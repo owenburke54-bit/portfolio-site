@@ -32,7 +32,12 @@ export default function HydraIQPage() {
           <li>Simple dashboards inspired by WHOOP and other wearables</li>
         </ul>
         <div className="pt-2">
-          <Link href="https://hydraiq.vercel.app" className="btn" target="_blank">
+          <Link
+            href="https://hydra-iq-mvp.vercel.app"
+            className="btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Open HydraIQ
           </Link>
         </div>
