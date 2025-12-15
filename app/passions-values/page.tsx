@@ -24,19 +24,19 @@ export default function PassionsValuesPage() {
           <h2 className="text-xl font-semibold">Values</h2>
           <ol className="mt-4 space-y-3 list-decimal list-inside text-gray-700">
             <li>
-              <span className="font-medium">Work ethic</span> â€“ Show up prepared, outwork expectations, and always do the extra rep.
+              <span className="font-medium">Work ethic</span> - Show up prepared, outwork expectations, and always do the extra rep.
             </li>
             <li>
-              <span className="font-medium">Thoughtfulness &amp; self-awareness</span> â€“ Be intentional, reflective, and pay attention to how I show up for others.
+              <span className="font-medium">Thoughtfulness &amp; self-awareness</span> - Be intentional, reflective, and pay attention to how I show up for others.
             </li>
             <li>
-              <span className="font-medium">Curiosity</span> â€“ Keep asking questions, exploring new ideas, and learning new skills.
+              <span className="font-medium">Curiosity</span> - Keep asking questions, exploring new ideas, and learning new skills.
             </li>
             <li>
-              <span className="font-medium">Team-first mindset</span> â€“ Put the groupâ€™s success over individual credit and support the people around me.
+              <span className="font-medium">Team-first mindset</span> - Put the group's success over individual credit and support the people around me.
             </li>
             <li>
-              <span className="font-medium">Resilience</span> â€“ Get comfortable with rejection and use setbacks as feedback, not as a definition of who I am.
+              <span className="font-medium">Resilience</span> - Get comfortable with rejection and use setbacks as feedback, not as a definition of who I am.
             </li>
           </ol>
         </div>
@@ -44,5 +44,3 @@ export default function PassionsValuesPage() {
     </div>
   );
 }
-
-
