@@ -1,18 +1,22 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 
 export const metadata = {
   title: "Owen Burke | Finance, Data Analytics & Performance",
   description:
-    "Portfolio of Owen Burke — Finance & Data Analytics | Division I Student-Athlete | Builder.",
+    "Portfolio of Owen Burke â€” Finance & Data Analytics Student | Division I Student-Athlete.",
 };
 
 export default function HomePage() {
   return (
-    <div className="space-y-10">
+    <div className="space-y-12">
       <section className="text-center space-y-6">
-        <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight">Owen Burke</h1>
+        <h1 className="text-5xl sm:text-6xl font-semibold tracking-tight">
+          <span className="bg-gradient-to-r from-black to-gray-600 bg-clip-text text-transparent">
+            Owen Burke
+          </span>
+        </h1>
         <p className="mx-auto max-w-3xl text-lg text-gray-600">
-          Finance & Data Analytics | Division I Student-Athlete | Builder.
+          Finance &amp; Data Analytics Student | Division I Student-Athlete
         </p>
         <div className="flex justify-center gap-3">
           <Link href="/projects" className="btn">
@@ -24,36 +28,27 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-3xl text-gray-700">
-        <p>
-          I’m a student-athlete who enjoys applying finance-style thinking to performance and
-          technology. I like building simple tools that make decisions clearer and habits easier.
-          This site is a snapshot of what I care about and what I’m building.
-        </p>
-      </section>
-
-      <section className="grid gap-4 sm:grid-cols-3">
-        <div className="card p-4">
+      <section className="grid gap-5 sm:grid-cols-3">
+        <div className="card p-5 transition hover:shadow-md">
           <h3 className="font-semibold">Soccer</h3>
           <p className="mt-2 text-sm text-gray-600">
-            Competing at a high level taught me the value of preparation, resilience, and teamwork.
+            NCAA Division 1 Men's Soccer Player at Stonehill College
           </p>
         </div>
-        <div className="card p-4">
+        <div className="card p-5 transition hover:shadow-md">
           <h3 className="font-semibold">Finance / Fintech</h3>
           <p className="mt-2 text-sm text-gray-600">
-            I’m drawn to quantitative thinking, clear KPIs, and systems that turn noise into signal.
+            Iâ€™m drawn to finance because it blends data and decision-making using quantitative
+            thinking to turn complex markets into actionable insights.
           </p>
         </div>
-        <div className="card p-4">
+        <div className="card p-5 transition hover:shadow-md">
           <h3 className="font-semibold">Health / Wearables</h3>
           <p className="mt-2 text-sm text-gray-600">
-            I explore how tracking, feedback loops, and simple visuals can change behavior.
+            I enjoy exploring how health data and tracking can lead to a healthier life.
           </p>
         </div>
       </section>
     </div>
   );
 }
-
-

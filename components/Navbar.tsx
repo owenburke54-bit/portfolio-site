@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import Link from "next/link";
 import { useSelectedLayoutSegment } from "next/navigation";
 
@@ -6,6 +6,9 @@ const links = [
   { href: "/", label: "Home" },
   { href: "/passions-values", label: "Passions & Values" },
   { href: "/projects", label: "Projects" },
+  { href: "/soccer", label: "Soccer" },
+  { href: "/study-abroad", label: "Study Abroad" },
+  { href: "/research", label: "Research" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -41,5 +44,3 @@ export default function Navbar() {
     </header>
   );
 }
-
-
