@@ -1,11 +1,11 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "HydraIQ | Personal Performance Analytics Project by Owen Burke",
+  title: "HydraIQ | Hydration Tracker",
   description:
-    "HydraIQ brings together everyday data and turns it into simple, actionable insights to guide better decisions.",
+    "HydraIQ helps you hit daily hydration targets with an intake log, a daily score, simple insights, and WHOOP-powered adjustments.",
 };
 
 export default function HydraIQPage() {
@@ -13,23 +13,22 @@ export default function HydraIQPage() {
     <div className="space-y-8">
       <PageHeader
         title="HydraIQ"
-        subtitle="A personal performance and insights tool I’m building to help people make better decisions with their data."
+        subtitle="A hydration app that turns daily intake into a score and actionable recommendations â€” with WHOOP data to personalize targets."
       />
 
       <section className="card p-6 space-y-4">
         <h2 className="text-xl font-semibold">Summary</h2>
         <p className="text-gray-700">
-          HydraIQ is an experimental personal analytics app that brings together data from
-          daily life—sleep, training, work, and reflection—and turns it into simple, actionable
-          insights. The goal is to give users a clear picture of how their habits stack up over
-          time and which levers actually move their performance. I’m using HydraIQ as a
-          playground for ideas at the intersection of finance-style analytics, sports performance,
-          and health tech.
+          HydraIQ focuses on one thing: better hydration. Log drinks throughout the day, see your
+          progress toward a personalized target, and get clear prompts that make it easy to stay on
+          track. Your daily score reflects how consistently you hydrate over the day, not just
+          whether you hit a single total.
         </p>
         <ul className="list-disc list-inside text-gray-700 space-y-1">
-          <li>Daily scoring system for key habits and behaviors</li>
-          <li>Trend charts to visualize consistency over time</li>
-          <li>Simple dashboards inspired by WHOOP and other wearables</li>
+          <li>Daily Hydration Score that rewards steady intake</li>
+          <li>Fast intake log with common sizes and quick-add buttons</li>
+          <li>Insights feed that suggests what to do next (e.g., â€œDrink 12 oz nowâ€)</li>
+          <li>Trends and streaks to reinforce consistency</li>
         </ul>
         <div className="pt-2">
           <Link
@@ -44,42 +43,46 @@ export default function HydraIQPage() {
       </section>
 
       <section className="card p-6 space-y-3">
-        <h2 className="text-xl font-semibold">Science &amp; Research</h2>
+        <h2 className="text-xl font-semibold">Data & Integrations</h2>
         <p className="text-gray-700">
-          HydraIQ pulls from research on habit formation and behavior change—ideas like
-          implementation intentions, habit stacking, and feedback loops. It takes cues from sports
-          science and wearables, where consistent tracking of sleep, training load, and recovery
-          can guide better decision-making. It also follows the quantified-self principle: simple,
-          understandable metrics plus regular reflection drive better long-term choices.
+          We integrate the WHOOP API (sleep, strain, recovery) to adjust daily hydration targets.
+          On harder training days or short sleep, HydraIQ nudges the target up. On light days, it
+          dials it back. This keeps guidance practical instead of one-size-fits-all.
         </p>
         <ul className="list-disc list-inside text-gray-700 space-y-1">
-          <li>Behavior change frameworks and feedback loops</li>
-          <li>Sports science monitoring for performance and recovery</li>
-          <li>Quantified-self mindset: track, reflect, adjust</li>
+          <li>WHOOP: sleep duration/consistency and strain inform target adjustments</li>
+          <li>App logic smooths changes so targets donâ€™t swing too much day-to-day</li>
+          <li>Privacy-first: only the minimum metrics are fetched and stored</li>
+        </ul>
+      </section>
+
+      <section className="card p-6 space-y-2">
+        <h2 className="text-xl font-semibold">How It Works</h2>
+        <ol className="list-decimal list-inside text-gray-700 space-y-1">
+          <li>Set a baseline target (e.g., 119 oz) or use the suggested one</li>
+          <li>WHOOP data adjusts that target for today</li>
+          <li>Log drinks; the score rewards steady intake across the day</li>
+          <li>Insights recommend the next small step to stay on track</li>
+        </ol>
+      </section>
+
+      <section className="card p-6 space-y-2">
+        <h2 className="text-xl font-semibold">Example Insights</h2>
+        <ul className="list-disc list-inside text-gray-700 space-y-1">
+          <li>â€œDrink 20 oz now, then 12 oz each hour until 9pm.â€</li>
+          <li>â€œYouâ€™re front-loaded today. Pace at ~8â€“10 oz/hour this afternoon.â€</li>
+          <li>â€œYesterdayâ€™s low intake after workouts led to a lower score â€” plan a bottle for the ride home.â€</li>
         </ul>
       </section>
 
       <section className="card p-6 space-y-2">
         <h2 className="text-xl font-semibold">Tech Stack</h2>
         <ul className="list-disc list-inside text-gray-700 space-y-1">
-          <li>Next.js and React for the frontend</li>
-          <li>TypeScript for type safety</li>
-          <li>Vercel for hosting and deployment</li>
-          <li>(Data layer and integrations placeholders)</li>
-        </ul>
-      </section>
-
-      <section className="card p-6 space-y-2">
-        <h2 className="text-xl font-semibold">What I Learned</h2>
-        <ul className="list-disc list-inside text-gray-700 space-y-1">
-          <li>Small, consistent metrics beat complex dashboards.</li>
-          <li>Clear copy and simple visuals help users act on data.</li>
-          <li>Designing for reflection improves adherence and outcomes.</li>
-          <li>Scope control is essential when exploring new integrations.</li>
+          <li>Next.js + React + TypeScript</li>
+          <li>Vercel for hosting</li>
+          <li>WHOOP API integration</li>
         </ul>
       </section>
     </div>
   );
 }
-
-

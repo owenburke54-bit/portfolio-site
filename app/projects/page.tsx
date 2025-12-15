@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import type { Metadata } from "next";
 
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function ProjectsPage() {
   return (
     <div className="space-y-8">
-      <PageHeader title="Projects" subtitle="A few things I’m building and exploring." />
+      <PageHeader title="Projects" subtitle="A few things I'm building and exploring." />
       <div className="grid gap-6 sm:grid-cols-2">
         <article className="card p-6 flex flex-col">
           <h3 className="text-lg font-semibold">HydraIQ</h3>
@@ -28,5 +28,6 @@ export default function ProjectsPage() {
     </div>
   );
 }
+
 
 

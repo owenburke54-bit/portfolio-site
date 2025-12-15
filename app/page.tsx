@@ -3,7 +3,7 @@
 export const metadata = {
   title: "Owen Burke | Finance, Data Analytics & Performance",
   description:
-    "Portfolio of Owen Burke â€” Finance & Data Analytics Student | Division I Student-Athlete.",
+    "Portfolio of Owen Burke - Finance & Data Analytics Student | Division I Student-Athlete.",
 };
 
 export default function HomePage() {
@@ -38,7 +38,7 @@ export default function HomePage() {
         <div className="card p-5 transition hover:shadow-md">
           <h3 className="font-semibold">Finance / Fintech</h3>
           <p className="mt-2 text-sm text-gray-600">
-            Iâ€™m drawn to finance because it blends data and decision-making using quantitative
+            I'm drawn to finance because it blends data and decision-making using quantitative
             thinking to turn complex markets into actionable insights.
           </p>
         </div>
