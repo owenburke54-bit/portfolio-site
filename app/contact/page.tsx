@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact | Owen Burke",
@@ -10,7 +10,7 @@ export default function ContactPage() {
     <div className="max-w-2xl space-y-6">
       <h1 className="text-3xl font-semibold tracking-tight">Contact</h1>
       <p className="text-gray-700">
-        I’m always open to connecting about finance, analytics, performance, or interesting
+        I'm always open to connecting about finance, analytics, performance, or interesting
         projects. Feel free to reach out.
       </p>
       <div className="flex gap-3">
@@ -21,5 +21,3 @@ export default function ContactPage() {
     </div>
   );
 }
-
-

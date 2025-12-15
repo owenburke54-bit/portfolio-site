@@ -12,7 +12,7 @@ export default function StudyAbroadPage() {
       <PageHeader title="Study Abroad" subtitle="Experiences and takeaways." />
       <section className="card p-6">
         <p className="text-gray-700">
-          Content coming soon. Iâ€™ll share stories, photos, and what I learned through the
+          Content coming soon. I'll share stories, photos, and what I learned through the
           experience.
         </p>
       </section>

@@ -13,7 +13,7 @@ export default function HydraIQPage() {
     <div className="space-y-8">
       <PageHeader
         title="HydraIQ"
-        subtitle="A hydration app that turns daily intake into a score and actionable recommendations â€” with WHOOP data to personalize targets."
+        subtitle="A hydration app that turns daily intake into a score and actionable recommendations - with WHOOP data to personalize targets."
       />
 
       <section className="card p-6 space-y-4">
@@ -27,7 +27,7 @@ export default function HydraIQPage() {
         <ul className="list-disc list-inside text-gray-700 space-y-1">
           <li>Daily Hydration Score that rewards steady intake</li>
           <li>Fast intake log with common sizes and quick-add buttons</li>
-          <li>Insights feed that suggests what to do next (e.g., â€œDrink 12 oz nowâ€)</li>
+          <li>Insights feed that suggests what to do next (e.g., "Drink 12 oz now")</li>
           <li>Trends and streaks to reinforce consistency</li>
         </ul>
         <div className="pt-2">
@@ -51,7 +51,7 @@ export default function HydraIQPage() {
         </p>
         <ul className="list-disc list-inside text-gray-700 space-y-1">
           <li>WHOOP: sleep duration/consistency and strain inform target adjustments</li>
-          <li>App logic smooths changes so targets donâ€™t swing too much day-to-day</li>
+          <li>App logic smooths changes so targets don't swing too much day-to-day</li>
           <li>Privacy-first: only the minimum metrics are fetched and stored</li>
         </ul>
       </section>
@@ -69,9 +69,9 @@ export default function HydraIQPage() {
       <section className="card p-6 space-y-2">
         <h2 className="text-xl font-semibold">Example Insights</h2>
         <ul className="list-disc list-inside text-gray-700 space-y-1">
-          <li>â€œDrink 20 oz now, then 12 oz each hour until 9pm.â€</li>
-          <li>â€œYouâ€™re front-loaded today. Pace at ~8â€“10 oz/hour this afternoon.â€</li>
-          <li>â€œYesterdayâ€™s low intake after workouts led to a lower score â€” plan a bottle for the ride home.â€</li>
+          <li>"Drink 20 oz now, then 12 oz each hour until 9pm."</li>
+          <li>"You're front-loaded today. Pace at ~8-10 oz/hour this afternoon."</li>
+          <li>"Yesterday's low intake after workouts led to a lower score - plan a bottle for the ride home."</li>
         </ul>
       </section>
 

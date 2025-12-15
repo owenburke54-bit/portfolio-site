@@ -15,7 +15,7 @@ export default function SoccerPage() {
       />
       <section className="card p-6">
         <p className="text-gray-700">
-          More content coming soon â€” highlights, reflections, and what soccer has taught me about
+          More content coming soon - highlights, reflections, and what soccer has taught me about
           preparation, resilience, and teamwork.
         </p>
       </section>
