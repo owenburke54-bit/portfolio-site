@@ -1,10 +1,11 @@
 ﻿'use client';
+
 import Link from "next/link";
 import { useSelectedLayoutSegment } from "next/navigation";
 
 const links = [
   { href: "/", label: "Home" },
-  { href: "/passions-values", label: "Passions & Values" },
+  // { href: "/passions-values", label: "Passions & Values" }, // hidden for now
   { href: "/projects", label: "Projects" },
   { href: "/soccer", label: "Soccer" },
   { href: "/study-abroad", label: "Study Abroad" },
@@ -26,7 +27,10 @@ export default function Navbar() {
   return (
     <header className="border-b border-gray-200">
       <div className="container-px mx-auto max-w-6xl h-16 flex items-center justify-between">
-        <Link href="/" className="font-semibold">Owen Burke</Link>
+        <Link href="/" className="font-semibold">
+          Owen Burke
+        </Link>
+
         <nav className="flex items-center gap-4 text-sm">
           {links.map((l) => (
             <Link
