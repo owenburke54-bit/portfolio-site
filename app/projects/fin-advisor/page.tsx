@@ -8,6 +8,9 @@ export const metadata: Metadata = {
     "Personal portfolio tracker with performance analytics, benchmarking, and risk metrics.",
 };
 
+// Standalone live app (separate Vercel project)
+const LIVE_APP_URL = "https://fin-advisor-five.vercel.app";
+
 const EXAMPLE_CSV = `ticker,name,assetClass,accountType,quantity,costBasisPerUnit,purchaseDate,currentPrice
 MMKT-ROTH,Money Market,Money Market,Roth IRA,1,7000,2025-08-13,7100.57
 MMKT-TAX,Money Market,Money Market,Taxable,1,7329,2025-08-13,7496.37
@@ -28,10 +31,13 @@ export default function FinAdvisorPage() {
           subtitle="A portfolio dashboard for positions, transactions, returns (TWR/XIRR), benchmarks, and risk metrics."
         />
 
-        {/* Status pill (keeps HydraIQ-like vibe without breaking PageHeader typing) */}
-        <div>
+        <div className="flex flex-wrap items-center gap-3">
           <span className="inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-sm font-medium text-gray-700">
-            In progress
+            Live demo available
+          </span>
+
+          <span className="text-sm text-gray-500">
+            Educational demo only — not financial advice.
           </span>
         </div>
       </div>
@@ -40,8 +46,8 @@ export default function FinAdvisorPage() {
       <section className="card p-6 space-y-3">
         <h2 className="text-xl font-semibold">Status</h2>
         <p className="text-gray-700">
-          In progress. I’m finishing a round of UI polish and accuracy improvements (imports, totals,
-          and return calculations), then I’ll publish a live build here.
+          Live demo is deployed. I’m continuing to improve accuracy (imports, totals, return calculations)
+          and UI polish as I expand benchmarking and analytics.
         </p>
       </section>
 
@@ -50,55 +56,75 @@ export default function FinAdvisorPage() {
         <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
           <div>
             <h2 className="text-xl font-semibold">App preview</h2>
-            <p className="text-gray-600">Quick look before opening the full app.</p>
+            <p className="text-gray-600">Open the live demo to explore the full dashboard.</p>
           </div>
 
-          {/* When the live app is ready, replace the href below */}
-          <Link href="#" className="btn pointer-events-none opacity-50" aria-disabled>
+          <Link
+            href={LIVE_APP_URL}
+            className="btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Open app
           </Link>
         </div>
 
         <div className="rounded-xl border border-gray-200 bg-gray-50 p-4">
           <p className="text-sm text-gray-600">
-            Preview will appear here once the live deployment is public. For now, the fastest way to
-            test the product is importing the example CSV below and validating totals, returns, and
-            risk metrics.
+            The fastest way to test Fin-Advisor is importing the example CSV below and validating totals,
+            returns (TWR/XIRR), and risk metrics.
           </p>
 
           <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             <div className="rounded-xl border border-gray-200 bg-white p-4">
               <div className="text-xs text-gray-500">Portfolio value</div>
               <div className="mt-1 text-2xl font-semibold">$—</div>
+              <div className="mt-1 text-xs text-gray-500">Auto-populates after import</div>
             </div>
             <div className="rounded-xl border border-gray-200 bg-white p-4">
               <div className="text-xs text-gray-500">TWR</div>
               <div className="mt-1 text-2xl font-semibold">—%</div>
+              <div className="mt-1 text-xs text-gray-500">Cash-flow aware</div>
             </div>
             <div className="rounded-xl border border-gray-200 bg-white p-4">
               <div className="text-xs text-gray-500">XIRR</div>
               <div className="mt-1 text-2xl font-semibold">—%</div>
+              <div className="mt-1 text-xs text-gray-500">Time-weighted IRR</div>
             </div>
             <div className="rounded-xl border border-gray-200 bg-white p-4">
               <div className="text-xs text-gray-500">Max drawdown</div>
               <div className="mt-1 text-2xl font-semibold">—%</div>
+              <div className="mt-1 text-xs text-gray-500">Peak-to-trough</div>
             </div>
           </div>
         </div>
 
         <p className="text-xs text-gray-500">
-          Once the app is live, this section can embed screenshots or an interactive preview.
+          Tip: if you don’t see data right away, confirm you’re on the “Positions” or “Import” section in the live app.
         </p>
       </section>
 
       {/* Summary */}
-      <section className="card p-6 space-y-3">
-        <h2 className="text-xl font-semibold">Summary</h2>
-        <p className="text-gray-700">
-          Fin-Advisor is built for a realistic investing workflow: enter positions (or import them),
-          log buys/sells and deposits/withdrawals, then see performance the right way — including
-          cash-flow-aware returns and risk context against a benchmark.
-        </p>
+      <section className="card p-6 space-y-4">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+          <div className="space-y-2">
+            <h2 className="text-xl font-semibold">Summary</h2>
+            <p className="text-gray-700">
+              Fin-Advisor is built for a realistic investing workflow: enter positions (or import them),
+              log buys/sells and deposits/withdrawals, then analyze performance the right way — including
+              cash-flow-aware returns and risk context against a benchmark.
+            </p>
+          </div>
+
+          <Link
+            href={LIVE_APP_URL}
+            className="btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Open live demo
+          </Link>
+        </div>
 
         <ul className="list-disc list-inside text-gray-700 space-y-1">
           <li>Positions + transaction tracking (buys, sells, deposits/withdrawals)</li>
@@ -106,13 +132,6 @@ export default function FinAdvisorPage() {
           <li>Benchmark comparison</li>
           <li>Risk metrics (volatility, beta, drawdown)</li>
         </ul>
-
-        {/* When the live app is ready, replace the href below */}
-        <div className="pt-2">
-          <Link href="#" className="btn pointer-events-none opacity-50" aria-disabled>
-            Live app (coming soon)
-          </Link>
-        </div>
       </section>
 
       {/* Example CSV */}
@@ -121,24 +140,31 @@ export default function FinAdvisorPage() {
           <div>
             <h2 className="text-xl font-semibold">Example CSV (test data)</h2>
             <p className="text-gray-600">
-              Use this to quickly populate positions and validate totals, returns, and charts.
+              Download and import this to instantly populate a sample portfolio.
             </p>
           </div>
 
-          {/* Download expects you to add /public/fin-advisor-example.csv */}
           <div className="flex flex-wrap gap-2">
             <Link href="/fin-advisor-example.csv" className="btn" download>
               Download CSV
+            </Link>
+            <Link
+              href={LIVE_APP_URL}
+              className="btn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open app to import
             </Link>
           </div>
         </div>
 
         <div className="rounded-xl border border-gray-200 bg-gray-50 p-4 space-y-3">
           <p className="text-sm text-gray-700">
-            <span className="font-semibold">How to use it:</span> download the file, then in Fin-Advisor
-            use your <span className="font-semibold">Import CSV</span> flow on the Positions screen.
-            This dataset includes money market placeholders, index funds, equities, and crypto so you
-            can sanity-check calculations across asset types.
+            <span className="font-semibold">How to use it:</span> download the file, open Fin-Advisor,
+            then use the <span className="font-semibold">Import CSV</span> flow. This dataset includes
+            money market placeholders, index funds, equities, and crypto so you can sanity-check
+            calculations across asset types.
           </p>
 
           <div className="rounded-lg border border-gray-200 bg-white overflow-hidden">
