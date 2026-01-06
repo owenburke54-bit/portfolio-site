@@ -22,17 +22,19 @@ ETH-USD,Ethereum,Crypto,Taxable,0.09,4622,2025-08-14,3145`;
 export default function FinAdvisorPage() {
   return (
     <div className="space-y-8">
-      <PageHeader
-        title={
-          <div className="flex items-center gap-3">
-            <span>Fin-Advisor</span>
-            <span className="inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-sm font-medium text-gray-700">
-              In progress
-            </span>
-          </div>
-        }
-        subtitle="A portfolio dashboard for positions, transactions, returns (TWR/XIRR), benchmarks, and risk metrics."
-      />
+      <div className="space-y-3">
+        <PageHeader
+          title="Fin-Advisor"
+          subtitle="A portfolio dashboard for positions, transactions, returns (TWR/XIRR), benchmarks, and risk metrics."
+        />
+
+        {/* Status pill (keeps HydraIQ-like vibe without breaking PageHeader typing) */}
+        <div>
+          <span className="inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-sm font-medium text-gray-700">
+            In progress
+          </span>
+        </div>
+      </div>
 
       {/* Status */}
       <section className="card p-6 space-y-3">
@@ -43,7 +45,7 @@ export default function FinAdvisorPage() {
         </p>
       </section>
 
-      {/* App preview (HydraIQ-like structure) */}
+      {/* App preview */}
       <section className="card p-6 space-y-4">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
           <div>
@@ -89,7 +91,7 @@ export default function FinAdvisorPage() {
         </p>
       </section>
 
-      {/* Summary (HydraIQ-like) */}
+      {/* Summary */}
       <section className="card p-6 space-y-3">
         <h2 className="text-xl font-semibold">Summary</h2>
         <p className="text-gray-700">
@@ -123,8 +125,8 @@ export default function FinAdvisorPage() {
             </p>
           </div>
 
+          {/* Download expects you to add /public/fin-advisor-example.csv */}
           <div className="flex flex-wrap gap-2">
-            {/* Download expects you to add /public/fin-advisor-example.csv */}
             <Link href="/fin-advisor-example.csv" className="btn" download>
               Download CSV
             </Link>
