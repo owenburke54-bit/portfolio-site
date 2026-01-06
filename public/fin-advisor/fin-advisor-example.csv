@@ -1,0 +1,10 @@
+ticker,name,assetClass,accountType,quantity,costBasisPerUnit,purchaseDate,currentPrice
+MMKT-ROTH,Money Market,Money Market,Roth IRA,1,7000,2025-08-13,7100.57
+MMKT-TAX,Money Market,Money Market,Taxable,1,7329,2025-08-13,7496.37
+VOO,Vanguard 500 Index Fund,ETF,Taxable,8,588,2025-08-13,628.30
+FXAIX,Fidelity 500 Index Fund,Mutual Fund,Taxable,3,219,2025-07-03,238.23
+NVDA,NVIDIA Corp,Equity,Taxable,4,181,2025-08-13,188.45
+AMZN,Amazon.com Inc,Equity,Taxable,3,224,2025-08-13,226.50
+META,Meta Platforms Inc,Equity,Taxable,2,784,2025-08-13,650.41
+BTC-USD,Bitcoin,Crypto,Taxable,0.01,119966,2025-08-14,91315
+ETH-USD,Ethereum,Crypto,Taxable,0.09,4622,2025-08-14,3145
