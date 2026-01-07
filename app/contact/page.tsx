@@ -15,16 +15,19 @@ export default function ContactPage() {
         projects. Feel free to reach out.
       </p>
 
-      <div className="flex flex-wrap gap-3">
-        {/* Email */}
+      {/* Email */}
+      <div className="text-gray-800">
+        <span className="font-medium">Email:</span>{" "}
         <a
-          href="mailto:owenburke54@gmail.com?subject=Connecting&body=Hi Owen,%0D%0A%0D%0A"
-          className="btn"
+          href="mailto:owenburke54@gmail.com"
+          className="underline underline-offset-4 hover:text-black"
         >
-          Email me
+          owenburke54@gmail.com
         </a>
+      </div>
 
-        {/* LinkedIn */}
+      {/* Social links */}
+      <div className="flex gap-3 pt-2">
         <a
           href="https://www.linkedin.com/in/owen-burke-0ab126257"
           target="_blank"
@@ -34,7 +37,6 @@ export default function ContactPage() {
           LinkedIn
         </a>
 
-        {/* GitHub */}
         <a
           href="https://github.com/owenburke54-bit"
           target="_blank"
