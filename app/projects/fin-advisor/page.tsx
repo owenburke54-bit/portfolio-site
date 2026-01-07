@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import type { Metadata } from "next";
+import { useState } from "react";
 
 export const metadata: Metadata = {
   title: "Fin-Advisor | Owen Burke",
@@ -22,6 +25,34 @@ BTC-USD,Bitcoin,Crypto,Taxable,0.01,119966,2025-08-14,91315
 ETH-USD,Ethereum,Crypto,Taxable,0.09,4622,2025-08-14,3145`;
 
 export default function FinAdvisorPage() {
+  const [copied, setCopied] = useState(false);
+
+  const copyCsv = async () => {
+    try {
+      await navigator.clipboard.writeText(EXAMPLE_CSV);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 1400);
+    } catch {
+      // Fallback for older browsers / blocked clipboard permissions
+      try {
+        const ta = document.createElement("textarea");
+        ta.value = EXAMPLE_CSV;
+        ta.style.position = "fixed";
+        ta.style.left = "-9999px";
+        ta.style.top = "0";
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+        setCopied(true);
+        window.setTimeout(() => setCopied(false), 1400);
+      } catch {
+        // If everything fails, do nothing silently (keeps page clean)
+      }
+    }
+  };
+
   return (
     <div className="space-y-8">
       <PageHeader
@@ -72,8 +103,8 @@ export default function FinAdvisorPage() {
         <h2 className="text-xl font-semibold">Summary</h2>
         <p className="text-gray-700">
           Fin-Advisor helps you understand your portfolio beyond “up or down today.” Add positions
-          and transactions, then view performance the right way with cash-flow-aware returns (TWR/XIRR),
-          benchmark comparison, and risk metrics that explain the ride.
+          and transactions, then view performance the right way with cash-flow-aware returns
+          (TWR/XIRR), benchmark comparison, and risk metrics that explain the ride.
         </p>
         <ul className="list-disc list-inside text-gray-700 space-y-1">
           <li>Positions + transaction tracking (buys, sells, deposits/withdrawals)</li>
@@ -97,18 +128,24 @@ export default function FinAdvisorPage() {
           <li>Analytics computed from positions + transactions/cash flows</li>
         </ul>
 
-        {/* Example CSV (kept neat + consistent with HydraIQ style) */}
+        {/* Example CSV */}
         <div className="pt-3 space-y-3">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
             <h3 className="text-base font-semibold">Example CSV</h3>
-            <Link href="/fin-advisor-example.csv" className="btn" download>
-              Download CSV
-            </Link>
+
+            <button
+              type="button"
+              onClick={copyCsv}
+              className="btn"
+              aria-label="Copy example CSV to clipboard"
+            >
+              {copied ? "Copied!" : "Copy CSV"}
+            </button>
           </div>
 
           <p className="text-sm text-gray-700">
-            <span className="font-semibold">How to use it:</span> download the file, open Fin-Advisor,
-            then import it from the Positions screen.
+            <span className="font-semibold">How to use it:</span> copy the CSV, open Fin-Advisor, then
+            paste/import it from the Positions screen.
           </p>
 
           <div className="rounded-lg border border-gray-200 bg-white overflow-hidden">

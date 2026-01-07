@@ -10,7 +10,8 @@ export const metadata: Metadata = {
 const PROJECTS = [
   {
     title: "HydraIQ",
-    description: "Personal analytics app for turning daily habits and wearable data into simple, actionable insights.",
+    description:
+      "Personal analytics app for turning daily habits and wearable data into simple, actionable insights.",
     href: "/projects/hydraiq",
     cta: "View project",
     badge: null as string | null,
@@ -21,7 +22,7 @@ const PROJECTS = [
       "Personal portfolio tracker with performance analytics (TWR/XIRR), benchmark comparison, and risk metrics.",
     href: "/projects/fin-advisor",
     cta: "View project",
-    badge: "In progress",
+    badge: null as string | null,
   },
 ];
 
@@ -36,11 +37,6 @@ export default function ProjectsPage() {
             <div className="flex items-start justify-between gap-4">
               <div>
                 <h2 className="text-xl font-semibold">{p.title}</h2>
-                {p.badge ? (
-                  <span className="mt-2 inline-flex items-center rounded-full border px-2 py-0.5 text-xs text-gray-600">
-                    {p.badge}
-                  </span>
-                ) : null}
                 <p className="mt-3 text-gray-700">{p.description}</p>
               </div>
             </div>
