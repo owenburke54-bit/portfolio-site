@@ -16,7 +16,7 @@ export default function HomePage() {
           </span>
         </h1>
         <p className="mx-auto max-w-3xl text-base sm:text-lg text-gray-600">
-          Finance | Analytics | Product-minded Builder
+          Finance &amp; Data Analytics Student | Division I Student-Athlete
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-3">
           <Link href="/projects" className="btn">
