@@ -11,9 +11,7 @@ export default function ResearchPage() {
     <div className="space-y-6">
       <PageHeader title="Research" subtitle="Areas I'm exploring and research notes." />
       <section className="card p-6">
-        <p className="text-gray-700">
-          More to come - I'll publish short write-ups as I experiment and learn.
-        </p>
+        <p className="text-gray-700">Coming soon...</p>
       </section>
     </div>
   );
