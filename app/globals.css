@@ -1,9 +1,9 @@
-@tailwind base;
+﻿@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --bg: #ffffff;
+  --bg: #f8fafc; /* slate-50 */
 }
 
 html, body {
@@ -13,6 +13,7 @@ html, body {
 body {
   background: var(--bg);
   color: #0b0f19;
+  line-height: 1.6;
 }
 
 .container-px {
@@ -20,19 +21,26 @@ body {
 }
 
 .card {
-  @apply rounded-lg border border-gray-200 bg-white shadow-sm;
+  @apply rounded-xl border border-gray-200/80 bg-white shadow-sm transition;
+}
+.card:hover {
+  @apply shadow translate-y-[1px];
 }
 
 .btn {
-  @apply inline-flex items-center justify-center rounded-md bg-black px-4 py-2 text-white transition hover:bg-gray-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/30;
+  @apply inline-flex items-center justify-center rounded-md bg-black px-4 py-2 text-white transition hover:bg-gray-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/30 shadow-sm;
 }
 
 .btn-secondary {
-  @apply inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-gray-900 transition hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/10;
+  @apply inline-flex items-center justify-center rounded-md border border-gray-200 bg-white px-4 py-2 text-gray-900 transition hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/10;
 }
+
 
 
 
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
+
+/* link hover underline */
+ a:hover { text-decoration: underline; }

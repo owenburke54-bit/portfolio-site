@@ -25,7 +25,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="border-b border-gray-200">
+    <header className="sticky top-0 z-40 border-b border-gray-200 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <div className="container-px mx-auto max-w-6xl h-16 flex items-center justify-between">
         <Link href="/" className="font-semibold">
           Owen Burke
