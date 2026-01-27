@@ -26,7 +26,7 @@ export default function SoccerPage() {
           <div className="sm:col-span-2">
             <div className="relative w-full overflow-hidden rounded-xl border bg-white aspect-[3/4]">
               <Image
-                src="/images/soccer/headshot.png"
+                src="/images/soccer/headshot.png.png"
                 alt="Owen Burke headshot"
                 fill
                 className="object-cover"
@@ -49,11 +49,13 @@ export default function SoccerPage() {
               <li>High School: Holliston</li>
               <li>Major: Finance</li>
             </ul>
-            <p className="text-gray-700">
-              Division I experience shaped how I prepare, lead, and perform under pressure. I focus
-              on consistency and doing the simple things well. I balance athletics with academics
-              and a data-driven mindset, applying analytics to improve daily habits and team impact.
-            </p>
+            <ul className="list-disc list-inside text-gray-700 space-y-1">
+              <li>NCAA Division I, Northeast Conference</li>
+              <li>Team Captain — Fall 2025 season</li>
+              <li>3x NCAA Division I Academic All-District (2023–2025)</li>
+              <li>NEC All-Conference Second Team (Fall 2025)</li>
+              <li>20+ hours weekly for training, travel, and games</li>
+            </ul>
           </div>
         </div>
       </section>
