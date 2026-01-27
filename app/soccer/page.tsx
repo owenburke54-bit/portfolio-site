@@ -26,7 +26,7 @@ export default function SoccerPage() {
           <div className="sm:col-span-2">
             <div className="relative w-full overflow-hidden rounded-xl border bg-white aspect-[3/4]">
               <Image
-                src="/images/soccer/headshot.png.png"
+                src="/images/soccer/headshot.jpg"
                 alt="Owen Burke headshot"
                 fill
                 className="object-cover"
