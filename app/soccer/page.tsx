@@ -25,12 +25,11 @@ export default function SoccerPage() {
           {/* LEFT: Headshot */}
           <div className="sm:col-span-2">
             <div className="relative w-full overflow-hidden rounded-xl border bg-white aspect-[3/4]">
-              <Image
+              <img
                 src="/images/soccer/headshot.png.png"
                 alt="Owen Burke headshot"
-                fill
-                className="object-cover"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 40vw, 400px"
+                className="absolute inset-0 h-full w-full object-cover"
+                loading="lazy"
               />
             </div>
           </div>
