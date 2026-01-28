@@ -1,4 +1,5 @@
 import PageHeader from "@/components/PageHeader";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -61,21 +62,33 @@ export default function Best10FromTheStands() {
         <h2 className="text-xl font-semibold">Top 10</h2>
         <div className="space-y-6 text-gray-700">
           {[
-            { n: 10, name: "Robin Gosens (Fiorentina)" },
-            { n: 9, name: "Nico Paz (Como)" },
-            { n: 8, name: "Antony (Real Betis)" },
-            { n: 7, name: "Isco (Real Betis)" },
-            { n: 6, name: "Kouadio Manu Kone (Roma)" },
-            { n: 5, name: "Jamal Musiala (Germany)" },
-            { n: 4, name: "Nicolo Barella (Italy)" },
-            { n: 3, name: "Sandro Tonali (Italy)" },
-            { n: 2, name: "Vinicius Jr. (Real Madrid)" },
-            { n: 1, name: "Joshua Kimmich (Germany)" },
+            { n: 10, name: "Robin Gosens (Fiorentina)", slug: "gosens" },
+            { n: 9, name: "Nico Paz (Como)", slug: "paz" },
+            { n: 8, name: "Antony (Real Betis)", slug: "antony" },
+            { n: 7, name: "Isco (Real Betis)", slug: "isco" },
+            { n: 6, name: "Kouadio Manu Kone (Roma)", slug: "kone" },
+            { n: 5, name: "Jamal Musiala (Germany)", slug: "musiala" },
+            { n: 4, name: "Nicolo Barella (Italy)", slug: "barella" },
+            { n: 3, name: "Sandro Tonali (Italy)", slug: "tonali" },
+            { n: 2, name: "Vinicius Jr. (Real Madrid)", slug: "vinicius" },
+            { n: 1, name: "Joshua Kimmich (Germany)", slug: "kimmich" },
           ].map((p) => (
-            <div key={p.n} className="space-y-2">
-              <h3 className="text-lg font-semibold">
-                {p.n}. {p.name}
-              </h3>
+            <div key={p.n} className="space-y-3">
+              <div className="flex items-start gap-3">
+                <div className="relative h-16 w-16 overflow-hidden rounded-md border bg-gray-50 shrink-0">
+                  <Image
+                    src={`/images/writing/top10/${p.slug}.jpg`}
+                    alt={p.name}
+                    fill
+                    className="object-cover"
+                    sizes="64px"
+                    quality={90}
+                  />
+                </div>
+                <h3 className="text-lg font-semibold leading-tight">
+                  {p.n}. {p.name}
+                </h3>
+              </div>
               {p.n === 10 ? (
                 <>
                   <p className="text-gray-700">
