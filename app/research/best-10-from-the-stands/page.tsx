@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "The Best 10 Soccer Players I've Seen from the Stands | Owen Burke",
   description:
-    "A fan-eye perspective after attending seven European matches in 2024–2025. Rules, context, and a countdown from 10 to 1.",
+    "Notes from seven European matches in 2024–2025. Rules, context, and a countdown from 10 to 1.",
 };
 
 export default function Best10FromTheStands() {
@@ -58,7 +58,7 @@ export default function Best10FromTheStands() {
 
       {/* Countdown sections */}
       <section className="card p-6 space-y-6">
-        <h2 className="text-xl font-semibold">Top 10 (fan‑eye notes)</h2>
+        <h2 className="text-xl font-semibold">Top 10</h2>
         <div className="space-y-6 text-gray-700">
           {[
             { n: 10, name: "Robin Gosens (Fiorentina)" },

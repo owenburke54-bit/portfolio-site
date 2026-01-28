@@ -20,8 +20,8 @@ export default function ResearchPage() {
           </h2>
           <p className="mt-1 text-xs text-gray-500">January 28, 2026</p>
           <p className="mt-3 text-gray-700">
-            A fan-eye perspective after attending seven European matches across 2024–2025.
-            Rules, context, and a countdown from 10 to 1—with a few honorable mentions.
+            Notes from seven European matches in 2024–2025. Rules, context, and a
+            countdown from 10 to 1—with a few honorable mentions.
           </p>
           <div className="mt-4">
             <a href="/research/best-10-from-the-stands" className="btn">
