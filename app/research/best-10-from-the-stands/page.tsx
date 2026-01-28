@@ -76,9 +76,27 @@ export default function Best10FromTheStands() {
               <h3 className="text-lg font-semibold">
                 {p.n}. {p.name}
               </h3>
-              <p className="text-gray-700">
-                Write‑up coming soon.
-              </p>
+              {p.n === 10 ? (
+                <>
+                  <p className="text-gray-700">
+                    This guy is a goal machine from left back. I've seen him play four times for
+                    Fiorentina, and he's tallied 3 goals and 1 assist. I just couldn't leave him off
+                    the list. You can't argue with goals, especially from a left back!
+                  </p>
+                  <p className="text-gray-700">
+                    He also scored two class goals against Real Betis in the UEFA Conference League
+                    Semifinal (Leg 2), although he was playing as a left winger in that match.
+                  </p>
+                  <p className="text-gray-700">
+                    Beyond his goal-scoring ability, Gosens has great fitness levels and covers a
+                    lot of ground for Fiorentina on the left flank. He's one of those players who
+                    always seems to get his head on the ball and be dangerous in the box. He puts in
+                    excellent crosses from the left and is also a solid 1v1 defender.
+                  </p>
+                </>
+              ) : (
+                <p className="text-gray-700">Write-up coming soon.</p>
+              )}
             </div>
           ))}
         </div>
