@@ -46,8 +46,7 @@ export default function HomePage() {
         >
           <h3 className="font-semibold">Finance / Fintech</h3>
           <p className="mt-2 text-sm text-gray-600">
-            I'm drawn to finance because it blends data and decision-making using quantitative
-            thinking to turn complex markets into actionable insights.
+            I'm drawn to finance and enjoy reading about the financial markets.
           </p>
         </Link>
         <Link
