@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function ResearchPage() {
   return (
     <div className="space-y-8">
-      <PageHeader title="Writing" subtitle="Short essays and notes." />
+      <PageHeader title="Writing" />
 
       {/* Articles */}
       <section className="grid gap-6 md:grid-cols-2">

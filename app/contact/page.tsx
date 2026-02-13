@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact | Owen Burke",
@@ -28,6 +28,15 @@ export default function ContactPage() {
 
       {/* Social links */}
       <div className="flex gap-3 pt-2">
+        <a
+          href="/resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn"
+        >
+          Resume (PDF)
+        </a>
+
         <a
           href="https://www.linkedin.com/in/owen-burke-0ab126257"
           target="_blank"
