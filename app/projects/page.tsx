@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import type { Metadata } from "next";
 
@@ -11,7 +11,7 @@ const PROJECTS = [
   {
     title: "HydraIQ",
     description:
-      "Personal analytics app for turning daily habits and wearable data into simple, actionable insights.",
+      "Personal hydration analytics app for turning daily habits and wearable data into simple, actionable insights.",
     href: "/projects/hydraiq",
     cta: "View project",
     badge: null as string | null,
@@ -19,7 +19,7 @@ const PROJECTS = [
   {
     title: "Fin-Advisor",
     description:
-      "Personal portfolio tracker with performance analytics (TWR/XIRR), benchmark comparison, and risk metrics.",
+      "Personal portfolio tracker with performance analytics, benchmark comparison, and risk metrics.",
     href: "/projects/fin-advisor",
     cta: "View project",
     badge: null as string | null,

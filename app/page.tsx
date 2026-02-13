@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 
 export const metadata = {
   title: "Owen Burke | Finance, Data Analytics & Performance",
@@ -29,25 +29,37 @@ export default function HomePage() {
       </section>
 
       <section className="grid gap-4 sm:gap-5 sm:grid-cols-3">
-        <div className="card p-4 sm:p-5 transition hover:shadow-md">
+        <Link
+          href="/soccer"
+          className="card block p-4 sm:p-5 transition hover:shadow-md focus:outline-none focus:ring-2 focus:ring-gray-300"
+          aria-label="Go to Soccer page"
+        >
           <h3 className="font-semibold">Soccer</h3>
           <p className="mt-2 text-sm text-gray-600">
             NCAA Division 1 Men's Soccer Player at Stonehill College
           </p>
-        </div>
-        <div className="card p-4 sm:p-5 transition hover:shadow-md">
+        </Link>
+        <Link
+          href="/projects/fin-advisor"
+          className="card block p-4 sm:p-5 transition hover:shadow-md focus:outline-none focus:ring-2 focus:ring-gray-300"
+          aria-label="Go to Fin-Advisor project"
+        >
           <h3 className="font-semibold">Finance / Fintech</h3>
           <p className="mt-2 text-sm text-gray-600">
             I'm drawn to finance because it blends data and decision-making using quantitative
             thinking to turn complex markets into actionable insights.
           </p>
-        </div>
-        <div className="card p-4 sm:p-5 transition hover:shadow-md">
+        </Link>
+        <Link
+          href="/projects/hydraiq"
+          className="card block p-4 sm:p-5 transition hover:shadow-md focus:outline-none focus:ring-2 focus:ring-gray-300"
+          aria-label="Go to HydraIQ project"
+        >
           <h3 className="font-semibold">Health / Wearables</h3>
           <p className="mt-2 text-sm text-gray-600">
             I enjoy exploring how health data and tracking can lead to a healthier life.
           </p>
-        </div>
+        </Link>
       </section>
     </div>
   );

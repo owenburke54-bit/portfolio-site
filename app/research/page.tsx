@@ -30,13 +30,20 @@ export default function ResearchPage() {
           </div>
         </article>
 
-        {/* Placeholder future post */}
+        {/* Markets article */}
         <article className="card p-6 flex flex-col">
-          <h2 className="text-lg font-semibold">FinTech Q&A Trends</h2>
-          <p className="mt-1 text-xs text-gray-500">Coming soon</p>
+          <h2 className="text-lg font-semibold">
+            The State of the Financial Markets: Nearing the Peak
+          </h2>
+          <p className="mt-1 text-xs text-gray-500">February 13, 2026</p>
           <p className="mt-3 text-gray-700">
-            Notes on common questions, themes, and signals from recent FinTech Q&A discussions.
+            Late-cycle dynamics, rate path, inflation trajectory, and positioning implications as breadth narrows.
           </p>
+          <div className="mt-4">
+            <a href="/research/state-of-the-financial-markets-nearing-the-peak" className="btn">
+              Read article
+            </a>
+          </div>
         </article>
       </section>
     </div>
