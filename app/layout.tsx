@@ -21,7 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ToastProvider>
           <div className="min-h-dvh flex flex-col">
             <Navbar />
-            <main className="flex-1 container-px mx-auto w-full max-w-6xl py-8 sm:py-14">
+            <main className="flex-1 container-px mx-auto w-full max-w-6xl pt-24 pb-10 sm:pt-28 sm:pb-14">
               {children}
             </main>
             <Footer />

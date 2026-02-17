@@ -99,12 +99,17 @@ export default function HomePage() {
               "D1 student-athlete discipline + leadership",
               "Growth mindset, team-first",
             ]}
+            actions={[{ label: "View", href: "/soccer" }]}
           />
           <InterestCard
             title="Writing"
             bullets={[
               "Photo essay + storytelling (Florence experience)",
               "Translate complex topics into plain language",
+            ]}
+            actions={[
+              { label: "Top 10 Players", href: "/research/best-10-from-the-stands" },
+              { label: "Markets Article", href: "/research/state-of-the-financial-markets-nearing-the-peak" },
             ]}
           />
           <InterestCard
@@ -113,6 +118,7 @@ export default function HomePage() {
               "Europe travel perspective",
               "Data visualization mindset",
             ]}
+            actions={[{ label: "Power BI Maps", href: "/study-abroad" }]}
           />
         </div>
       </Section>

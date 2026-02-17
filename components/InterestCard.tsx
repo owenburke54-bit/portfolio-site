@@ -6,10 +6,12 @@ export default function InterestCard({
   title,
   bullets,
   body,
+  actions,
 }: {
   title: Interest | string;
   bullets?: string[];
   body?: string;
+  actions?: { label: string; href: string }[];
 }) {
   const icon =
     title === "Soccer" ? <Trophy className="h-5 w-5" /> :
@@ -31,6 +33,15 @@ export default function InterestCard({
         </ul>
       ) : null}
       {body ? <p className="mt-3 text-sm text-[var(--text-muted)]">{body}</p> : null}
+      {actions && actions.length ? (
+        <div className="mt-4 flex flex-wrap gap-2">
+          {actions.map((a) => (
+            <a key={a.href + a.label} href={a.href} className="btn-secondary text-xs px-3 py-1.5">
+              {a.label}
+            </a>
+          ))}
+        </div>
+      ) : null}
     </div>
   );
 }

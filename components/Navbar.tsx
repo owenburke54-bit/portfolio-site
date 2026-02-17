@@ -5,9 +5,9 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { href: "#home", label: "Home" },
-  { href: "#interests", label: "Interests" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#home", label: "Home" },
+  { href: "/#interests", label: "Interests" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -43,7 +43,7 @@ export default function Navbar() {
       <div className="container-px mx-auto max-w-6xl">
         <div className="mt-3 rounded-xl border" style={{ borderColor: "var(--border)" }}>
           <div className="h-14 px-4 sm:px-6 flex items-center justify-between bg-[color:var(--surface)]/80 backdrop-blur supports-[backdrop-filter]:bg-[color:var(--surface)]/70 rounded-xl">
-            <Link href="/" className="font-semibold tracking-tight">
+            <Link href="/#home" className="font-semibold tracking-tight">
               Owen Burke
             </Link>
             <nav className="hidden md:flex items-center gap-2 text-sm">

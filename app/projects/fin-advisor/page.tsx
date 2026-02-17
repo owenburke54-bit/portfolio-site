@@ -30,53 +30,31 @@ export default function FinAdvisorPage() {
         subtitle="A portfolio tracker for positions, transactions, performance (TWR/XIRR), benchmark comparison, and risk metrics."
       />
 
-      {/* Preview */}
-      <section className="card p-6 space-y-4">
+      {/* Preview (no nested scroll) */}
+      <section className="card p-6 space-y-3">
         <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
           <div>
             <h2 className="text-xl font-semibold">App preview</h2>
-            <p className="mt-1 text-sm text-gray-600">
-              Quick look before opening the full app.
-            </p>
+            <p className="mt-1 text-sm text-[var(--text-muted)]">Open the live app in a new tab.</p>
           </div>
-
-          <Link
-            href={FIN_ADVISOR_APP_URL}
-            className="btn"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link href={FIN_ADVISOR_APP_URL} className="btn" target="_blank" rel="noopener noreferrer">
             Open app
           </Link>
         </div>
-
-        <div className="w-full overflow-hidden rounded-xl border bg-white">
-          {/* 16:9 responsive container */}
-          <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
-            <iframe
-              title="Fin-Advisor Preview"
-              src={FIN_ADVISOR_APP_URL}
-              className="absolute left-0 top-0 h-full w-full"
-              loading="lazy"
-              allow="clipboard-read; clipboard-write"
-            />
-          </div>
+        <div className="rounded-xl border p-4 text-sm text-[var(--text-muted)]" style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}>
+          Inline preview disabled to avoid nested scrolling. Use “Open app” to explore.
         </div>
-
-        <p className="text-xs text-gray-500">
-          If the preview is blocked by browser security settings, use the “Open app” button above.
-        </p>
       </section>
 
       {/* Summary */}
       <section className="card p-6 space-y-4">
         <h2 className="text-xl font-semibold">Summary</h2>
-        <p className="text-gray-700">
+        <p className="text-[var(--text)]">
           Fin-Advisor helps you understand your portfolio beyond “up or down today.” Add positions
           and transactions, then view performance the right way with cash-flow-aware returns
           (TWR/XIRR), benchmark comparison, and risk metrics that explain the ride.
         </p>
-        <ul className="list-disc list-inside text-gray-700 space-y-1">
+        <ul className="list-disc list-inside text-[var(--text)] space-y-1">
           <li>Positions + transaction tracking (buys, sells, deposits/withdrawals)</li>
           <li>Cash-flow-aware returns (TWR and XIRR)</li>
           <li>Benchmark comparison (S&amp;P 500)</li>
@@ -87,12 +65,12 @@ export default function FinAdvisorPage() {
       {/* Data & Integrations */}
       <section className="card p-6 space-y-3">
         <h2 className="text-xl font-semibold">Data &amp; Integrations</h2>
-        <p className="text-gray-700">
+        <p className="text-[var(--text)]">
           Fin-Advisor supports quick onboarding with CSV import for positions, so users can validate
           totals and analytics immediately. Portfolio metrics are computed directly from positions
           and cash flows, and benchmark data is used for performance context.
         </p>
-        <ul className="list-disc list-inside text-gray-700 space-y-1">
+        <ul className="list-disc list-inside text-[var(--text)] space-y-1">
           <li>CSV import for positions (tickers, quantities, dates, cost basis)</li>
           <li>Benchmark series for comparison (S&amp;P 500)</li>
           <li>Analytics computed from positions + transactions/cash flows</li>
@@ -110,13 +88,13 @@ export default function FinAdvisorPage() {
             then paste/import it from the Positions screen.
           </p>
 
-          <div className="rounded-lg border border-gray-200 bg-white overflow-hidden">
-            <pre className="max-h-[280px] overflow-auto p-3 text-xs leading-relaxed text-gray-800">
+          <div className="rounded-lg border overflow-hidden" style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}>
+            <pre className="max-h-[280px] overflow-auto p-3 text-xs leading-relaxed">
               {EXAMPLE_CSV}
             </pre>
           </div>
 
-          <p className="text-xs text-gray-500">
+          <p className="text-xs text-[var(--text-muted)]">
             Tip: keep <span className="font-semibold">purchaseDate</span> in{" "}
             <span className="font-semibold">YYYY-MM-DD</span> format (as shown).
           </p>
@@ -126,7 +104,7 @@ export default function FinAdvisorPage() {
       {/* How it works */}
       <section className="card p-6 space-y-2">
         <h2 className="text-xl font-semibold">How it works</h2>
-        <ol className="list-decimal list-inside text-gray-700 space-y-1">
+        <ol className="list-decimal list-inside text-[var(--text)] space-y-1">
           <li>Add positions manually or import via CSV</li>
           <li>Log buys/sells and deposits/withdrawals</li>
           <li>View performance (TWR/XIRR) and benchmark comparison</li>
@@ -137,7 +115,7 @@ export default function FinAdvisorPage() {
       {/* Tech */}
       <section className="card p-6 space-y-2">
         <h2 className="text-xl font-semibold">Tech stack</h2>
-        <ul className="list-disc list-inside text-gray-700 space-y-1">
+        <ul className="list-disc list-inside text-[var(--text)] space-y-1">
           <li>Next.js + React + TypeScript</li>
           <li>Vercel for hosting</li>
           <li>Local-first storage + CSV import</li>
