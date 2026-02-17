@@ -1,49 +1,83 @@
-﻿'use client';
+'use client';
 
 import Link from "next/link";
-import { useSelectedLayoutSegment } from "next/navigation";
+import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
 
 const links = [
-  { href: "/", label: "Home" },
-  // { href: "/passions-values", label: "Passions & Values" }, // hidden for now
-  { href: "/projects", label: "Projects" },
-  { href: "/soccer", label: "Soccer" },
-  { href: "/study-abroad", label: "Study Abroad" },
-  { href: "/research", label: "Writing" },
-  { href: "/contact", label: "Contact" },
+  { href: "#home", label: "Home" },
+  { href: "#interests", label: "Interests" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export default function Navbar() {
-  const segment = useSelectedLayoutSegment();
+  const [hidden, setHidden] = useState(false);
+  const [lastY, setLastY] = useState(0);
+  const [open, setOpen] = useState(false);
 
-  const isActive = (href: string) => {
-    if (href === "/") {
-      return segment === null;
-    }
-    const first = href.split("/").filter(Boolean)[0];
-    return segment === first;
-  };
+  useEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY;
+      const delta = y - lastY;
+      const threshold = 12;
+      if (Math.abs(delta) > threshold) {
+        setHidden(delta > 0 && y > 80);
+        setLastY(y);
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [lastY]);
+
+  useEffect(() => {
+    if (!open) return;
+    const close = () => setOpen(false);
+    window.addEventListener("scroll", close, { passive: true });
+    return () => window.removeEventListener("scroll", close);
+  }, [open]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-gray-200 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
-      <div className="container-px mx-auto max-w-6xl h-16 flex items-center justify-between">
-        <Link href="/" className="font-semibold">
-          Owen Burke
-        </Link>
-
-        <nav className="flex items-center gap-2 md:gap-4 text-sm overflow-x-auto whitespace-nowrap no-scrollbar -mx-2 px-2">
-          {links.map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
-              className={`px-2 py-1 rounded-md transition hover:bg-gray-100 ${
-                isActive(l.href) ? "bg-gray-100" : ""
-              }`}
-            >
-              {l.label}
+    <header
+      className={`fixed top-0 inset-x-0 z-40 transition-transform duration-300 ${hidden ? "-translate-y-full" : "translate-y-0"}`}
+    >
+      <div className="container-px mx-auto max-w-6xl">
+        <div className="mt-3 rounded-xl border" style={{ borderColor: "var(--border)" }}>
+          <div className="h-14 px-4 sm:px-6 flex items-center justify-between bg-[color:var(--surface)]/80 backdrop-blur supports-[backdrop-filter]:bg-[color:var(--surface)]/70 rounded-xl">
+            <Link href="/" className="font-semibold tracking-tight">
+              Owen Burke
             </Link>
-          ))}
-        </nav>
+            <nav className="hidden md:flex items-center gap-2 text-sm">
+              {links.map((l) => (
+                <a key={l.href} href={l.href} className="px-3 py-1 rounded-md hover:bg-white/5">
+                  {l.label}
+                </a>
+              ))}
+            </nav>
+            <button
+              className="md:hidden p-2 rounded-md hover:bg-white/5"
+              aria-label={open ? "Close menu" : "Open menu"}
+              onClick={() => setOpen((v) => !v)}
+            >
+              {open ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
+          {open && (
+            <div className="md:hidden border-t" style={{ borderColor: "var(--border)" }}>
+              <nav className="bg-[color:var(--surface)] rounded-b-xl px-4 py-2">
+                {links.map((l) => (
+                  <a
+                    key={l.href}
+                    href={l.href}
+                    className="block px-2 py-2 rounded-md hover:bg-white/5"
+                    onClick={() => setOpen(false)}
+                  >
+                    {l.label}
+                  </a>
+                ))}
+              </nav>
+            </div>
+          )}
+        </div>
       </div>
     </header>
   );

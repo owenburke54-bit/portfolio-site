@@ -1,9 +1,15 @@
-﻿@tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --bg: #f8fafc; /* slate-50 */
+  --bg: #0b0f17;            /* near-black background */
+  --surface: #0f1523;       /* layered surface */
+  --surface-2: #0d1220;     /* deeper surface */
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #e5e7eb;          /* slate-200 */
+  --text-muted: #9aa4b2;    /* slate-400 */
+  --accent: #17c3b2;        /* muted teal/green */
 }
 
 html, body {
@@ -11,9 +17,15 @@ html, body {
 }
 
 body {
-  background: var(--bg);
-  color: #0b0f19;
+  background: radial-gradient(1200px 600px at 20% -10%, rgba(23,195,178,0.10), transparent 60%),
+              radial-gradient(1000px 600px at 80% -20%, rgba(29,78,216,0.10), transparent 60%),
+              var(--bg);
+  color: var(--text);
   line-height: 1.6;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .container-px {
@@ -21,26 +33,32 @@ body {
 }
 
 .card {
-  @apply rounded-xl border border-gray-200/80 bg-white shadow-sm transition;
+  @apply rounded-2xl border shadow-sm transition;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)) , var(--surface);
+  border-color: var(--border);
 }
 .card:hover {
-  @apply shadow translate-y-[1px];
+  @apply translate-y-[1px] shadow-lg;
+  box-shadow: 0 0 0 1px color-mix(in oklab, var(--accent) 30%, transparent), 0 10px 30px -10px rgba(23,195,178,0.25);
 }
 
 .btn {
-  @apply inline-flex items-center justify-center rounded-md bg-black px-4 py-2 text-white transition hover:bg-gray-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/30 shadow-sm;
+  @apply inline-flex items-center justify-center rounded-md px-4 py-2 text-white transition shadow-sm;
+  background: color-mix(in oklab, var(--accent) 92%, #0a0a0a);
+}
+.btn:hover {
+  filter: brightness(1.05);
 }
 
 .btn-secondary {
-  @apply inline-flex items-center justify-center rounded-md border border-gray-200 bg-white px-4 py-2 text-gray-900 transition hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/10;
+  @apply inline-flex items-center justify-center rounded-md border px-4 py-2 text-[var(--text)] transition;
+  border-color: var(--border);
+  background: var(--surface-2);
 }
-
-
-
 
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-
-/* link hover underline */
- a:hover { text-decoration: underline; }
+/* subtle link style */
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
