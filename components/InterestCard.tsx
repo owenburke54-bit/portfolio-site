@@ -1,4 +1,4 @@
-import { SoccerBall, BookOpenText, Globe2 } from "lucide-react";
+import { Trophy, BookOpenText, Globe2 } from "lucide-react";
 
 type Interest = "Soccer" | "Writing" | "Study Abroad";
 
@@ -12,7 +12,7 @@ export default function InterestCard({
   body?: string;
 }) {
   const icon =
-    title === "Soccer" ? <SoccerBall className="h-5 w-5" /> :
+    title === "Soccer" ? <Trophy className="h-5 w-5" /> :
     title === "Writing" ? <BookOpenText className="h-5 w-5" /> :
     title === "Study Abroad" ? <Globe2 className="h-5 w-5" /> :
     <BookOpenText className="h-5 w-5" />;
