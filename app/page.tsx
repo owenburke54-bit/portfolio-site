@@ -147,7 +147,7 @@ export default function HomePage() {
             className="card p-6 space-y-4"
             onSubmit={(e) => {
               e.preventDefault();
-              show(\"Thanks — I’ll reply soon.\");
+              show("Thanks — I’ll reply soon.");
             }}
           >
             <div>
