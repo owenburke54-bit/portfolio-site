@@ -1,7 +1,7 @@
 import Toolchain from "./Toolchain";
 import { Droplets, LineChart, Boxes, Link2 } from "lucide-react";
 
-type Tool = "Cursor" | "GitHub" | "Vercel" | "Claude Code";
+type Tool = "Cursor" | "GitHub" | "Vercel" | "Claude Code" | "Claude";
 
 type ProjectCardProps = {
   title: string;
