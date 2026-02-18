@@ -1,6 +1,7 @@
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import type { Metadata } from "next";
+import PreviewFrame from "@/components/PreviewFrame";
 
 export const metadata: Metadata = {
   title: "HydraIQ | Owen Burke",
@@ -29,22 +30,7 @@ export default function HydraIQPage() {
             Open app
           </Link>
         </div>
-        <div className="flex justify-center">
-          <div
-            className="overflow-hidden rounded-2xl border bg-white shadow"
-            style={{ width: 390, height: 760, borderColor: "var(--border)" }}
-          >
-            <iframe
-              title="HydraIQ Preview"
-              src={HYDRAIQ_APP_URL}
-              width={390}
-              height={760}
-              loading="lazy"
-              scrolling="no"
-              style={{ pointerEvents: "none", border: "0" }}
-            />
-          </div>
-        </div>
+        <PreviewFrame src={HYDRAIQ_APP_URL} mode="mobile" label="HydraIQ Preview" />
       </section>
 
       {/* Summary */}

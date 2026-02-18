@@ -2,6 +2,7 @@ import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import type { Metadata } from "next";
 import CopyCsvButton from "@/components/CopyCsvButton";
+import PreviewFrame from "@/components/PreviewFrame";
 
 export const metadata: Metadata = {
   title: "Fin-Advisor | Owen Burke",
@@ -41,17 +42,7 @@ export default function FinAdvisorPage() {
             Open app
           </Link>
         </div>
-        <div className="w-full overflow-hidden rounded-xl border bg-white" style={{ borderColor: "var(--border)" }}>
-          <iframe
-            title="Fin-Advisor Preview"
-            src={FIN_ADVISOR_APP_URL}
-            className="block w-full"
-            height={720}
-            loading="lazy"
-            scrolling="no"
-            style={{ pointerEvents: "none", border: "0" }}
-          />
-        </div>
+        <PreviewFrame src={FIN_ADVISOR_APP_URL} mode="web" label="Fin-Advisor Preview" />
       </section>
 
       {/* Summary */}
