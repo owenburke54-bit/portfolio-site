@@ -24,7 +24,6 @@ export default function HydraIQPage() {
         <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
           <div>
             <h2 className="text-xl font-semibold">App preview</h2>
-            <p className="mt-1 text-sm text-[var(--text-muted)]">Static preview. Open the live app for interaction.</p>
           </div>
           <Link href={HYDRAIQ_APP_URL} className="btn" target="_blank" rel="noopener noreferrer">
             Open app
@@ -39,8 +38,9 @@ export default function HydraIQPage() {
               title="HydraIQ Preview"
               src={HYDRAIQ_APP_URL}
               width={390}
-              height={760}
+              height={1600}
               loading="lazy"
+              scrolling="no"
               style={{ border: "0" }}
             />
           </div>

@@ -48,8 +48,8 @@ export default function StudyAbroadPage() {
         </div>
 
         <div className="rounded-xl border bg-gray-50 p-4">
-          <h3 className="text-sm font-semibold">What’s included</h3>
-          <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-gray-700">
+          <h3 className="text-sm font-semibold text-black">What’s included</h3>
+          <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-black">
             <li>Cities visited with counts and first / earliest dates</li>
             <li>Airports used and visit frequency</li>
             <li>Soccer stadium visits plotted geographically</li>
@@ -71,7 +71,7 @@ export default function StudyAbroadPage() {
           {SNAPSHOTS.map((img) => (
             <figure key={img.src} className="overflow-hidden rounded-xl border bg-white">
               <div className="border-b px-3 py-2">
-                <figcaption className="text-sm font-medium">{img.title}</figcaption>
+                <figcaption className="text-sm font-medium text-black">{img.title}</figcaption>
               </div>
               <Image
                 src={img.src}
