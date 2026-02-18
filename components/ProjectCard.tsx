@@ -28,7 +28,7 @@ export default function ProjectCard({
     <Boxes className="h-5 w-5" />;
 
   return (
-    <div className="card p-6">
+    <div className="card p-6 h-full flex flex-col">
       <div className="flex items-center gap-2">
         {icon}
         <h3 className="text-lg font-semibold">{title}</h3>
@@ -40,7 +40,7 @@ export default function ProjectCard({
         ))}
       </ul>
       <Toolchain tools={tools} />
-      <div className="mt-5">
+      <div className="mt-auto pt-5">
         {comingSoon ? (
           <button className="btn opacity-60 cursor-not-allowed">Coming Soon</button>
         ) : href ? (

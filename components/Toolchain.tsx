@@ -1,12 +1,13 @@
 import { Github, Triangle, Sparkles, MousePointer2, ArrowRight } from "lucide-react";
 
-type Tool = "Cursor" | "GitHub" | "Vercel" | "Claude Code";
+type Tool = "Cursor" | "GitHub" | "Vercel" | "Claude Code" | "Claude";
 
 const ICONS: Record<Tool, React.ReactNode> = {
   "Cursor": <MousePointer2 className="h-3.5 w-3.5" />,
   "GitHub": <Github className="h-3.5 w-3.5" />,
   "Vercel": <Triangle className="h-3.5 w-3.5" />,
   "Claude Code": <Sparkles className="h-3.5 w-3.5" />,
+  "Claude": <Sparkles className="h-3.5 w-3.5" />,
 };
 
 export default function Toolchain({ tools }: { tools: Tool[] }) {

@@ -41,7 +41,7 @@ export default function HomePage() {
             AI Builder
           </h1>
           <p className="mx-auto max-w-3xl text-base sm:text-lg text-[var(--text-muted)]">
-            Finance &amp; Data Analytics Student | D1 Student-Athlete — building systems that turn data into clear decisions and useful products.
+            Finance &amp; Data Analytics Student | D1 Student-Athlete
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-3">
             <a href="#projects" className="btn">View Projects</a>
@@ -58,9 +58,9 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <ProjectCard
             title="HydraIQ"
-            description="Hydration tracking PWA integrating performance signals and reminders."
+            description="Hydration tracking app with reminders and WHOOP API integration."
             highlights={[
-              "PWA-first mobile experience",
+              "WHOOP API integration",
               "Daily hydration tracking + trends",
               "Reminders & insights driven by data",
             ]}
@@ -81,10 +81,10 @@ export default function HomePage() {
             cta="View project"
           />
           <ProjectCard
-            title="New Project (Claude Code)"
+            title="New Project (Claude)"
             description="Building now — shipping soon."
             highlights={["Exploring a new problem + prototype"]}
-            tools={["Claude Code", "GitHub", "Vercel"]}
+            tools={["Claude", "GitHub", "Vercel"]}
             comingSoon
           />
         </div>
@@ -103,10 +103,7 @@ export default function HomePage() {
           />
           <InterestCard
             title="Writing"
-            bullets={[
-              "Photo essay + storytelling (Florence experience)",
-              "Translate complex topics into plain language",
-            ]}
+            bullets={["Top 10 soccer players I’ve watched", "Market outlook articles"]}
             actions={[
               { label: "Top 10 Players", href: "/research/best-10-from-the-stands" },
               { label: "Markets Article", href: "/research/state-of-the-financial-markets-nearing-the-peak" },
@@ -114,10 +111,7 @@ export default function HomePage() {
           />
           <InterestCard
             title="Study Abroad"
-            bullets={[
-              "Europe travel perspective",
-              "Data visualization mindset",
-            ]}
+            bullets={["Study abroad experience → data", "Power BI interactive maps"]}
             actions={[{ label: "Power BI Maps", href: "/study-abroad" }]}
           />
         </div>
@@ -143,6 +137,16 @@ export default function HomePage() {
                   className="underline"
                 >
                   LinkedIn
+                </a>
+              </div>
+              <div className="mt-2">
+                <a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline"
+                >
+                  Resume (PDF)
                 </a>
               </div>
             </div>
