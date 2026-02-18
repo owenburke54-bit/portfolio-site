@@ -2,7 +2,7 @@ import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import type { Metadata } from "next";
 import CopyCsvButton from "@/components/CopyCsvButton";
-import PreviewFrame from "@/components/PreviewFrame";
+// Inline interactive preview — sized to avoid page overlap
 
 export const metadata: Metadata = {
   title: "Fin-Advisor | Owen Burke",
@@ -42,7 +42,16 @@ export default function FinAdvisorPage() {
             Open app
           </Link>
         </div>
-        <PreviewFrame src={FIN_ADVISOR_APP_URL} mode="web" label="Fin-Advisor Preview" />
+        <div className="w-full overflow-hidden rounded-xl border bg-white" style={{ borderColor: "var(--border)" }}>
+          <iframe
+            title="Fin-Advisor Preview"
+            src={FIN_ADVISOR_APP_URL}
+            className="block w-full"
+            height={900}
+            loading="lazy"
+            style={{ border: "0" }}
+          />
+        </div>
       </section>
 
       {/* Summary */}
