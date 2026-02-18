@@ -1,7 +1,7 @@
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import type { Metadata } from "next";
-// Inline interactive preview — sized to a mobile frame
+import ResizableEmbed from "@/components/ResizableEmbed";
 
 export const metadata: Metadata = {
   title: "HydraIQ | Owen Burke",
@@ -19,7 +19,7 @@ export default function HydraIQPage() {
         subtitle="A hydration app that turns daily intake into a score and actionable recommendations - with WHOOP data to personalize targets."
       />
 
-      {/* Preview (static, no inner scroll) */}
+      {/* Preview (auto-resize, no inner scroll) */}
       <section className="card p-6 space-y-3">
         <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
           <div>
@@ -30,18 +30,12 @@ export default function HydraIQPage() {
           </Link>
         </div>
         <div className="flex justify-center">
-          <div
-            className="overflow-hidden rounded-2xl border bg-white shadow"
-            style={{ width: 390, height: 760, borderColor: "var(--border)" }}
-          >
-            <iframe
-              title="HydraIQ Preview"
+          <div style={{ width: 390 }}>
+            <ResizableEmbed
               src={HYDRAIQ_APP_URL}
-              width={390}
-              height={1600}
-              loading="lazy"
-              scrolling="no"
-              style={{ border: "0" }}
+              title="HydraIQ Preview"
+              allowedOrigins={["https://hydra-iq-mvp.vercel.app"]}
+              minHeight={800}
             />
           </div>
         </div>

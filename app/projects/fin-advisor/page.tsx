@@ -2,7 +2,7 @@ import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import type { Metadata } from "next";
 import CopyCsvButton from "@/components/CopyCsvButton";
-// Inline interactive preview — sized to avoid page overlap
+import ResizableEmbed from "@/components/ResizableEmbed";
 
 export const metadata: Metadata = {
   title: "Fin-Advisor | Owen Burke",
@@ -31,7 +31,7 @@ export default function FinAdvisorPage() {
         subtitle="A portfolio tracker for positions, transactions, performance (TWR/XIRR), benchmark comparison, and risk metrics."
       />
 
-      {/* Preview (static, no inner scroll) */}
+      {/* Preview (auto-resize, no inner scroll) */}
       <section className="card p-6 space-y-3">
         <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
           <div>
@@ -41,17 +41,12 @@ export default function FinAdvisorPage() {
             Open app
           </Link>
         </div>
-        <div className="w-full overflow-hidden rounded-xl border bg-white" style={{ borderColor: "var(--border)" }}>
-          <iframe
-            title="Fin-Advisor Preview"
-            src={FIN_ADVISOR_APP_URL}
-            className="block w-full"
-            height={1600}
-            loading="lazy"
-            scrolling="no"
-            style={{ border: "0" }}
-          />
-        </div>
+        <ResizableEmbed
+          src={FIN_ADVISOR_APP_URL}
+          title="Fin-Advisor Preview"
+          allowedOrigins={["https://fin-advisor-five.vercel.app"]}
+          minHeight={900}
+        />
       </section>
 
       {/* Summary */}
