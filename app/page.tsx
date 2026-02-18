@@ -4,6 +4,7 @@ import InterestCard from "@/components/InterestCard";
 import ContactForm from "@/components/ContactForm";
 import { Cpu } from "lucide-react";
 import Chat from "@/components/Chat";
+import ScrollTopOnLoad from "@/components/ScrollTopOnLoad";
 
 export const metadata = {
   title: "Owen Burke | AI Builder",
@@ -14,6 +15,7 @@ export const metadata = {
 export default function HomePage() {
   return (
     <div className="space-y-16 sm:space-y-24">
+      <ScrollTopOnLoad />
       {/* Home / Hero */}
       <Section id="home">
         <div className="text-center space-y-5 sm:space-y-6">

@@ -1,9 +1,34 @@
 {
   "name": "Owen Burke",
-  "education": "",
-  "major": "",
-  "skills": [],
-  "experience": [],
-  "projects": []
+  "education": "Stonehill College",
+  "major": "Finance (major) and Data Analytics (minor)",
+  "sports": "Division I college soccer player",
+  "skills": [
+    "Excel (modeling, pivots, data cleanup)",
+    "SQL (data mining)",
+    "Python",
+    "Tableau",
+    "Power BI",
+    "Java",
+    "Next.js + TypeScript + Tailwind"
+  ],
+  "experience": [
+    "Fidelity Investments — Operations Intern (accepted for summer internship in Smithfield, RI)",
+    "Owen Burke Soccer Training — founder (built a training business with 50+ clients and a small coaching team)"
+  ],
+  "projects": [
+    {
+      "name": "HydraIQ",
+      "one_liner": "A hydration-tracking app built around performance insights and WHOOP-style metrics.",
+      "stack": ["Next.js", "TypeScript", "Tailwind"],
+      "status": "In progress"
+    },
+    {
+      "name": "Fin-Advisor",
+      "one_liner": "A personal portfolio tracker that analyzes positions and performance with clean dashboards.",
+      "stack": ["Next.js", "TypeScript", "Tailwind"],
+      "status": "In progress"
+    }
+  ]
 }
 
