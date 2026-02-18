@@ -2,30 +2,14 @@ import Section from "@/components/Section";
 import ProjectCard from "@/components/ProjectCard";
 import InterestCard from "@/components/InterestCard";
 import ContactForm from "@/components/ContactForm";
-import { Cpu, MessageCircleMore } from "lucide-react";
+import { Cpu } from "lucide-react";
+import Chat from "@/components/Chat";
 
 export const metadata = {
   title: "Owen Burke | AI Builder",
   description:
     "AI Builder — Finance & Data Analytics Student | D1 Student-Athlete. Projects, interests, and contact.",
 };
-
-function TalkToOwen() {
-  return (
-    <div className="card p-6 flex items-center justify-between">
-      <div className="flex items-center gap-3">
-        <MessageCircleMore className="h-5 w-5" />
-        <div>
-          <h3 className="font-semibold">Talk to Owen</h3>
-          <p className="text-sm text-[var(--text-muted)]">
-            Chatbot coming soon — a simple way to ask about projects and interests.
-          </p>
-        </div>
-      </div>
-      <button className="btn opacity-70 cursor-not-allowed">Coming Soon</button>
-    </div>
-  );
-}
 
 export default function HomePage() {
   return (
@@ -48,9 +32,7 @@ export default function HomePage() {
             <a href="#contact" className="btn-secondary">Contact</a>
           </div>
         </div>
-        <div className="mt-8 sm:mt-10">
-          <TalkToOwen />
-        </div>
+        <div className="mt-8 sm:mt-10"><Chat /></div>
       </Section>
 
       {/* Projects */}
