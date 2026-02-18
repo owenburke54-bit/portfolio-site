@@ -72,7 +72,7 @@ export default function HomePage() {
             title="Fin-Advisor"
             description="Portfolio analytics tool for tracking positions and performance."
             highlights={[
-              "CSV import workflow",
+              "Rebalance simulator",
               "Allocation + performance views",
               "Clean, fast dashboard UX",
             ]}

@@ -18,19 +18,28 @@ export default function HydraIQPage() {
         subtitle="A hydration app that turns daily intake into a score and actionable recommendations - with WHOOP data to personalize targets."
       />
 
-      {/* Preview (no nested scroll) */}
+      {/* Preview (static, no inner scroll) */}
       <section className="card p-6 space-y-3">
         <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
           <div>
             <h2 className="text-xl font-semibold">App preview</h2>
-            <p className="mt-1 text-sm text-[var(--text-muted)]">Open the live app in a new tab.</p>
+            <p className="mt-1 text-sm text-[var(--text-muted)]">Static preview. Open the live app for interaction.</p>
           </div>
           <Link href={HYDRAIQ_APP_URL} className="btn" target="_blank" rel="noopener noreferrer">
             Open app
           </Link>
         </div>
-        <div className="rounded-xl border p-4 text-sm text-[var(--text-muted)]" style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}>
-          Inline preview disabled to avoid nested scrolling. Use “Open app” to explore.
+        <div className="w-full overflow-hidden rounded-xl border bg-white" style={{ borderColor: "var(--border)" }}>
+          <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
+            <iframe
+              title="HydraIQ Preview"
+              src={HYDRAIQ_APP_URL}
+              className="absolute left-0 top-0 h-full w-full"
+              loading="lazy"
+              allow="clipboard-read; clipboard-write"
+              style={{ pointerEvents: "none" }}
+            />
+          </div>
         </div>
       </section>
 

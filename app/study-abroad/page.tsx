@@ -1,4 +1,4 @@
-﻿import PageHeader from "@/components/PageHeader";
+import PageHeader from "@/components/PageHeader";
 import type { Metadata } from "next";
 import Image from "next/image";
 
@@ -31,7 +31,7 @@ export default function StudyAbroadPage() {
       <section className="card p-6 space-y-4">
         <div>
           <h2 className="text-xl font-semibold">Europe Travel Map (Power BI)</h2>
-          <p className="mt-1 text-sm text-gray-600">
+          <p className="mt-1 text-sm text-black">
             Hover for tooltips, click points to highlight related stops, and use the built-in filters.
           </p>
         </div>
@@ -62,7 +62,7 @@ export default function StudyAbroadPage() {
       <section className="card p-6 space-y-4">
         <div>
           <h2 className="text-xl font-semibold">Snapshots</h2>
-          <p className="mt-1 text-sm text-gray-600">
+          <p className="mt-1 text-sm text-black">
             Static views from the dashboard, including tooltip examples.
           </p>
         </div>

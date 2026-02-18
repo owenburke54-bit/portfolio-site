@@ -18,7 +18,7 @@ export default function Best10FromTheStands() {
 
       {/* Meta */}
       <section className="card p-6">
-        <p className="text-sm text-gray-600">
+        <p className="text-sm text-[var(--text-muted)]">
           Date: 1/28/2026 · Author: Owen Burke
         </p>
       </section>
@@ -26,7 +26,7 @@ export default function Best10FromTheStands() {
       {/* Rules */}
       <section className="card p-6 space-y-3">
         <h2 className="text-xl font-semibold">Rules</h2>
-        <ol className="list-decimal list-inside space-y-1 text-gray-700">
+        <ol className="list-decimal list-inside space-y-1 text-[var(--text)]">
           <li>I've watched every player on this list in person.</li>
           <li>Each player performed well and stood out on the pitch.</li>
           <li>
@@ -46,7 +46,7 @@ export default function Best10FromTheStands() {
       {/* Matches attended */}
       <section className="card p-6 space-y-3">
         <h2 className="text-xl font-semibold">Matches I attended (2024–2025)</h2>
-        <ul className="list-disc list-inside space-y-1 text-gray-700">
+        <ul className="list-disc list-inside space-y-1 text-[var(--text)]">
           <li>Mar 2, 2024: Valencia vs Real Madrid — La Liga</li>
           <li>Feb 2, 2025: Fiorentina vs Genoa — Serie A</li>
           <li>Feb 16, 2025: Fiorentina vs Como — Serie A</li>
@@ -60,7 +60,7 @@ export default function Best10FromTheStands() {
       {/* Countdown sections */}
       <section className="card p-6 space-y-6">
         <h2 className="text-xl font-semibold">Top 10</h2>
-        <div className="space-y-6 text-gray-700">
+        <div className="space-y-6 text-[var(--text)]">
           {[
             { n: 10, name: "Robin Gosens (Fiorentina)", slug: "gosens" },
             { n: 9, name: "Nico Paz (Como)", slug: "paz" },
@@ -91,16 +91,16 @@ export default function Best10FromTheStands() {
               </div>
               {p.n === 10 ? (
                 <>
-                  <p className="text-gray-700">
+                  <p className="">
                     This guy is a goal machine from left back. I've seen him play four times for
                     Fiorentina, and he's tallied 3 goals and 1 assist. I just couldn't leave him off
                     the list. You can't argue with goals, especially from a left back!
                   </p>
-                  <p className="text-gray-700">
+                  <p className="">
                     He also scored two class goals against Real Betis in the UEFA Conference League
                     Semifinal (Leg 2), although he was playing as a left winger in that match.
                   </p>
-                  <p className="text-gray-700">
+                  <p className="">
                     Beyond his goal-scoring ability, Gosens has great fitness levels and covers a
                     lot of ground for Fiorentina on the left flank. He's one of those players who
                     always seems to get his head on the ball and be dangerous in the box. He puts in
@@ -109,19 +109,19 @@ export default function Best10FromTheStands() {
                 </>
               ) : p.n === 9 ? (
                 <>
-                  <p className="text-gray-700">
+                  <p className="">
                     Going into the Fiorentina vs Como match, I was expecting big things from Nico Paz,
                     and he did not disappoint. He's smooth on the ball and a very intelligent player.
                     He played as a false nine in this game, and his movement and first touch stood out
                     the most to me.
                   </p>
-                  <p className="text-gray-700">
+                  <p className="">
                     Paz is a natural number 10 and was only 20 years old at the time, yet he played
                     very maturely even out of position. His first touch allows him to turn and get
                     forward consistently, and he really facilitates everything going forward for this
                     Como side.
                   </p>
-                  <p className="text-gray-700">
+                  <p className="">
                     Paz has continued to dominate Serie A as a 21 year old. As of now, Nico has scored
                     8 and assisted 6 through 22 Serie A matches in the 2025/2026 campaign. He's led
                     Como to a very impressive 6th place position in the Serie A table.
@@ -129,36 +129,36 @@ export default function Best10FromTheStands() {
                 </>
               ) : p.n === 8 ? (
                 <>
-                  <p className="text-gray-700">
+                  <p className="">
                     Antony's name has been damaged by his flop at Manchester United, but he's still a
                     top-quality winger. What stands out most is his quickness. Defenders know he wants
                     to cut onto his left foot, yet he still does it at a very high success rate.
                   </p>
-                  <p className="text-gray-700">
+                  <p className="">
                     Antony revived his career with a successful loan spell at Real Betis in 2025. When
                     I saw Antony play in the UEFA Conference League semifinal, I was very impressed with
                     his end product. He scored a beautiful goal and provided the assist to send Real Betis
                     through to the final.
                   </p>
-                  <p className="text-gray-700">
+                  <p className="">
                     Antony has continued his strong form in the 2025/2026 campaign and is now permanently
                     signed to Real Betis.
                   </p>
                 </>
               ) : p.n === 7 ? (
                 <>
-                  <p className="text-gray-700">
+                  <p className="">
                     I've been a fan of Isco for some time now. Unfortunately, his future didn't look
                     promising after a poor stretch at Real Madrid. Similar to Antony, Isco found his footing
                     again at Real Betis and had a sensational 2024/2025 campaign, scoring 12 and assisting 11
                     in 33 matches, while also captaining his side to a UEFA Conference League Final.
                   </p>
-                  <p className="text-gray-700">
+                  <p className="">
                     Isco has some of the best footwork and dribbling I've ever seen. His control in tight spaces
                     is unbelievable to watch. It feels like he's going to dribble out of any pressure. It doesn't
                     matter if Isco is hugging the sideline and surrounded by three defenders, he will find a way out.
                   </p>
-                  <p className="text-gray-700">
+                  <p className="">
                     Isco is also a very unselfish player who consistently makes the right play, which I appreciate.
                     Isco is your favorite player's favorite player.
                   </p>
@@ -265,7 +265,7 @@ export default function Best10FromTheStands() {
                   </p>
                 </>
               ) : (
-                <p className="text-gray-700">Write-up coming soon.</p>
+                <p className="">Write-up coming soon.</p>
               )}
             </div>
           ))}
@@ -275,7 +275,7 @@ export default function Best10FromTheStands() {
       {/* Honorable mentions */}
       <section className="card p-6 space-y-3">
         <h2 className="text-xl font-semibold">Honorable mentions</h2>
-        <ul className="list-disc list-inside space-y-1 text-gray-700">
+        <ul className="list-disc list-inside space-y-1 text-[var(--text)]">
           <li>Moise Kean (Fiorentina)</li>
           <li>David De Gea (Fiorentina)</li>
           <li>Matias Soule (Roma)</li>
