@@ -2,7 +2,7 @@ import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import type { Metadata } from "next";
 import CopyCsvButton from "@/components/CopyCsvButton";
-import ResizableEmbed from "@/components/ResizableEmbed";
+import ScaledEmbed from "@/components/ScaledEmbed";
 
 export const metadata: Metadata = {
   title: "Fin-Advisor | Owen Burke",
@@ -41,11 +41,14 @@ export default function FinAdvisorPage() {
             Open app
           </Link>
         </div>
-        <ResizableEmbed
+        <ScaledEmbed
           src={FIN_ADVISOR_APP_URL}
           title="Fin-Advisor Preview"
+          targetWidth={1280}
+          minHeight={1400}
           allowedOrigins={["https://fin-advisor-five.vercel.app"]}
-          minHeight={900}
+          minScale={0.6}
+          maxScale={1}
         />
       </section>
 
