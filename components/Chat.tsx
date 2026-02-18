@@ -40,7 +40,7 @@ export default function Chat() {
       return;
     }
     setLoading(true);
-    const next = [...messages, { role: 'user', content }];
+    const next: Msg[] = [...messages, { role: 'user', content }];
     setMessages(next);
     setInput('');
     try {
