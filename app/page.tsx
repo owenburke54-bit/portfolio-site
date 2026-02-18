@@ -124,7 +124,6 @@ export default function HomePage() {
             <h3 className="font-semibold">Get in touch</h3>
             <div className="text-sm">
               <div>
-                <span className="text-[var(--text-muted)]">Email:</span>{" "}
                 <a href="mailto:owenburke54@gmail.com" className="underline">
                   owenburke54@gmail.com
                 </a>

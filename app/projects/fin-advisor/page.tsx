@@ -42,16 +42,15 @@ export default function FinAdvisorPage() {
           </Link>
         </div>
         <div className="w-full overflow-hidden rounded-xl border bg-white" style={{ borderColor: "var(--border)" }}>
-          <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
-            <iframe
-              title="Fin-Advisor Preview"
-              src={FIN_ADVISOR_APP_URL}
-              className="absolute left-0 top-0 h-full w-full"
-              loading="lazy"
-              allow="clipboard-read; clipboard-write"
-              style={{ pointerEvents: "none" }}
-            />
-          </div>
+          <iframe
+            title="Fin-Advisor Preview"
+            src={FIN_ADVISOR_APP_URL}
+            className="block w-full"
+            height={720}
+            loading="lazy"
+            scrolling="no"
+            style={{ pointerEvents: "none", border: "0" }}
+          />
         </div>
       </section>
 

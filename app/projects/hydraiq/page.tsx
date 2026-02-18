@@ -29,15 +29,19 @@ export default function HydraIQPage() {
             Open app
           </Link>
         </div>
-        <div className="w-full overflow-hidden rounded-xl border bg-white" style={{ borderColor: "var(--border)" }}>
-          <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
+        <div className="flex justify-center">
+          <div
+            className="overflow-hidden rounded-2xl border bg-white shadow"
+            style={{ width: 390, height: 760, borderColor: "var(--border)" }}
+          >
             <iframe
               title="HydraIQ Preview"
               src={HYDRAIQ_APP_URL}
-              className="absolute left-0 top-0 h-full w-full"
+              width={390}
+              height={760}
               loading="lazy"
-              allow="clipboard-read; clipboard-write"
-              style={{ pointerEvents: "none" }}
+              scrolling="no"
+              style={{ pointerEvents: "none", border: "0" }}
             />
           </div>
         </div>
