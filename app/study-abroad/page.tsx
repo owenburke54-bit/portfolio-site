@@ -31,7 +31,7 @@ export default function StudyAbroadPage() {
       <section className="card p-6 space-y-4">
         <div>
           <h2 className="text-xl font-semibold">Europe Travel Map (Power BI)</h2>
-          <p className="mt-1 text-sm text-black">
+          <p className="mt-1 text-sm text-[var(--text-muted)]">
             Hover for tooltips, click points to highlight related stops, and use the built-in filters.
           </p>
         </div>
@@ -47,9 +47,9 @@ export default function StudyAbroadPage() {
           </div>
         </div>
 
-        <div className="rounded-xl border bg-gray-50 p-4">
-          <h3 className="text-sm font-semibold text-black">What’s included</h3>
-          <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-black">
+        <div className="rounded-xl border p-4" style={{ background: "var(--surface-2)", borderColor: "var(--border)" }}>
+          <h3 className="text-sm font-semibold text-[var(--text)]">What’s included</h3>
+          <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-[var(--text)]">
             <li>Cities visited with counts and first / earliest dates</li>
             <li>Airports used and visit frequency</li>
             <li>Soccer stadium visits plotted geographically</li>
@@ -62,7 +62,7 @@ export default function StudyAbroadPage() {
       <section className="card p-6 space-y-4">
         <div>
           <h2 className="text-xl font-semibold">Snapshots</h2>
-          <p className="mt-1 text-sm text-black">
+          <p className="mt-1 text-sm text-[var(--text-muted)]">
             Static views from the dashboard, including tooltip examples.
           </p>
         </div>
@@ -71,7 +71,7 @@ export default function StudyAbroadPage() {
           {SNAPSHOTS.map((img) => (
             <figure key={img.src} className="overflow-hidden rounded-xl border bg-white">
               <div className="border-b px-3 py-2">
-                <figcaption className="text-sm font-medium text-black">{img.title}</figcaption>
+                <figcaption className="text-sm font-medium text-[var(--text)]">{img.title}</figcaption>
               </div>
               <Image
                 src={img.src}
