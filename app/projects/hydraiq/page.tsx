@@ -45,16 +45,27 @@ export default function HydraIQPage() {
       <section className="card p-6 space-y-4">
         <h2 className="text-xl font-semibold">Summary</h2>
         <p className="text-[var(--text)]">
-          HydraIQ focuses on one thing: better hydration. Log drinks throughout the day, see your
-          progress toward a personalized target, and get clear prompts that make it easy to stay on
-          track. Your daily score reflects how consistently you hydrate over the day, not just
-          whether you hit a single total.
+          HydraIQ started with a simple frustration. Hydration advice is generic, but performance is not.
         </p>
+        <p className="text-[var(--text)]">
+          Most apps tell you to drink more water. HydraIQ focuses on how and when you hydrate, not just whether you hit a number.
+        </p>
+        <p className="text-[var(--text)]">
+          You log drinks throughout the day, track progress toward a dynamic target, and get practical prompts that help you stay consistent. The daily score rewards steady intake across the day instead of late-night catch up.
+        </p>
+        <p className="text-[var(--text)]">
+          Hydration becomes a structured habit instead of a guess.
+        </p>
+      </section>
+
+      {/* Core Features */}
+      <section className="card p-6 space-y-3">
+        <h2 className="text-xl font-semibold">Core Features</h2>
         <ul className="list-disc list-inside text-[var(--text)] space-y-1">
-          <li>Daily Hydration Score that rewards steady intake</li>
-          <li>Fast intake log with common sizes and quick-add buttons</li>
-          <li>Insights feed that suggests what to do next (e.g., "Drink 12 oz now")</li>
-          <li>Trends and streaks to reinforce consistency</li>
+          <li>Daily Hydration Score that rewards consistent intake</li>
+          <li>Fast logging with common sizes and quick add buttons</li>
+          <li>Simple prompts such as "Drink 12 oz now"</li>
+          <li>Trends and streaks that reinforce behavior</li>
         </ul>
       </section>
 
@@ -62,75 +73,62 @@ export default function HydraIQPage() {
       <section className="card p-6 space-y-3">
         <h2 className="text-xl font-semibold">Data & Integrations</h2>
         <p className="text-[var(--text)]">
-          HydraIQ integrates WHOOP metrics (sleep, strain, recovery) to adjust daily hydration
-          targets. On harder training days or short sleep, HydraIQ nudges the target up. On light
-          days, it dials it back - keeping guidance practical instead of one-size-fits-all.
+          HydraIQ integrates WHOOP metrics such as sleep, strain, and recovery to adjust daily hydration targets.
         </p>
+        <p className="text-[var(--text)]">
+          On harder training days or short sleep, the target increases. On lighter days, it scales back. Adjustments are smoothed so targets do not swing dramatically from one day to the next.
+        </p>
+        <p className="text-[var(--text)]">
+          The goal is not to add more data. It is to translate performance signals into simple hydration decisions.
+        </p>
+      </section>
+
+      {/* Design Principles */}
+      <section className="card p-6 space-y-3">
+        <h2 className="text-xl font-semibold">Design Principles</h2>
         <ul className="list-disc list-inside text-[var(--text)] space-y-1">
-          <li>WHOOP: sleep duration/consistency and strain inform target adjustments</li>
-          <li>Target changes are smoothed so they don't swing too much day-to-day</li>
-          <li>Privacy-first: only the minimum metrics are fetched and stored</li>
+          <li>Daily targets informed by WHOOP metrics</li>
+          <li>Gradual changes to avoid overcorrection</li>
+          <li>Privacy focused. Only the minimum necessary data is stored</li>
         </ul>
       </section>
 
       {/* Problem -> Insight -> Action */}
       <section className="card p-6 space-y-3">
-        <h2 className="text-xl font-semibold">Problem -&gt; Insight -&gt; Action</h2>
+        <h2 className="text-xl font-semibold">Problem → Insight → Action</h2>
         <ul className="list-disc list-inside text-[var(--text)] space-y-2">
           <li>
-            <span className="font-medium">Problem:</span> Wearable data is rich but overwhelming and hard to
-            translate into daily decisions.
+            <span className="font-medium">Problem:</span> Wearable data is powerful, but it does not always tell you what to do today.
           </li>
           <li>
-            <span className="font-medium">Insight:</span> Hydration, recovery, and training load interact in
-            non-linear ways; small changes compound.
+            <span className="font-medium">Insight:</span> Hydration, recovery, and training load interact in meaningful ways. Small daily decisions compound over time.
           </li>
           <li>
-            <span className="font-medium">Action:</span> HydraIQ simplifies these signals into a daily target,
-            score, and next-step recommendations.
+            <span className="font-medium">Action:</span> HydraIQ simplifies those signals into one target, one score, and one clear next step.
           </li>
         </ul>
       </section>
 
-      {/* WHOOP alignment */}
+      {/* WHOOP Alignment */}
       <section className="card p-6 space-y-2">
-        <h2 className="text-xl font-semibold">WHOOP alignment</h2>
+        <h2 className="text-xl font-semibold">WHOOP Alignment</h2>
         <p className="text-[var(--text)]">
-          Designed with WHOOP-style recovery, strain, and behavioral data in mind. HydraIQ does not try to
-          replace WHOOP; it complements the model by translating those metrics into clear hydration decisions
-          and lightweight trends.
+          HydraIQ does not replace WHOOP. It complements it.
+        </p>
+        <p className="text-[var(--text)]">
+          WHOOP measures recovery and strain. HydraIQ translates those metrics into clear hydration decisions.
         </p>
       </section>
 
       {/* How it works */}
       <section className="card p-6 space-y-2">
-        <h2 className="text-xl font-semibold">How it works</h2>
+        <h2 className="text-xl font-semibold">How It Works</h2>
         <ol className="list-decimal list-inside text-[var(--text)] space-y-1">
-          <li>Set a baseline target (or use the suggested one)</li>
-          <li>WHOOP data adjusts that target for today</li>
-          <li>Log drinks; the score rewards steady intake across the day</li>
-          <li>Insights recommend the next small step to stay on track</li>
+          <li>Set a baseline hydration target or use the suggested one</li>
+          <li>WHOOP data adjusts today's target</li>
+          <li>Log drinks throughout the day</li>
+          <li>Follow the recommended next step</li>
         </ol>
-      </section>
-
-      {/* Tech */}
-      <section className="card p-6 space-y-2">
-        <h2 className="text-xl font-semibold">Tech stack</h2>
-        <ul className="list-disc list-inside text-[var(--text)] space-y-1">
-          <li>Next.js + React + TypeScript</li>
-          <li>Vercel for hosting</li>
-          <li>WHOOP API integration</li>
-        </ul>
-      </section>
-
-      {/* What I'd build next */}
-      <section className="card p-6 space-y-2">
-        <h2 className="text-xl font-semibold">What I'd build next</h2>
-        <ul className="list-disc list-inside text-[var(--text)] space-y-1">
-          <li>Correlation analysis between hydration, recovery, and strain</li>
-          <li>Athlete-specific vs general population views</li>
-          <li>Longitudinal trend detection vs daily noise</li>
-        </ul>
       </section>
     </div>
   );
