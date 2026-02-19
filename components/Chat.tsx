@@ -72,7 +72,7 @@ export default function Chat() {
   };
 
   return (
-    <div className="card p-4 space-y-3 max-w-sm mx-auto">
+    <div className="card p-3 space-y-2 max-w-lg mx-auto">
       <div className="flex items-center justify-between gap-2">
         <div className="flex items-center gap-2 min-w-0">
           <h3 className="font-semibold text-sm truncate">Talk to Owen</h3>
@@ -101,7 +101,7 @@ export default function Chat() {
       </div>
 
       <div className="rounded border" style={{ borderColor: 'var(--border)' }}>
-        <div ref={viewportRef} className="max-h-[180px] overflow-auto p-3 space-y-2 text-xs">
+        <div ref={viewportRef} className="max-h-[120px] overflow-auto p-2.5 space-y-1.5 text-xs">
           {messages.map((m, i) => (
             <div
               key={i}
