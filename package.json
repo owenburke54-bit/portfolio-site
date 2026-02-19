@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "ingest:wisprflow": "tsx scripts/ingestWisprflow.ts"
   },
   "dependencies": {
     "@vercel/analytics": "^1.6.1",
@@ -27,7 +28,8 @@
     "eslint-config-next": "^0.2.4",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.15",
-    "typescript": "^5.6.3"
+    "typescript": "^5.6.3",
+    "tsx": "^4.19.2"
   },
   "overrides": {},
   "packageManager": "npm@10.9.0",

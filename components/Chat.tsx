@@ -4,9 +4,11 @@ import { useEffect, useRef, useState } from "react";
 type Msg = { role: 'user' | 'assistant'; content: string };
 
 const SUGGESTIONS = [
+  "Where are you from?",
+  "Tell me about your soccer career",
+  "What position did you play and what did you learn in college?",
   "Give me the 30-second intro",
   "What projects are you building?",
-  "What are your technical skills?",
 ];
 
 export default function Chat() {
@@ -72,14 +74,19 @@ export default function Chat() {
   return (
     <div className="card p-6 space-y-4">
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <h3 className="font-semibold">Talk to Owen</h3>
-          <span className="text-xs rounded-full border px-2 py-0.5" style={{ borderColor: 'var(--border)', background: 'var(--surface-2)' }}>
-            Work in progress
-          </span>
+        <div className="flex flex-col gap-1">
+          <div className="flex items-center gap-2">
+            <h3 className="font-semibold">Talk to Owen</h3>
+            <span className="text-xs rounded-full border px-2 py-0.5" style={{ borderColor: 'var(--border)', background: 'var(--surface-2)' }}>
+              Work in progress
+            </span>
+          </div>
+          <p className="text-xs text-[var(--text-muted)]">
+            This assistant only answers from Owen&apos;s published info. If something isn&apos;t included yet, it will say so.
+          </p>
         </div>
-        <div className="hidden sm:flex gap-2">
-          {SUGGESTIONS.map((s) => (
+        <div className="hidden sm:flex gap-2 flex-shrink-0">
+          {SUGGESTIONS.slice(0, 3).map((s) => (
             <button
               key={s}
               className="btn-secondary text-xs px-3 py-1.5"

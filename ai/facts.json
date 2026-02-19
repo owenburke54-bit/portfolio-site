@@ -2,7 +2,110 @@
   "name": "Owen Burke",
   "education": "Stonehill College",
   "major": "Finance (major) and Data Analytics (minor)",
-  "sports": "Division I college soccer player",
+  "academics": {
+    "major": "Finance",
+    "minor": "Data Analytics"
+  },
+  "birthday": "2003-12-20",
+  "age_years": 22,
+  "hometown_current": "Holliston, Massachusetts",
+  "childhood_move": {
+    "from": "Framingham, Massachusetts",
+    "to": "Holliston, Massachusetts",
+    "age_at_move_years": 1.5
+  },
+  "parents": ["Jen Burke", "Scott Burke"],
+  "siblings": [
+    {
+      "name": "Ellie",
+      "relation": "sister",
+      "age_gap_months": 14,
+      "age_years": 23
+    },
+    {
+      "name": "Danny",
+      "relation": "brother",
+      "age_years": 19
+    }
+  ],
+  "interests_youth": ["math", "numbers"],
+  "sports_youth": ["soccer", "basketball", "lacrosse", "baseball (younger)"],
+  "sports_specialization": {
+    "stopped_lacrosse_after_grade": 7,
+    "stopped_basketball_after_grade": 8,
+    "reason": "focused on soccer to play in college"
+  },
+  "clubs_soccer": [
+    {
+      "name": "Abbey Villa Soccer Club",
+      "start_grade_approx": 2,
+      "end_grade_approx": 6
+    },
+    {
+      "name": "NEFC",
+      "start_grade_approx": 6,
+      "notes": "started on B team, trained with A team at times, later promoted to top team; stayed through junior year of high school"
+    }
+  ],
+  "soccer_profile": {
+    "preferred_position": "8",
+    "key_learning_college": [
+      "spacing and making room for teammates",
+      "not always dropping back for the ball",
+      "moving more isn't always better; staying still/drifting can help team flow",
+      "play smarter in college vs high school ball-dominant style"
+    ]
+  },
+  "college_soccer": [
+    {
+      "year_label": "Freshman year",
+      "games_played": 11,
+      "starts": 2,
+      "goals": 1,
+      "assists": null,
+      "highlight": "free kick vs University of Hartford (first collegiate goal)",
+      "notes": "expected more minutes; upperclassmen ahead; spring season helped confidence"
+    },
+    {
+      "year_label": "Sophomore year",
+      "role": "8 in double pivot",
+      "goals": 0,
+      "assists": 0,
+      "notes": "defensive role; felt could have scored more; big improvement"
+    },
+    {
+      "year_label": "Junior year",
+      "formation_change": "one holding + two attacking mids",
+      "goals": 3,
+      "assists": 4,
+      "highlights": [
+        "free kick vs Brown",
+        "volley vs Navy (not game-winner due to late equalizer)"
+      ],
+      "notes": "breakthrough season; became key player"
+    }
+  ],
+  "dogs": [
+    {
+      "type": "chocolate lab",
+      "status": "passed away",
+      "owen_age_years_approx": 4
+    },
+    {
+      "name": "Teddy",
+      "type": "black lab mix",
+      "status": "passed away",
+      "date": "2024-08-01",
+      "note": "childhood dog, favorite"
+    },
+    {
+      "name": "Gus",
+      "type": "yellow lab",
+      "status": "alive",
+      "adopted_month_year": "2025-10",
+      "note": "puppy"
+    }
+  ],
   "skills": [
     "Excel (modeling, pivots, data cleanup)",
     "SQL (data mining)",
@@ -12,6 +115,7 @@
     "Java",
     "Next.js + TypeScript + Tailwind"
   ],
+  "sports": "Division I college soccer player",
   "experience": [
     "Fidelity Investments — Operations Intern (accepted for summer internship in Smithfield, RI)",
     "Owen Burke Soccer Training — founder (built a training business with 50+ clients and a small coaching team)"
@@ -31,4 +135,3 @@
     }
   ]
 }
-

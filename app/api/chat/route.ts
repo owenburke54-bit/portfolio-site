@@ -34,12 +34,16 @@ export async function POST(req: NextRequest) {
   }
   rateMap.set(key, used + 1);
 
-  // Load local knowledge
-  const personaPath = path.join(process.cwd(), "ai", "persona.md");
-  const factsPath = path.join(process.cwd(), "ai", "facts.json");
-  const [persona, factsRaw] = await Promise.all([
+  // Load local knowledge: persona, facts, soccer, projects
+  const aiDir = path.join(process.cwd(), "ai");
+  const personaPath = path.join(aiDir, "persona.md");
+  const factsPath = path.join(aiDir, "facts.json");
+  const soccerPath = path.join(aiDir, "soccer.md");
+
+  const [persona, factsRaw, soccerRaw] = await Promise.all([
     fs.readFile(personaPath, "utf8"),
-    fs.readFile(factsPath, "utf8"),
+    fs.readFile(factsPath, "utf8").catch(() => "{}"),
+    fs.readFile(soccerPath, "utf8").catch(() => ""),
   ]);
 
   let facts: unknown;
@@ -49,11 +53,32 @@ export async function POST(req: NextRequest) {
     facts = {};
   }
 
+  const projectsDir = path.join(aiDir, "projects");
+  let projectsContent = "";
+  try {
+    const entries = await fs.readdir(projectsDir, { withFileTypes: true });
+    for (const e of entries) {
+      if (e.isFile() && e.name.endsWith(".md")) {
+        const content = await fs.readFile(
+          path.join(projectsDir, e.name),
+          "utf8"
+        );
+        projectsContent += `\n--- ai/projects/${e.name} ---\n${content}`;
+      }
+    }
+  } catch {
+    // projects/ may not exist
+  }
+
+  const fallback =
+    "I don't have that detail yet — you can check the relevant page or contact Owen directly.";
+
   const systemPrompt = [
     "You are an AI version of Owen Burke.",
-    "Answer ONLY using the knowledge provided below.",
-    "If the answer is not present, reply exactly:",
-    '"I don’t have that detail yet — you can check the project page or contact Owen directly."',
+    "Answer ONLY from ai/facts.json, ai/projects/*.md, ai/soccer.md, ai/persona.md. NEVER invent facts. NEVER infer missing details.",
+    `If the answer is not present, reply exactly: "${fallback}"`,
+    "Handle timeline ambiguity: if transcript has uncertain dates, do NOT state as fact.",
+    "CITATION: At the end of every answer add Sources with file names used. If you cannot answer, use the fallback and do not cite.",
     "Be concise. Avoid hype. No fabrication.",
     "",
     "=== PERSONA ===",
@@ -61,7 +86,13 @@ export async function POST(req: NextRequest) {
     "",
     "=== FACTS (JSON) ===",
     JSON.stringify(facts, null, 2),
-  ].join("\n");
+    "",
+    "=== SOCCER ===",
+    soccerRaw.trim(),
+    projectsContent ? `\n=== PROJECTS ===${projectsContent}` : "",
+  ]
+    .filter(Boolean)
+    .join("\n");
 
   type Msg = { role: "user" | "assistant"; content: string };
   const body = (await req.json()) as { messages?: Msg[] };
@@ -77,7 +108,7 @@ export async function POST(req: NextRequest) {
       max_output_tokens: 500,
     });
 
-    const text = resp.output_text || "I don’t have that detail yet — you can check the project page or contact Owen directly.";
+    const text = resp.output_text || fallback;
     return new Response(JSON.stringify({ message: text }), {
       headers: { "Content-Type": "application/json" },
     });
@@ -85,8 +116,7 @@ export async function POST(req: NextRequest) {
     console.error(err);
     return new Response(
       JSON.stringify({
-        message:
-          "I don’t have that detail yet — you can check the project page or contact Owen directly.",
+        message: fallback,
       }),
       { status: 200, headers: { "Content-Type": "application/json" } },
     );

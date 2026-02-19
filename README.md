@@ -6,11 +6,13 @@ This repo includes a minimal, grounded chat system that only answers from local 
 
 - `ai/persona.md` — Tone and rules. Keep it short and strict. The system prompt injects this verbatim.
 - `ai/facts.json` — Structured facts only. No claims beyond this file. The assistant refuses to fabricate.
-- `ai/projects/` — Future per‑project notes or files (empty placeholder now).
+- `ai/projects/` — Per-project notes (`.md` files).
+- `ai/soccer.md` — Soccer narrative (youth, clubs, college).
+- `ai/transcripts/` — Raw Wisprflow transcripts; run `npm run ingest:wisprflow` to update knowledge.
 
 The API route at `app/api/chat/route.ts`:
 - Uses the OpenAI Responses API (`gpt-4.1-mini`) with `max_output_tokens: 500`
-- Loads `persona.md` and `facts.json` from disk and builds a strict system prompt
+- Loads `persona.md`, `facts.json`, `ai/soccer.md`, and `ai/projects/*.md` and builds a strict system prompt
 - Returns a fallback if the answer is missing:
   “I don’t have that detail yet — you can check the project page or contact Owen directly.”
 - Never exposes the API key client-side
@@ -40,12 +42,15 @@ The UI (`components/Chat.tsx`) is a small client component:
 
 3) Optional: add per‑project notes in `ai/projects/` and reference them in `facts.json` if needed.
 
-### Whisprflow transcript later
+### Wisprflow transcript ingestion
 
-When you have a Whisprflow (or any transcript) to ground answers:
-- Save it under `ai/projects/<project-slug>/transcript.md`
-- Summarize key facts into `ai/facts.json` (short bullets or fields)
-- The assistant should still only use what’s in `facts.json` and persona files
+1. **Paste** the raw transcript into `ai/transcripts/wisprflow_latest.md`
+2. **Run** the ingest script: `npm run ingest:wisprflow`
+3. **Review** the console report (facts_added, facts_skipped_uncertain, facts_conflicts)
+4. **Check** `ai/transcripts/conflicts.md` if any conflicts were found
+5. **Deploy** as usual
+
+**Important:** Never put secrets in transcripts. Transcripts should contain only safe-to-share personal info.
 
 ### Environment
 
