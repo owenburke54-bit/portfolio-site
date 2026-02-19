@@ -130,6 +130,16 @@ export default function HydraIQPage() {
           <li>Follow the recommended next step</li>
         </ol>
       </section>
+
+      {/* Tech Stack */}
+      <section className="card p-6 space-y-2">
+        <h2 className="text-xl font-semibold">Tech Stack</h2>
+        <ul className="list-disc list-inside text-[var(--text)] space-y-1">
+          <li>Next.js with React and TypeScript</li>
+          <li>Vercel for hosting</li>
+          <li>WHOOP API integration</li>
+        </ul>
+      </section>
     </div>
   );
 }
