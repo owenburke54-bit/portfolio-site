@@ -19,10 +19,14 @@ export default function Chat() {
   ]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
-  const endRef = useRef<HTMLDivElement | null>(null);
+  const viewportRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    endRef.current?.scrollIntoView({ behavior: 'smooth' });
+    // Keep the message viewport scrolled to bottom without moving the whole page
+    const el = viewportRef.current;
+    if (el) {
+      el.scrollTo({ top: el.scrollHeight, behavior: 'smooth' });
+    }
   }, [messages, loading]);
 
   const send = async (prompt?: string) => {
@@ -88,7 +92,7 @@ export default function Chat() {
       </div>
 
       <div className="rounded-lg border" style={{ borderColor: 'var(--border)' }}>
-        <div className="max-h-[360px] overflow-auto p-4 space-y-3 text-sm">
+        <div ref={viewportRef} className="max-h-[360px] overflow-auto p-4 space-y-3 text-sm">
           {messages.map((m, i) => (
             <div
               key={i}
@@ -99,7 +103,6 @@ export default function Chat() {
             </div>
           ))}
           {loading ? <div className="text-[var(--text-muted)]">Thinking…</div> : null}
-          <div ref={endRef} />
         </div>
       </div>
 
