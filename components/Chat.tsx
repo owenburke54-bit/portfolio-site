@@ -83,12 +83,20 @@ export default function Chat() {
             aria-hidden
           />
         </div>
-        <span
-          className="text-[10px] font-medium tracking-wide px-2 py-0.5 rounded-md"
-          style={{ color: 'rgba(255,255,255,0.4)', background: 'rgba(255,255,255,0.04)' }}
-        >
-          AI Agent
-        </span>
+        <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 opacity-70">
+            <img src="/openai-logo.svg" alt="OpenAI" className="h-3.5 w-3.5" />
+            <span className="text-[10px] font-medium" style={{ color: 'rgba(255,255,255,0.5)' }}>
+              gpt-4.1-mini
+            </span>
+          </div>
+          <span
+            className="text-[10px] font-medium tracking-wide px-2 py-0.5 rounded-md"
+            style={{ color: 'rgba(255,255,255,0.4)', background: 'rgba(255,255,255,0.04)' }}
+          >
+            AI Agent
+          </span>
+        </div>
       </div>
 
       <p className="text-[11px] pb-3" style={{ color: 'rgba(255,255,255,0.4)' }}>
