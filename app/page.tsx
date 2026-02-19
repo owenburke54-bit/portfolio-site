@@ -68,11 +68,11 @@ export default function HomePage() {
           />
           <ProjectCard
             title="Equity Research Workflow"
-            description="Interactive stock screener and comps builder designed to streamline equity research from idea generation to investment thesis."
+            description="Stock screener and comps builder for equity research workflows."
             highlights={[
-              "Intelligent stock screener with sector, market cap, and valuation filters",
-              "One-click comparable company table with live valuation metrics",
-              "Built-in thesis builder and DCF model workflow checklist",
+              "Screener with sector, cap, and valuation filters",
+              "One-click comps table with live metrics",
+              "Thesis builder + DCF checklist",
             ]}
             tools={["Claude", "GitHub", "Vercel"]}
             href="/projects/equity-research"
