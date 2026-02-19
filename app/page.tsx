@@ -87,7 +87,7 @@ export default function HomePage() {
           />
           <InterestCard
             title="Writing"
-            bullets={["Top 10 soccer players I’ve watched", "Market outlook articles"]}
+            bullets={["Soccer Thoughts", "Financial Markets"]}
             actions={[
               { label: "Top 10 Players", href: "/research/best-10-from-the-stands" },
               { label: "Markets Article", href: "/research/state-of-the-financial-markets-nearing-the-peak" },

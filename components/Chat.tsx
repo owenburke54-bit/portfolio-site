@@ -68,7 +68,12 @@ export default function Chat() {
   return (
     <div className="card p-6 space-y-4">
       <div className="flex items-center justify-between">
-        <h3 className="font-semibold">Talk to Owen</h3>
+        <div className="flex items-center gap-2">
+          <h3 className="font-semibold">Talk to Owen</h3>
+          <span className="text-xs rounded-full border px-2 py-0.5" style={{ borderColor: 'var(--border)', background: 'var(--surface-2)' }}>
+            Work in progress
+          </span>
+        </div>
         <div className="hidden sm:flex gap-2">
           {SUGGESTIONS.map((s) => (
             <button

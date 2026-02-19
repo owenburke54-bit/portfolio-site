@@ -45,9 +45,10 @@ export default function FinAdvisorPage() {
           src={FIN_ADVISOR_APP_URL}
           title="Fin-Advisor Preview"
           targetWidth={1280}
-          minHeight={1400}
+          targetHeight={1400}
+          containerMaxHeight={900}
           allowedOrigins={["https://fin-advisor-five.vercel.app"]}
-          minScale={0.6}
+          minScale={0.55}
           maxScale={1}
         />
       </section>

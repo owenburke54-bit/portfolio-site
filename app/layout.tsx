@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/next";
 import { ToastProvider } from "@/components/Toast";
+import ScrollTopOnLoad from "@/components/ScrollTopOnLoad";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${inter.className} bg-[var(--bg)] text-[var(--text)]`}>
         <ToastProvider>
           <div className="min-h-dvh flex flex-col">
+            <ScrollTopOnLoad />
             <Navbar />
             <main className="flex-1 container-px mx-auto w-full max-w-6xl pt-24 pb-10 sm:pt-28 sm:pb-14">
               {children}

@@ -5,7 +5,8 @@ type Props = {
   src: string;
   title: string;
   targetWidth: number; // logical width of the embedded app (e.g., 1280)
-  minHeight?: number; // fallback logical height before first message
+  targetHeight?: number; // logical height fallback/baseline (e.g., 1400)
+  containerMaxHeight?: number; // pixels to contain within (e.g., 900)
   allowedOrigins: string[];
   className?: string;
   maxScale?: number; // cap scale (default 1)
@@ -16,7 +17,8 @@ export default function ScaledEmbed({
   src,
   title,
   targetWidth,
-  minHeight = 1200,
+  targetHeight = 1200,
+  containerMaxHeight = 900,
   allowedOrigins,
   className,
   maxScale = 1,
@@ -24,19 +26,19 @@ export default function ScaledEmbed({
 }: Props) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [containerWidth, setContainerWidth] = useState<number | null>(null);
-  const [logicalHeight, setLogicalHeight] = useState<number>(minHeight);
+  const [logicalHeight, setLogicalHeight] = useState<number>(targetHeight);
 
   useEffect(() => {
     const onMessage = (event: MessageEvent) => {
       if (!allowedOrigins.includes(event.origin)) return;
       const data = event.data as any;
       if (data?.type === "EMBED_HEIGHT" && typeof data.height === "number") {
-        setLogicalHeight(Math.max(minHeight, data.height));
+        setLogicalHeight(Math.max(targetHeight, data.height));
       }
     };
     window.addEventListener("message", onMessage);
     return () => window.removeEventListener("message", onMessage);
-  }, [allowedOrigins, minHeight]);
+  }, [allowedOrigins, targetHeight]);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -51,8 +53,16 @@ export default function ScaledEmbed({
     return () => ro.disconnect();
   }, []);
 
+  // Scale to fit both width and a maximum container height to avoid page cutoff
   const scale = containerWidth
-    ? Math.max(minScale, Math.min(maxScale, containerWidth / targetWidth))
+    ? Math.max(
+        minScale,
+        Math.min(
+          maxScale,
+          containerWidth / targetWidth,
+          containerMaxHeight / (logicalHeight || targetHeight)
+        )
+      )
     : 1;
 
   const renderedHeight = logicalHeight * scale;
