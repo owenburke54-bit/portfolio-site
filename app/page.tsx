@@ -70,7 +70,7 @@ export default function HomePage() {
             title="Equity Research Workflow"
             description="Stock screener and comps builder for equity research workflows."
             highlights={[
-              "Screener with sector, cap, and valuation filters",
+              "Screener with sector, cap, and valuation",
               "One-click comps table with live metrics",
               "Thesis builder + DCF checklist",
             ]}
