@@ -67,11 +67,16 @@ export default function HomePage() {
             cta="View project"
           />
           <ProjectCard
-            title="New Project (Claude)"
-            description="Building now — shipping soon."
-            highlights={["Exploring a new problem + prototype"]}
+            title="Equity Research Workflow"
+            description="Interactive stock screener and comps builder designed to streamline equity research from idea generation to investment thesis."
+            highlights={[
+              "Intelligent stock screener with sector, market cap, and valuation filters",
+              "One-click comparable company table with live valuation metrics",
+              "Built-in thesis builder and DCF model workflow checklist",
+            ]}
             tools={["Claude", "GitHub", "Vercel"]}
-            comingSoon
+            href="/projects/equity-research"
+            cta="View project"
           />
         </div>
       </Section>
