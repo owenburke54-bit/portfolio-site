@@ -1,22 +1,14 @@
 'use client';
 import { useEffect, useRef, useState } from "react";
+import { Send } from "lucide-react";
 
 type Msg = { role: 'user' | 'assistant'; content: string };
-
-const SUGGESTIONS = [
-  "Where are you from?",
-  "Tell me about your soccer career",
-  "What position did you play and what did you learn in college?",
-  "Give me the 30-second intro",
-  "What projects are you building?",
-];
 
 export default function Chat() {
   const [messages, setMessages] = useState<Msg[]>([
     {
       role: 'assistant',
-      content:
-        "Hi — I’m Owen (AI). Ask about projects, skills, or interests. I’ll answer from the site’s knowledge only.",
+      content: "Hi — I'm Owen (AI). Ask anything about my work or background.",
     },
   ]);
   const [input, setInput] = useState('');
@@ -24,23 +16,21 @@ export default function Chat() {
   const viewportRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    // Keep the message viewport scrolled to bottom without moving the whole page
     const el = viewportRef.current;
     if (el) {
       el.scrollTo({ top: el.scrollHeight, behavior: 'smooth' });
     }
   }, [messages, loading]);
 
-  const send = async (prompt?: string) => {
-    const content = (prompt ?? input).trim();
+  const send = async () => {
+    const content = input.trim();
     if (!content || loading) return;
     if (messages.filter((m) => m.role === 'user').length >= 15) {
       setMessages((prev) => [
         ...prev,
         {
           role: 'assistant',
-          content:
-            'Free demo limit reached — feel free to contact Owen directly.',
+          content: 'Free demo limit reached — feel free to contact Owen directly.',
         },
       ]);
       return;
@@ -63,7 +53,7 @@ export default function Chat() {
         {
           role: 'assistant',
           content:
-            "I don’t have that detail yet — you can check the project page or contact Owen directly.",
+            "I don't have that detail yet — you can check the relevant page or contact Owen directly.",
         },
       ]);
     } finally {
@@ -72,65 +62,92 @@ export default function Chat() {
   };
 
   return (
-    <div className="card p-3 space-y-2 max-w-lg mx-auto">
-      <div className="flex items-center justify-between gap-2">
-        <div className="flex items-center gap-2 min-w-0">
-          <h3 className="font-semibold text-sm truncate">Talk to Owen</h3>
-          <span className="text-[10px] rounded-full border px-1.5 py-0.5 flex-shrink-0" style={{ borderColor: 'var(--border)', background: 'var(--surface-2)' }}>
-            WIP
-          </span>
+    <div
+      className="relative mx-auto max-w-5xl overflow-hidden rounded-lg px-5 py-4"
+      style={{
+        background: 'linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%)',
+        border: '1px solid rgba(255,255,255,0.06)',
+        boxShadow: '0 0 0 1px rgba(0,0,0,0.2), 0 4px 24px rgba(0,0,0,0.15)',
+      }}
+    >
+      {/* Header */}
+      <div className="flex items-center justify-between pb-2">
+        <div className="flex items-center gap-2">
+          <h3 className="font-medium text-sm tracking-tight">Talk to Owen</h3>
+          <span
+            className="h-1.5 w-1.5 rounded-full"
+            style={{
+              background: 'rgba(74, 222, 128, 0.8)',
+              boxShadow: '0 0 6px rgba(74, 222, 128, 0.5)',
+            }}
+            aria-hidden
+          />
         </div>
-        <div className="flex items-center gap-1.5 text-[var(--text-muted)] flex-shrink-0">
-          <img src="/openai-logo.svg" alt="OpenAI" className="h-3.5 w-3.5 opacity-80" />
-          <span className="text-[10px] font-medium">gpt-4.1-mini</span>
-        </div>
-      </div>
-      <p className="text-[10px] text-[var(--text-muted)] leading-tight">
-        Answers from Owen&apos;s published info only.
-      </p>
-      <div className="flex flex-wrap gap-1.5">
-        {SUGGESTIONS.slice(0, 3).map((s) => (
-          <button
-            key={s}
-            className="btn-secondary text-[10px] px-2 py-1"
-            onClick={() => send(s)}
-          >
-            {s}
-          </button>
-        ))}
+        <span
+          className="text-[10px] font-medium tracking-wide px-2 py-0.5 rounded-md"
+          style={{ color: 'rgba(255,255,255,0.4)', background: 'rgba(255,255,255,0.04)' }}
+        >
+          AI Agent
+        </span>
       </div>
 
-      <div className="rounded border" style={{ borderColor: 'var(--border)' }}>
-        <div ref={viewportRef} className="max-h-[120px] overflow-auto p-2.5 space-y-1.5 text-xs">
+      <p className="text-[11px] pb-3" style={{ color: 'rgba(255,255,255,0.4)' }}>
+        This AI answers from Owen&apos;s published info only.
+      </p>
+
+      {/* Chat area */}
+      <div
+        className="mb-3 overflow-hidden rounded-md"
+        style={{ border: '1px solid rgba(255,255,255,0.05)' }}
+      >
+        <div
+          ref={viewportRef}
+          className="overflow-auto px-4 py-3 space-y-2.5 text-[13px] leading-relaxed"
+          style={{ maxHeight: '300px' }}
+        >
           {messages.map((m, i) => (
             <div
               key={i}
-              className={m.role === 'user' ? 'text-[var(--text)]' : 'text-[var(--text-muted)]'}
+              className={
+                m.role === 'user'
+                  ? 'text-[var(--text)]'
+                  : 'text-[var(--text-muted)]'
+              }
             >
-              <span className="font-medium">{m.role === 'user' ? 'You' : 'Owen'}:</span>{' '}
-              <span>{m.content}</span>
+              <span className="font-medium text-[11px] uppercase tracking-wider opacity-60">
+                {m.role === 'user' ? 'You' : 'Owen'}
+              </span>
+              <span className="block mt-0.5">{m.content}</span>
             </div>
           ))}
-          {loading ? <div className="text-[var(--text-muted)]">Thinking…</div> : null}
+          {loading ? (
+            <div className="text-[var(--text-muted)] text-[13px]">Thinking…</div>
+          ) : null}
         </div>
       </div>
 
-      <div className="flex gap-1.5">
+      {/* Input bar */}
+      <div className="flex items-center gap-2 rounded-lg overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.06)' }}>
         <input
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => {
             if (e.key === 'Enter') send();
           }}
-          className="flex-1 rounded border bg-transparent px-2 py-1.5 text-xs min-w-0"
-          style={{ borderColor: 'var(--border)' }}
-          placeholder="Ask about projects, soccer, interests…"
+          className="flex-1 bg-transparent px-4 py-2.5 text-sm min-w-0 placeholder:opacity-50"
+          style={{ color: 'var(--text)' }}
+          placeholder="Ask about projects, soccer, or background…"
         />
-        <button className="btn text-xs px-3 py-1.5" onClick={() => send()} disabled={loading}>
-          Send
+        <button
+          onClick={send}
+          disabled={loading}
+          className="p-2.5 flex-shrink-0 transition-opacity hover:opacity-80 disabled:opacity-40"
+          style={{ color: 'var(--accent)' }}
+          aria-label="Send"
+        >
+          <Send className="h-4 w-4" strokeWidth={2} />
         </button>
       </div>
     </div>
   );
 }
-
