@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/next";
 import { ToastProvider } from "@/components/Toast";
 import ScrollTopOnLoad from "@/components/ScrollTopOnLoad";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,6 +20,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`${inter.className} bg-[var(--bg)] text-[var(--text)]`}>
+        <Script id="scroll-restore-off" strategy="beforeInteractive">{`
+          try {
+            if ('scrollRestoration' in history) {
+              history.scrollRestoration = 'manual';
+            }
+            if (!location.hash) {
+              window.scrollTo(0, 0);
+            }
+          } catch {}
+        `}</Script>
         <ToastProvider>
           <div className="min-h-dvh flex flex-col">
             <ScrollTopOnLoad />
