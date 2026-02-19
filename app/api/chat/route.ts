@@ -74,12 +74,10 @@ export async function POST(req: NextRequest) {
     "I don't have that detail yet — you can check the relevant page or contact Owen directly.";
 
   const systemPrompt = [
-    "You are an AI version of Owen Burke.",
-    "Answer ONLY from ai/facts.json, ai/projects/*.md, ai/soccer.md, ai/persona.md. NEVER invent facts. NEVER infer missing details.",
-    `If the answer is not present, reply exactly: "${fallback}"`,
-    "Handle timeline ambiguity: if transcript has uncertain dates, do NOT state as fact.",
-    "CITATION: At the end of every answer add Sources with file names used. If you cannot answer, use the fallback and do not cite.",
-    "Be concise. Avoid hype. No fabrication.",
+    "You are an AI version of Owen Burke. Answer ONLY from the knowledge below. NEVER invent facts.",
+    "For soccer, hometown, family, dogs, or college questions: use the FACTS and SOCCER sections — they contain full details.",
+    `If the answer is truly not in the knowledge, reply exactly: "${fallback}"`,
+    "Be concise. End with 'Sources: ai/facts.json' or 'Sources: ai/soccer.md, ai/facts.json' etc. when you use them.",
     "",
     "=== PERSONA ===",
     persona.trim(),
@@ -105,7 +103,7 @@ export async function POST(req: NextRequest) {
         { role: "system", content: systemPrompt },
         ...messages.map((m) => ({ role: m.role, content: m.content })),
       ],
-      max_output_tokens: 500,
+      max_output_tokens: 300,
     });
 
     const text = resp.output_text || fallback;

@@ -72,34 +72,36 @@ export default function Chat() {
   };
 
   return (
-    <div className="card p-6 space-y-4">
-      <div className="flex items-center justify-between">
-        <div className="flex flex-col gap-1">
-          <div className="flex items-center gap-2">
-            <h3 className="font-semibold">Talk to Owen</h3>
-            <span className="text-xs rounded-full border px-2 py-0.5" style={{ borderColor: 'var(--border)', background: 'var(--surface-2)' }}>
-              Work in progress
-            </span>
-          </div>
-          <p className="text-xs text-[var(--text-muted)]">
-            This assistant only answers from Owen&apos;s published info. If something isn&apos;t included yet, it will say so.
-          </p>
+    <div className="card p-4 space-y-3 max-w-sm mx-auto">
+      <div className="flex items-center justify-between gap-2">
+        <div className="flex items-center gap-2 min-w-0">
+          <h3 className="font-semibold text-sm truncate">Talk to Owen</h3>
+          <span className="text-[10px] rounded-full border px-1.5 py-0.5 flex-shrink-0" style={{ borderColor: 'var(--border)', background: 'var(--surface-2)' }}>
+            WIP
+          </span>
         </div>
-        <div className="hidden sm:flex gap-2 flex-shrink-0">
-          {SUGGESTIONS.slice(0, 3).map((s) => (
-            <button
-              key={s}
-              className="btn-secondary text-xs px-3 py-1.5"
-              onClick={() => send(s)}
-            >
-              {s}
-            </button>
-          ))}
+        <div className="flex items-center gap-1.5 text-[var(--text-muted)] flex-shrink-0">
+          <img src="/openai-logo.svg" alt="OpenAI" className="h-3.5 w-3.5 opacity-80" />
+          <span className="text-[10px] font-medium">gpt-4.1-mini</span>
         </div>
       </div>
+      <p className="text-[10px] text-[var(--text-muted)] leading-tight">
+        Answers from Owen&apos;s published info only.
+      </p>
+      <div className="flex flex-wrap gap-1.5">
+        {SUGGESTIONS.slice(0, 3).map((s) => (
+          <button
+            key={s}
+            className="btn-secondary text-[10px] px-2 py-1"
+            onClick={() => send(s)}
+          >
+            {s}
+          </button>
+        ))}
+      </div>
 
-      <div className="rounded-lg border" style={{ borderColor: 'var(--border)' }}>
-        <div ref={viewportRef} className="max-h-[360px] overflow-auto p-4 space-y-3 text-sm">
+      <div className="rounded border" style={{ borderColor: 'var(--border)' }}>
+        <div ref={viewportRef} className="max-h-[180px] overflow-auto p-3 space-y-2 text-xs">
           {messages.map((m, i) => (
             <div
               key={i}
@@ -113,32 +115,20 @@ export default function Chat() {
         </div>
       </div>
 
-      <div className="flex gap-2">
+      <div className="flex gap-1.5">
         <input
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => {
             if (e.key === 'Enter') send();
           }}
-          className="flex-1 rounded-md border bg-transparent px-3 py-2"
+          className="flex-1 rounded border bg-transparent px-2 py-1.5 text-xs min-w-0"
           style={{ borderColor: 'var(--border)' }}
-          placeholder="Ask about projects, skills, or interests…"
+          placeholder="Ask about projects, soccer, interests…"
         />
-        <button className="btn" onClick={() => send()} disabled={loading}>
+        <button className="btn text-xs px-3 py-1.5" onClick={() => send()} disabled={loading}>
           Send
         </button>
-      </div>
-
-      <div className="sm:hidden flex flex-wrap gap-2 pt-1">
-        {SUGGESTIONS.map((s) => (
-          <button
-            key={s}
-            className="btn-secondary text-xs px-3 py-1.5"
-            onClick={() => send(s)}
-          >
-            {s}
-          </button>
-        ))}
       </div>
     </div>
   );
