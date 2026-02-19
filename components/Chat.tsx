@@ -89,7 +89,7 @@ export default function Chat() {
               src="/openai-logo.png"
               alt="OpenAI"
               className="h-4 w-4 shrink-0 opacity-80"
-              style={{ filter: 'grayscale(100%)' }}
+              style={{ filter: 'brightness(0) invert(1)' }}
               width={16}
               height={16}
             />
