@@ -54,9 +54,12 @@ The UI (`components/Chat.tsx`) is a small client component:
 
 ### Environment
 
-- Set `OPENAI_API_KEY` in your environment (never client-side). Example:
-```
-OPENAI_API_KEY=sk-...
-```
+- Set `OPENAI_API_KEY` in your environment (never client-side).
+- Set `NEXT_PUBLIC_FORMSPREE_FORM_ID` for the contact form:
+  1. Create a form at [formspree.io](https://formspree.io)
+  2. Copy the form ID from the endpoint (e.g. `xyzabcde` from `https://formspree.io/f/xyzabcde`)
+  3. Add `NEXT_PUBLIC_FORMSPREE_FORM_ID=xyzabcde` to `.env.local`
+
+Copy `.env.example` to `.env.local` and fill in your values.
 
 # Owen Burke — Portfolio

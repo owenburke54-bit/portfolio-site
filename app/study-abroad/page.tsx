@@ -71,7 +71,7 @@ export default function StudyAbroadPage() {
           {SNAPSHOTS.map((img) => (
             <figure key={img.src} className="overflow-hidden rounded-xl border bg-white">
               <div className="border-b px-3 py-2">
-                <figcaption className="text-sm font-medium text-[var(--text)]">{img.title}</figcaption>
+                <figcaption className="text-sm font-medium text-black">{img.title}</figcaption>
               </div>
               <Image
                 src={img.src}
