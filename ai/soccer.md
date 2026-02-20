@@ -11,7 +11,7 @@ Owen grew up playing soccer, basketball, lacrosse, and baseball (when younger). 
 
 ## Position and style
 
-Preferred position is **8** (central midfielder).
+Preferred position is **8** (central midfielder). Favorite team: **Manchester United**.
 
 ## College adjustment
 
