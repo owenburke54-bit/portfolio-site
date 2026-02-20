@@ -1,5 +1,5 @@
 import Toolchain from "./Toolchain";
-import { Droplets, LineChart, Boxes, BarChart2, Link2 } from "lucide-react";
+import { Droplets, LineChart, Boxes, BarChart2, BookOpen, Link2 } from "lucide-react";
 
 type Tool = "Cursor" | "GitHub" | "Vercel" | "Claude Code" | "Claude";
 
@@ -25,7 +25,7 @@ export default function ProjectCard({
   const icon =
     title.toLowerCase().includes("hydra") ? <Droplets className="h-5 w-5" /> :
     title.toLowerCase().includes("intrinsic") ? <BarChart2 className="h-5 w-5" /> :
-    title.toLowerCase().includes("compound") ? <LineChart className="h-5 w-5" /> :
+    title.toLowerCase().includes("compound") ? <BookOpen className="h-5 w-5" /> :
     <Boxes className="h-5 w-5" />;
 
   return (

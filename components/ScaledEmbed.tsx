@@ -65,13 +65,19 @@ export default function ScaledEmbed({
       )
     : 1;
 
+  const renderedWidth = targetWidth * scale;
   const renderedHeight = logicalHeight * scale;
 
   return (
     <div ref={containerRef} className={className}>
       <div
-        className="relative rounded-2xl border overflow-hidden bg-white"
-        style={{ borderColor: "var(--border)", height: renderedHeight }}
+        className="relative rounded-2xl border overflow-hidden"
+        style={{
+          borderColor: "var(--border)",
+          width: renderedWidth,
+          height: renderedHeight,
+          background: "var(--surface)",
+        }}
       >
         <iframe
           src={src}

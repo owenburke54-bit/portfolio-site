@@ -72,7 +72,7 @@ export default function HomePage() {
             highlights={[
               "Local-first storage with offline support",
               "AI-powered topic classification",
-              "Structured notes across custom categories",
+              "Structured notes across categories",
             ]}
             tools={["Cursor", "GitHub", "Vercel"]}
             comingSoon
