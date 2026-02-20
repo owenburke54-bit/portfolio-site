@@ -54,7 +54,7 @@ export default function IntrinsicPage() {
           Most platforms focus on giving you more data. Intrinsic focuses on helping you think clearly. It guides you from idea to comps to thesis in a deliberate sequence.
         </p>
         <p className="text-[var(--text)]">
-          You start with a stock, define a peer set, size valuation dispersion, write out your bull and bear case, and track model progress. Everything lives in one workspace.
+          You start with a stock, define a peer set, size valuation dispersion, build your thesis (bull, bear, competitive advantage, catalyst, valuation, management, psychology), and track progress from market cycle through financials to final report. Everything lives in one workspace.
         </p>
         <p className="text-[var(--text)]">
           Research becomes intentional instead of reactive.
@@ -68,8 +68,8 @@ export default function IntrinsicPage() {
           <li>Clean screener with universe filtering</li>
           <li>Comparable companies table with automatic median benchmarks</li>
           <li>Anchor based valuation comparison</li>
-          <li>Thesis builder with bull, bear, catalysts, and risks</li>
-          <li>Model build checklist to track analytical progress</li>
+          <li>Thesis builder with bull, bear, competitive advantage, catalyst, valuation, management, and psychology</li>
+          <li>Research workflow checklist: market cycle, sector review, comp group, stock selection, financials, DCF, final report</li>
           <li>Saved research sets for reusable comps and notes</li>
         </ul>
       </section>
@@ -101,7 +101,7 @@ export default function IntrinsicPage() {
           <li>Structure over noise</li>
           <li>Anchored comparisons instead of raw lists</li>
           <li>Median benchmarks instead of averages</li>
-          <li>Explicit bull and bear framing</li>
+          <li>Explicit thesis framing (bull, bear, catalyst, valuation, management, psychology)</li>
           <li>Progress tracking to reinforce disciplined thinking</li>
           <li>Minimal interface with clear hierarchy</li>
         </ul>
@@ -132,8 +132,8 @@ export default function IntrinsicPage() {
         <ol className="list-decimal list-inside text-[var(--text)] space-y-1">
           <li>Screen a universe and select an anchor stock</li>
           <li>Build a peer set and inspect valuation dispersion</li>
-          <li>Document your thesis with bull and bear framing</li>
-          <li>Track model build steps and target price</li>
+          <li>Document your thesis (bull, bear, competitive advantage, catalyst, valuation, management, psychology)</li>
+          <li>Track research workflow from market cycle and sector through comps, financials, DCF, and final report</li>
           <li>Save the full research set for review and iteration</li>
         </ol>
         <p className="text-[var(--text)] pt-2">

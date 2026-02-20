@@ -40,7 +40,7 @@ export default function HomePage() {
       </Section>
 
       {/* Projects */}
-      <Section id="projects" title="Projects" subtitle="Selected work and current builds.">
+      <Section id="projects" title="Projects">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <ProjectCard
             title="HydraIQ"

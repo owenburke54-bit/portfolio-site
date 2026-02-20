@@ -1,0 +1,44 @@
+---
+description: Portfolio site context, handoff summary, and pending work
+alwaysApply: true
+---
+
+# Portfolio Site — Agent Handoff
+
+## Scope Completed
+
+- **Site structure**: Premium dark single-scroll (Home → Projects → Interests → Contact)
+- **Navbar**: Home / Interests / Contact; hide-on-scroll down, show-on-scroll up; blur/border when visible
+- **Projects**: 3 cards (HydraIQ, Fin-Advisor, New Project) with toolchain badges
+- **Interests**: Soccer / Writing / Study Abroad combined into 3 cards
+- **Chat**: "Talk to Owen" V1 — grounded AI using `ai/persona.md`, `ai/facts.json`, OpenAI Responses API (gpt-4.1-mini), 15 msg/IP rate limit
+- **Previews**: HydraIQ inline mobile; Fin-Advisor via `ScaledEmbed` (targetWidth=1280, no inner scroll)
+
+## Key Files
+
+| Area | Path |
+|------|------|
+| Chat API | `app/api/chat/route.ts` |
+| Chat UI | `components/Chat.tsx` |
+| Embeds | `components/ResizableEmbed.tsx`, `components/ScaledEmbed.tsx` |
+| Scroll/reset | `components/ScrollTopOnLoad.tsx`, `components/ResetHashOnHome.tsx` |
+| Knowledge | `ai/persona.md`, `ai/facts.json`, `ai/projects/` |
+
+## Pending / Next Up
+
+1. **EmbedHeightReporter**: Add to HydraIQ/Fin-Advisor embedded apps — post `{ type: 'EMBED_HEIGHT', height }` via `postMessage` on content change; portfolio can then adjust iframe heights.
+2. **Knowledge**: Expand `ai/facts.json` with verified details; optional vector grounding later.
+3. **Rate limit**: In-memory OK for V1; move to store if needed.
+4. **Content**: Verify copy ("Soccer Thoughts", "Financial Markets"); check study abroad contrast on light cards.
+5. **ScaledEmbed**: Optional tweak `containerMaxHeight`/`minScale` for small screens.
+
+## QA Targets
+
+- Fresh tab opens at hero; "View Projects" anchor works; no unwanted jump
+- HydraIQ mobile preview scrolls inside app only
+- Fin-Advisor: full width scaled; bottom visible; "Open app" available
+- Chat: works with `OPENAI_API_KEY`; 15 msg limit; strict fallback when info missing
+
+## ENV
+
+- `OPENAI_API_KEY` — server-side only (chat API)
