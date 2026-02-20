@@ -55,28 +55,27 @@ export default function HomePage() {
             cta="View project"
           />
           <ProjectCard
-            title="Fin-Advisor"
-            description="Portfolio analytics tool for tracking positions and performance."
+            title="Intrinsic"
+            description="Equity research workflow tool that streamlines stock analysis from idea to investment memo."
             highlights={[
-              "Rebalance simulator",
-              "Allocation + performance views",
-              "Clean, fast dashboard UX",
+              "AI-assisted stock research workflow",
+              "Structured thesis, comps, and DCF framework",
+              "Clean exportable investment memo output",
             ]}
-            tools={["Cursor", "GitHub", "Vercel"]}
-            href="/projects/fin-advisor"
+            tools={["Claude", "GitHub", "Vercel"]}
+            href="/projects/intrinsic"
             cta="View project"
           />
           <ProjectCard
-            title="Equity Research Workflow"
-            description="Stock screener and comps builder for equity research workflows."
+            title="Compound"
+            description="Personal knowledge engine that captures ideas and organizes them with AI."
             highlights={[
-              "Screener with sector, cap, and valuation",
-              "One-click comps table with live metrics",
-              "Thesis builder + DCF checklist",
+              "Local-first storage with offline support",
+              "AI-powered topic classification",
+              "Structured notes across custom categories",
             ]}
-            tools={["Claude", "GitHub", "Vercel"]}
-            href="/projects/equity-research"
-            cta="View project"
+            tools={["Cursor", "GitHub", "Vercel"]}
+            comingSoon
           />
         </div>
       </Section>
