@@ -56,11 +56,11 @@ export default function HomePage() {
           />
           <ProjectCard
             title="Intrinsic"
-            description="Equity research workflow tool that streamlines stock analysis from idea to investment memo."
+            description="Equity research workspace for building valuation-backed investment theses."
             highlights={[
               "AI-assisted stock research workflow",
-              "Structured thesis, comps, and DCF framework",
-              "Clean exportable investment memo output",
+              "Thesis, comps, and DCF framework",
+              "Exportable investment memo output",
             ]}
             tools={["Claude", "GitHub", "Vercel"]}
             href="/projects/intrinsic"

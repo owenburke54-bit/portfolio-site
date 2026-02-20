@@ -1,6 +1,7 @@
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import type { Metadata } from "next";
+import ScaledEmbed from "@/components/ScaledEmbed";
 
 export const metadata: Metadata = {
   title: "Intrinsic | Owen Burke",
@@ -18,11 +19,23 @@ export default function IntrinsicPage() {
         subtitle="A lightweight equity research workspace for building valuation-backed investment theses."
       />
 
-      {/* Open app */}
-      <section className="card p-6">
-        <Link href={INTRINSIC_APP_URL} className="btn" target="_blank" rel="noopener noreferrer">
-          Open app
-        </Link>
+      {/* Preview */}
+      <section className="card p-6 space-y-3">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+          <div>
+            <h2 className="text-xl font-semibold">App preview</h2>
+          </div>
+          <Link href={INTRINSIC_APP_URL} className="btn" target="_blank" rel="noopener noreferrer">
+            Open app
+          </Link>
+        </div>
+        <ScaledEmbed
+          src={INTRINSIC_APP_URL}
+          title="Intrinsic Preview"
+          targetWidth={1280}
+          containerMaxHeight={700}
+          allowedOrigins={["https://intrinsic-equities.vercel.app"]}
+        />
       </section>
 
       {/* Summary */}
