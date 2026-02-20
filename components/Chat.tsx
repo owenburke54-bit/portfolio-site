@@ -39,23 +39,74 @@ export default function Chat() {
     const next: Msg[] = [...messages, { role: 'user', content }];
     setMessages(next);
     setInput('');
+    setMessages((prev) => [...prev, { role: 'assistant', content: '' }]);
     try {
       const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ messages: next }),
       });
-      const data = (await res.json()) as { message: string };
-      setMessages((prev) => [...prev, { role: 'assistant', content: data.message }]);
+      const contentType = res.headers.get('content-type') ?? '';
+      if (contentType.includes('application/json')) {
+        const data = (await res.json()) as { message?: string };
+        setMessages((prev) => {
+          const last = prev[prev.length - 1];
+          if (last?.role === 'assistant' && last.content === '') {
+            return [...prev.slice(0, -1), { ...last, content: data.message ?? "I don't have that detail yet — you can check the relevant page or contact Owen directly." }];
+          }
+          return prev;
+        });
+        return;
+      }
+      if (!res.ok || !res.body) throw new Error('Stream failed');
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      let buffer = '';
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split('\n');
+        buffer = lines.pop() ?? '';
+        for (const line of lines) {
+          if (line.startsWith('data: ')) {
+            try {
+              const data = JSON.parse(line.slice(6));
+              if (data.delta) {
+                setMessages((prev) => {
+                  const last = prev[prev.length - 1];
+                  if (last?.role === 'assistant') {
+                    return [...prev.slice(0, -1), { ...last, content: last.content + data.delta }];
+                  }
+                  return prev;
+                });
+              }
+              if (data.done && data.message) {
+                setMessages((prev) => {
+                  const last = prev[prev.length - 1];
+                  if (last?.role === 'assistant' && !last.content) {
+                    return [...prev.slice(0, -1), { ...last, content: data.message }];
+                  }
+                  return prev;
+                });
+              }
+            } catch {
+              /* skip parse errors */
+            }
+          }
+        }
+      }
     } catch {
-      setMessages((prev) => [
-        ...prev,
-        {
-          role: 'assistant',
-          content:
-            "I don't have that detail yet — you can check the relevant page or contact Owen directly.",
-        },
-      ]);
+      setMessages((prev) => {
+        const last = prev[prev.length - 1];
+        if (last?.role === 'assistant' && last.content === '') {
+          return [
+            ...prev.slice(0, -1),
+            { role: 'assistant', content: "I don't have that detail yet — you can check the relevant page or contact Owen directly." },
+          ];
+        }
+        return prev;
+      });
     } finally {
       setLoading(false);
     }
@@ -82,6 +133,12 @@ export default function Chat() {
             }}
             aria-hidden
           />
+          <span
+            className="text-[10px] font-medium tracking-wide px-2 py-0.5 rounded-md"
+            style={{ color: 'rgba(255,255,255,0.45)', background: 'rgba(255,255,255,0.06)' }}
+          >
+            In Progress
+          </span>
         </div>
         <div className="flex items-center gap-2">
           <div className="flex items-center gap-1.5 shrink-0">

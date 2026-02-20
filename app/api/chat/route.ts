@@ -75,7 +75,8 @@ export async function POST(req: NextRequest) {
 
   const systemPrompt = [
     "You are an AI version of Owen Burke. Answer ONLY from the knowledge below. NEVER invent facts.",
-    "For soccer, hometown, family, dogs, or college questions: use the FACTS and SOCCER sections — they contain full details.",
+    "The FACTS and SOCCER sections contain verified info: soccer position (8), clubs, college stats, hometown, family, dogs, projects, skills. ANSWER from them when the question matches.",
+    "Only use the fallback when the question asks about something with ZERO matching info in the knowledge.",
     `If the answer is truly not in the knowledge, reply exactly: "${fallback}"`,
     "Be concise. End with 'Sources: ai/facts.json' or 'Sources: ai/soccer.md, ai/facts.json' etc. when you use them.",
     "",
@@ -97,25 +98,50 @@ export async function POST(req: NextRequest) {
   const messages = body?.messages ?? [];
 
   try {
-    const resp = await client.responses.create({
+    const stream = await client.responses.create({
       model: "gpt-4.1-mini",
       input: [
         { role: "system", content: systemPrompt },
         ...messages.map((m) => ({ role: m.role, content: m.content })),
       ],
       max_output_tokens: 300,
+      stream: true,
     });
 
-    const text = resp.output_text || fallback;
-    return new Response(JSON.stringify({ message: text }), {
-      headers: { "Content-Type": "application/json" },
+    const encoder = new TextEncoder();
+    const readable = new ReadableStream({
+      async start(controller) {
+        let fullText = "";
+        try {
+          for await (const event of stream) {
+            if (event.type === "response.output_text.delta" && "delta" in event) {
+              const chunk = event.delta as string;
+              fullText += chunk;
+              controller.enqueue(encoder.encode(`data: ${JSON.stringify({ delta: chunk })}\n\n`));
+            }
+          }
+          if (!fullText.trim()) fullText = fallback;
+          controller.enqueue(encoder.encode(`data: ${JSON.stringify({ done: true, message: fullText })}\n\n`));
+        } catch (err) {
+          console.error(err);
+          controller.enqueue(encoder.encode(`data: ${JSON.stringify({ done: true, message: fallback })}\n\n`));
+        } finally {
+          controller.close();
+        }
+      },
+    });
+
+    return new Response(readable, {
+      headers: {
+        "Content-Type": "text/event-stream",
+        "Cache-Control": "no-cache",
+        Connection: "keep-alive",
+      },
     });
   } catch (err) {
     console.error(err);
     return new Response(
-      JSON.stringify({
-        message: fallback,
-      }),
+      JSON.stringify({ message: fallback }),
       { status: 200, headers: { "Content-Type": "application/json" } },
     );
   }
