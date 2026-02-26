@@ -114,9 +114,9 @@ export default function Chat() {
 
   return (
     <div
-      className="relative mx-auto max-w-5xl overflow-hidden rounded-lg px-3 py-4 sm:px-5"
+      className="relative mx-auto max-w-2xl overflow-hidden rounded-lg px-3 py-4 sm:px-4"
       style={{
-        background: 'linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%)',
+        background: 'rgba(0,0,0,0.2)',
         border: '1px solid rgba(255,255,255,0.06)',
         boxShadow: '0 0 0 1px rgba(0,0,0,0.2), 0 4px 24px rgba(0,0,0,0.15)',
       }}
@@ -170,12 +170,19 @@ export default function Chat() {
       {/* Chat area */}
       <div
         className="mb-3 overflow-hidden rounded-md"
-        style={{ border: '1px solid rgba(255,255,255,0.05)' }}
+        style={{
+          border: '1px solid rgba(255,255,255,0.05)',
+          background: 'rgba(0,0,0,0.2)',
+        }}
       >
         <div
           ref={viewportRef}
           className="overflow-y-auto overflow-x-hidden px-3 py-3 space-y-2.5 text-[13px] leading-relaxed sm:px-4 min-h-0"
-          style={{ height: '280px', maxHeight: '280px' }}
+          style={{
+            height: '200px',
+            maxHeight: '200px',
+            background: 'rgba(0,0,0,0.2)',
+          }}
         >
           {messages.map((m, i) => (
             <div
@@ -199,7 +206,10 @@ export default function Chat() {
       </div>
 
       {/* Input bar */}
-      <div className="flex items-center gap-2 rounded-lg overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.06)' }}>
+      <div
+        className="flex items-center gap-2 rounded-lg overflow-hidden"
+        style={{ border: '1px solid rgba(255,255,255,0.06)', background: 'rgba(0,0,0,0.2)' }}
+      >
         <input
           value={input}
           onChange={(e) => setInput(e.target.value)}
