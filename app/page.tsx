@@ -37,7 +37,7 @@ export default function HomePage() {
           </div>
         </div>
         <div
-          className="mt-8 sm:mt-10 pb-8 rounded-xl overflow-hidden"
+          className="mt-8 sm:mt-10 pb-4 pt-1 rounded-xl overflow-hidden mb-12 sm:mb-16"
           style={{ background: "rgba(0,0,0,0.2)" }}
         >
           <Chat />
