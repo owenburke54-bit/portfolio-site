@@ -114,7 +114,7 @@ export default function Chat() {
 
   return (
     <div
-      className="relative mx-auto max-w-2xl overflow-hidden rounded-lg px-3 py-4 sm:px-4"
+      className="relative mx-auto max-w-4xl overflow-hidden rounded-lg px-3 py-3 sm:px-4"
       style={{
         background: 'rgba(0,0,0,0.2)',
         border: '1px solid rgba(255,255,255,0.06)',
@@ -122,7 +122,7 @@ export default function Chat() {
       }}
     >
       {/* Header */}
-      <div className="flex flex-col gap-2 pb-2 sm:flex-row sm:items-center sm:justify-between sm:gap-0">
+      <div className="flex flex-col gap-1.5 pb-1.5 sm:flex-row sm:items-center sm:justify-between sm:gap-0">
         <div className="flex items-center gap-2 flex-wrap">
           <h3 className="font-medium text-sm tracking-tight">Talk to Owen</h3>
           <span
@@ -163,13 +163,13 @@ export default function Chat() {
         </div>
       </div>
 
-      <p className="text-[11px] pb-3" style={{ color: 'rgba(255,255,255,0.4)' }}>
+      <p className="text-[11px] pb-2" style={{ color: 'rgba(255,255,255,0.4)' }}>
         This AI answers from Owen&apos;s published info only.
       </p>
 
       {/* Chat area */}
       <div
-        className="mb-3 overflow-hidden rounded-md"
+        className="mb-2 overflow-hidden rounded-md"
         style={{
           border: '1px solid rgba(255,255,255,0.05)',
           background: 'rgba(0,0,0,0.2)',
@@ -179,8 +179,8 @@ export default function Chat() {
           ref={viewportRef}
           className="overflow-y-auto overflow-x-hidden px-3 py-3 space-y-2.5 text-[13px] leading-relaxed sm:px-4 min-h-0"
           style={{
-            height: '200px',
-            maxHeight: '200px',
+            height: '160px',
+            maxHeight: '160px',
             background: 'rgba(0,0,0,0.2)',
           }}
         >
