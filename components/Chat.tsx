@@ -114,7 +114,7 @@ export default function Chat() {
 
   return (
     <div
-      className="relative mx-auto max-w-5xl overflow-hidden rounded-lg px-5 py-4"
+      className="relative mx-auto max-w-5xl overflow-hidden rounded-lg px-3 py-4 sm:px-5"
       style={{
         background: 'linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%)',
         border: '1px solid rgba(255,255,255,0.06)',
@@ -122,11 +122,11 @@ export default function Chat() {
       }}
     >
       {/* Header */}
-      <div className="flex items-center justify-between pb-2">
-        <div className="flex items-center gap-2">
+      <div className="flex flex-col gap-2 pb-2 sm:flex-row sm:items-center sm:justify-between sm:gap-0">
+        <div className="flex items-center gap-2 flex-wrap">
           <h3 className="font-medium text-sm tracking-tight">Talk to Owen</h3>
           <span
-            className="h-1.5 w-1.5 rounded-full"
+            className="h-1.5 w-1.5 rounded-full shrink-0"
             style={{
               background: 'rgba(74, 222, 128, 0.8)',
               boxShadow: '0 0 6px rgba(74, 222, 128, 0.5)',
@@ -140,7 +140,7 @@ export default function Chat() {
             In Progress
           </span>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-shrink-0">
           <div className="flex items-center gap-1.5 shrink-0">
             <img
               src="/openai-logo.png"
@@ -150,12 +150,12 @@ export default function Chat() {
               width={16}
               height={16}
             />
-            <span className="text-[10px] font-medium" style={{ color: 'rgba(255,255,255,0.5)' }}>
+            <span className="text-[10px] font-medium whitespace-nowrap" style={{ color: 'rgba(255,255,255,0.5)' }}>
               gpt-4.1-mini
             </span>
           </div>
           <span
-            className="text-[10px] font-medium tracking-wide px-2 py-0.5 rounded-md"
+            className="hidden text-[10px] font-medium tracking-wide px-2 py-0.5 rounded-md sm:inline"
             style={{ color: 'rgba(255,255,255,0.4)', background: 'rgba(255,255,255,0.04)' }}
           >
             AI Agent
@@ -174,8 +174,8 @@ export default function Chat() {
       >
         <div
           ref={viewportRef}
-          className="overflow-auto px-4 py-3 space-y-2.5 text-[13px] leading-relaxed"
-          style={{ maxHeight: '300px' }}
+          className="overflow-y-auto overflow-x-hidden px-3 py-3 space-y-2.5 text-[13px] leading-relaxed sm:px-4 min-h-0"
+          style={{ height: '280px', maxHeight: '280px' }}
         >
           {messages.map((m, i) => (
             <div
@@ -206,9 +206,9 @@ export default function Chat() {
           onKeyDown={(e) => {
             if (e.key === 'Enter') send();
           }}
-          className="flex-1 bg-transparent px-4 py-2.5 text-sm min-w-0 placeholder:opacity-50"
+          className="flex-1 min-w-0 bg-transparent px-3 py-2.5 text-sm placeholder:opacity-50 sm:px-4"
           style={{ color: 'var(--text)' }}
-          placeholder="Ask about projects, soccer, or background…"
+          placeholder="Ask about work, soccer, or background…"
         />
         <button
           onClick={send}

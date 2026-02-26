@@ -50,7 +50,15 @@
   ],
   "soccer_profile": {
     "preferred_position": "8",
+    "jersey_number": "8",
+    "height": "5'11\"",
+    "weight": "170 lbs",
+    "high_school": "Holliston",
     "favorite_team": "Manchester United",
+    "team_captain_fall_2025": true,
+    "academic_all_district": ["2023", "2024", "2025"],
+    "nec_all_conference_second_team_2025": true,
+    "career_stats_summary": "63 GP, 49 GS, 8 G, 7 A, 23 PTS",
     "key_learning_college": [
       "spacing and making room for teammates",
       "not always dropping back for the ball",
@@ -125,15 +133,64 @@
   "projects": [
     {
       "name": "HydraIQ",
-      "one_liner": "A hydration-tracking app built around performance insights and WHOOP-style metrics.",
-      "stack": ["Next.js", "TypeScript", "Tailwind"],
-      "status": "In progress"
+      "one_liner": "Hydration tracking app with WHOOP API integration.",
+      "description": "A hydration app that turns daily intake into a score and actionable recommendations.",
+      "href": "/projects/hydraiq",
+      "status": "Live"
     },
     {
-      "name": "Fin-Advisor",
-      "one_liner": "A personal portfolio tracker that analyzes positions and performance with clean dashboards.",
-      "stack": ["Next.js", "TypeScript", "Tailwind"],
-      "status": "In progress"
+      "name": "Intrinsic",
+      "one_liner": "Equity research workspace for building valuation-backed investment theses.",
+      "description": "Stock screener, comps, thesis builder. Workflow from market cycle through financials to final report.",
+      "href": "/projects/intrinsic",
+      "status": "Live"
+    },
+    {
+      "name": "Compound",
+      "one_liner": "Personal knowledge engine that captures ideas and organizes them with AI.",
+      "description": "Local-first storage, AI-powered topic classification, structured notes across categories.",
+      "href": "/projects/compound",
+      "status": "Coming Soon"
     }
-  ]
+  ],
+  "portfolio_site": {
+    "home_sections": ["Hero with Talk to Owen chat", "Projects (HydraIQ, Intrinsic, Compound)", "Interests (Soccer, Writing, Study Abroad)", "Contact"],
+    "contact": {
+      "email": "owenburke54@gmail.com",
+      "linkedin": "https://www.linkedin.com/in/owen-burke-0ab126257",
+      "resume": "/resume.pdf"
+    },
+    "pages": [
+      {"path": "/soccer", "title": "Soccer", "summary": "NCAA D1 at Stonehill, jersey 8, senior, Team Captain Fall 2025, career stats, featured articles"},
+      {"path": "/study-abroad", "title": "Study Abroad", "summary": "Power BI maps of Europe travels: cities, airports, soccer stadiums"},
+      {"path": "/research/best-10-from-the-stands", "title": "Best 10 Soccer Players from the Stands", "summary": "Top 10 list from 7 European matches 2024-2025, countdown from Gosens to Kimmich"},
+      {"path": "/research/state-of-the-financial-markets-nearing-the-peak", "title": "State of the Financial Markets: Nearing the Peak", "summary": "Late-cycle expansion, inflation, rate path, positioning implications"},
+      {"path": "/passions-values", "title": "Passions & Values", "summary": "Passion areas: Soccer, Finance & Fintech, Health/Wellness/Technology. Values: work ethic, thoughtfulness, curiosity, team-first, resilience"}
+    ]
+  },
+  "study_abroad_and_senior_season": {
+    "study_abroad": {
+      "location": "Florence, Italy",
+      "timing": "junior year",
+      "decision": "last-minute decision with five best friends",
+      "concerns": ["losing starting spot", "falling out of leadership consideration", "losing momentum"],
+      "outcome": "one of the best decisions of his life",
+      "gains": ["independence", "perspective", "confidence"]
+    },
+    "usl2_summer": {
+      "team": "Boston City FC",
+      "note": "highest summer league available for college players, closest level to professional competition",
+      "effect": "sharpened his game and prepared for senior season"
+    },
+    "senior_season": {
+      "captain": true,
+      "team_context": "team wasn't as strong as the year before, larger responsibility on the field",
+      "stats": "3 goals, 3 assists",
+      "highlights": ["free kick against Harvard", "penalty against Merrimack", "conference goal against Central Connecticut State"],
+      "playoff_race": "goal was NEC playoffs, controlled destiny going into Senior Day vs LIU (third place, top four advance)",
+      "outcome": "lost 1-0 to LIU, dropped to fifth, missed tournament",
+      "reflection": "proud of steady progression over four years; growth comes from taking risks, like studying abroad in Florence"
+    },
+    "narrative": "Going into senior soccer season, Owen never planned on studying abroad. Soccer had always been his primary focus, and stepping away felt risky. But during junior year, he made a last-minute decision to study in Florence, Italy with his five best friends. It was one of the hardest decisions he's made. His biggest concern was losing his starting spot, falling out of leadership consideration, or losing momentum. But Florence ended up being one of the best decisions of his life. He gained independence, perspective, and confidence. That summer, he played USL2 with Boston City FC. When he returned for senior year, he was named team captain. The team wasn't as strong, and he carried a larger responsibility. He finished with 3 goals and 3 assists (free kick vs Harvard, penalty vs Merrimack, conference goal vs Central Connecticut State). Heading into Senior Day vs LIU, they controlled their destiny in third place. They lost 1-0 and dropped to fifth, missing the tournament. Owen is most proud of the steady progression over four years and learning that growth often comes from taking risks."
+  }
 }
