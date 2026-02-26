@@ -36,16 +36,17 @@ export default function HomePage() {
             <a href="#contact" className="btn-secondary">Contact</a>
           </div>
         </div>
-        <div
-          className="mt-8 sm:mt-10 pb-4 pt-1 rounded-xl overflow-hidden mb-12 sm:mb-16"
-          style={{ background: "rgba(0,0,0,0.2)" }}
-        >
-          <Chat />
-        </div>
       </Section>
 
+      {/* Talk to Owen */}
+      <section id="talk-to-owen" className="relative py-24 scroll-mt-24">
+        <div className="max-w-4xl mx-auto px-6">
+          <Chat />
+        </div>
+      </section>
+
       {/* Projects */}
-      <Section id="projects" title="Projects">
+      <Section id="projects" title="Projects" className="pt-8 sm:pt-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <ProjectCard
             title="HydraIQ"

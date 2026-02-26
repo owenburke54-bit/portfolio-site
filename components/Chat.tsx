@@ -114,12 +114,7 @@ export default function Chat() {
 
   return (
     <div
-      className="relative mx-auto max-w-4xl overflow-hidden rounded-lg px-3 py-3 sm:px-4"
-      style={{
-        background: 'rgba(0,0,0,0.2)',
-        border: '1px solid rgba(255,255,255,0.06)',
-        boxShadow: '0 0 0 1px rgba(0,0,0,0.2), 0 4px 24px rgba(0,0,0,0.15)',
-      }}
+      className="relative w-full overflow-hidden rounded-2xl border border-white/10 bg-[color:var(--surface)] shadow-xl shadow-black/30 px-4 py-4 sm:px-5"
     >
       {/* Header */}
       <div className="flex flex-col gap-1.5 pb-1.5 sm:flex-row sm:items-center sm:justify-between sm:gap-0">
@@ -168,20 +163,13 @@ export default function Chat() {
       </p>
 
       {/* Chat area */}
-      <div
-        className="mb-2 overflow-hidden rounded-md"
-        style={{
-          border: '1px solid rgba(255,255,255,0.05)',
-          background: 'rgba(0,0,0,0.2)',
-        }}
-      >
+      <div className="mb-2 overflow-hidden rounded-xl border border-white/5 bg-[color:var(--surface-2)]">
         <div
           ref={viewportRef}
-          className="overflow-y-auto overflow-x-hidden px-3 py-3 space-y-2.5 text-[13px] leading-relaxed sm:px-4 min-h-0"
+          className="overflow-y-auto overflow-x-hidden px-3 py-3 space-y-2.5 text-[13px] leading-relaxed sm:px-4 min-h-0 bg-[color:var(--surface-2)]"
           style={{
             height: '160px',
             maxHeight: '160px',
-            background: 'rgba(0,0,0,0.2)',
           }}
         >
           {messages.map((m, i) => (
@@ -206,10 +194,7 @@ export default function Chat() {
       </div>
 
       {/* Input bar */}
-      <div
-        className="flex items-center gap-2 rounded-lg overflow-hidden"
-        style={{ border: '1px solid rgba(255,255,255,0.06)', background: 'rgba(0,0,0,0.2)' }}
-      >
+      <div className="flex items-center gap-2 rounded-xl overflow-hidden border border-white/5 bg-[color:var(--surface-2)]">
         <input
           value={input}
           onChange={(e) => setInput(e.target.value)}
