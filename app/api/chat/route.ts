@@ -82,7 +82,7 @@ export async function POST(req: NextRequest) {
     "The FACTS and SOCCER sections contain verified info: soccer position (8), favorite team (Manchester United), clubs, college stats, hometown, family, dogs, projects, skills. You MUST answer from them when the question matches.",
     "Only use the fallback when the question asks about something with ZERO matching info in the knowledge.",
     `If the answer is truly not in the knowledge, reply exactly: "${fallback}"`,
-    "Be concise. End with 'Sources: ai/facts.json' or 'Sources: ai/soccer.md' etc. when you use them.",
+    "Be concise. Do not include source citations or file paths in your responses.",
     "",
     "=== PERSONA ===",
     persona.trim(),
