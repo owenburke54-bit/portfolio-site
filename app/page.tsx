@@ -36,7 +36,12 @@ export default function HomePage() {
             <a href="#contact" className="btn-secondary">Contact</a>
           </div>
         </div>
-        <div className="mt-8 sm:mt-10"><Chat /></div>
+        <div
+          className="mt-8 sm:mt-10 pb-8 rounded-xl overflow-hidden"
+          style={{ background: "rgba(0,0,0,0.2)" }}
+        >
+          <Chat />
+        </div>
       </Section>
 
       {/* Projects */}
