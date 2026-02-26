@@ -166,7 +166,7 @@ export default function Chat() {
       <div className="mb-2 overflow-hidden rounded-xl border border-white/5 bg-[color:var(--surface-2)]">
         <div
           ref={viewportRef}
-          className="overflow-y-auto overflow-x-hidden px-3 py-3 space-y-2.5 text-[13px] leading-relaxed sm:px-4 min-h-0 bg-[color:var(--surface-2)]"
+          className="scrollbar-dark overflow-y-auto overflow-x-hidden px-3 py-3 space-y-2.5 text-[13px] leading-relaxed sm:px-4 min-h-0 bg-[color:var(--surface-2)]"
           style={{
             height: '160px',
             maxHeight: '160px',

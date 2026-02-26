@@ -59,6 +59,18 @@ html {
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
+/* Dark scrollbar for chat and dark surfaces */
+.scrollbar-dark::-webkit-scrollbar { width: 8px; }
+.scrollbar-dark::-webkit-scrollbar-track { background: var(--surface-2); }
+.scrollbar-dark::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+}
+.scrollbar-dark::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+.scrollbar-dark { scrollbar-width: thin; scrollbar-color: rgba(255, 255, 255, 0.2) var(--surface-2); }
+
 /* subtle link style */
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }

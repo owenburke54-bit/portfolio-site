@@ -39,14 +39,14 @@ export default function HomePage() {
       </Section>
 
       {/* Talk to Owen */}
-      <section id="talk-to-owen" className="relative py-24 scroll-mt-24">
+      <section id="talk-to-owen" className="relative py-12 scroll-mt-24">
         <div className="max-w-4xl mx-auto px-6">
           <Chat />
         </div>
       </section>
 
       {/* Projects */}
-      <Section id="projects" title="Projects" className="pt-8 sm:pt-12">
+      <Section id="projects" title="Projects">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <ProjectCard
             title="HydraIQ"
