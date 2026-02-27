@@ -153,6 +153,19 @@
       "status": "Live"
     }
   ],
+  "site_content_full": {
+    "projects_detail": {
+      "HydraIQ": {"url": "https://hydra-iq-mvp.vercel.app", "page": "/projects/hydraiq", "summary": "Hydration tracking app with WHOOP API integration. Turns daily intake into a score and actionable recommendations. Features: Daily Hydration Score, fast logging, trends and streaks, WHOOP data personalizes targets. Tech: Next.js, TypeScript, Tailwind, Vercel, WHOOP API."},
+      "Intrinsic": {"url": "https://intrinsic-equities.vercel.app", "page": "/projects/intrinsic", "summary": "Equity research workspace for building valuation-backed investment theses. Stock screener, comps table, thesis builder (bull, bear, catalyst, valuation, management, psychology). Workflow from market cycle through financials to final report. Tech: Next.js, TypeScript, Yahoo Finance, LocalStorage, Vercel."},
+      "Compound": {"url": "https://compound-black.vercel.app", "page": "/projects/compound", "summary": "Personal knowledge engine that captures ideas and organizes them with AI. Local-first storage, offline support, AI topic classification, structured notes across categories. Tech: Next.js, TypeScript, LocalStorage/IndexedDB, Vercel."}
+    },
+    "articles": {
+      "best_10_soccer_players": {"title": "The Best 10 Soccer Players I've Seen from the Stands", "path": "/research/best-10-from-the-stands", "date": "Jan 28, 2026", "summary": "Personal list from 7 European matches 2024-2025. Top 10 countdown: 10. Robin Gosens (Fiorentina), 9. Nico Paz (Como), 8. Antony (Real Betis), 7. Isco (Real Betis), 6. Kouadio Manu Kone (Roma), 5. Jamal Musiala (Germany), 4. Nicolo Barella (Italy), 3. Sandro Tonali (Italy), 2. Vinicius Jr. (Real Madrid), 1. Joshua Kimmich (Germany). Matches: Valencia vs Real Madrid, Fiorentina vs Genoa/Como/Juventus/Real Betis, Empoli vs Roma, Italy vs Germany."},
+      "state_of_financial_markets": {"title": "The State of the Financial Markets: Nearing the Peak", "path": "/research/state-of-the-financial-markets-nearing-the-peak", "date": "Feb 9, 2026", "summary": "Late-stage expansion cycle. Economy resilient, labor market cooling gradually. Inflation trending toward 2%, Fed Funds 3.64%, unemployment 4.5%. Recommends cautious capital deployment, favor quality companies with strong cash flows, maintain diversification, keep cash on hand, avoid speculative growth stocks."}
+    },
+    "study_abroad_maps": {"path": "/study-abroad", "title": "Study Abroad", "summary": "Interactive Power BI maps of Europe travels. Cities visited with counts and dates. Airports used and visit frequency. Soccer stadium visits plotted geographically. Filters by country and time. Based on study abroad in Florence, Italy (junior year)."},
+    "resume": {"path": "/resume.pdf", "available": true, "note": "PDF resume available for download from Contact section"}
+  },
   "portfolio_site": {
     "home_sections": ["Hero with Talk to Owen chat", "Projects (HydraIQ, Intrinsic, Compound)", "Interests (Soccer, Writing, Study Abroad)", "Contact"],
     "contact": {
