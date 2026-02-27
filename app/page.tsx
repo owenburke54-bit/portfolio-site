@@ -81,7 +81,8 @@ export default function HomePage() {
               "Structured notes across categories",
             ]}
             tools={["Cursor", "GitHub", "Vercel"]}
-            comingSoon
+            href="/projects/compound"
+            cta="View project"
           />
         </div>
       </Section>
