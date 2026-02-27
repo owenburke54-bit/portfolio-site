@@ -45,16 +45,16 @@ export default function CompoundPage() {
       <section className="card p-6 space-y-4">
         <h2 className="text-xl font-semibold">Summary</h2>
         <p className="text-[var(--text)]">
-          Compound started with a simple frustration. Ideas and notes were scattered across apps and tabs.
+          Notes lived in five places. Ideas never connected. That was the problem.
         </p>
         <p className="text-[var(--text)]">
-          Most tools add cloud sync, teams, and complexity. Compound focuses on capture and clarity—how you think, not where you store.
+          Every note app pushes cloud sync, shared folders, and accounts. Compound strips that back—one place, your device, no signup.
         </p>
         <p className="text-[var(--text)]">
-          You add ideas, they get classified by topic, and your notes stay in one place. Local-first means it works offline and your data stays on your device. The structure grows with you.
+          Drop in an idea. AI tags it. It lands in a category. Local-first means offline works and your data never leaves. The structure builds as you add.
         </p>
         <p className="text-[var(--text)]">
-          Knowledge becomes organized instead of scattered.
+          Knowledge ends up organized instead of everywhere.
         </p>
       </section>
 
