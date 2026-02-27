@@ -6,7 +6,7 @@ import ResizableEmbed from "@/components/ResizableEmbed";
 export const metadata: Metadata = {
   title: "Compound | Owen Burke",
   description:
-    "Compound helps you capture ideas and organize them with AI—local-first storage, topic classification, and structured notes.",
+    "Compound helps you capture ideas and organize them with AI: local-first storage, topic classification, and structured notes.",
 };
 
 const COMPOUND_APP_URL = "https://compound-black.vercel.app";
@@ -16,7 +16,7 @@ export default function CompoundPage() {
     <div className="space-y-8">
       <PageHeader
         title="Compound"
-        subtitle="A personal knowledge engine that captures ideas and organizes them with AI—local-first storage and offline support."
+        subtitle="A personal knowledge engine that captures ideas and organizes them with AI. Local-first storage and offline support."
       />
 
       {/* Preview (mobile layout like HydraIQ) */}
@@ -45,10 +45,10 @@ export default function CompoundPage() {
       <section className="card p-6 space-y-4">
         <h2 className="text-xl font-semibold">Summary</h2>
         <p className="text-[var(--text)]">
-          Notes lived in five places. Ideas never connected. That was the problem.
+          Notes lived in many places. Ideas never connected. That was the problem.
         </p>
         <p className="text-[var(--text)]">
-          Every note app pushes cloud sync, shared folders, and accounts. Compound strips that back—one place, your device, no signup.
+          Every note app pushes cloud sync, shared folders, and accounts. Compound strips that back. One place, your device, no signup.
         </p>
         <p className="text-[var(--text)]">
           Drop in an idea. AI tags it. It lands in a category. Local-first means offline works and your data never leaves. The structure builds as you add.
@@ -101,7 +101,7 @@ export default function CompoundPage() {
             <span className="font-medium">Insight:</span> Capture matters more than storage. Small daily additions compound into a useful knowledge base when they are structured.
           </li>
           <li>
-            <span className="font-medium">Action:</span> Compound gives you one place to capture, classify, and organize ideas—without the cloud.
+            <span className="font-medium">Action:</span> Compound gives you one place to capture, classify, and organize ideas, without the cloud.
           </li>
         </ul>
       </section>
@@ -112,7 +112,7 @@ export default function CompoundPage() {
         <ol className="list-decimal list-inside text-[var(--text)] space-y-1">
           <li>Add an idea or note</li>
           <li>AI suggests topics and categories</li>
-          <li>Store it locally—works offline</li>
+          <li>Store it locally, works offline</li>
           <li>Browse and build on your knowledge base over time</li>
         </ol>
       </section>
