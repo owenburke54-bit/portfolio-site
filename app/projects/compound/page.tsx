@@ -124,6 +124,7 @@ export default function CompoundPage() {
           <li>Next.js with React and TypeScript</li>
           <li>Vercel for hosting</li>
           <li>LocalStorage and IndexedDB for local-first persistence</li>
+          <li>OpenAI API</li>
         </ul>
       </section>
     </div>
