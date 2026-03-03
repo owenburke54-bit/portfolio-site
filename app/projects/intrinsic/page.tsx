@@ -84,12 +84,6 @@ export default function IntrinsicPage() {
           Comps are built around an anchor company. Median valuation metrics are calculated across peers, excluding missing data, so the benchmarks stay clean.
         </p>
         <p className="text-[var(--text)]">
-          Premium versus median dispersion is calculated directly:
-        </p>
-        <p className="text-[var(--text)] font-mono text-sm">
-          (Anchor Multiple ÷ Peer Median) − 1
-        </p>
-        <p className="text-[var(--text)]">
           The goal is not to add more numbers. It is to make valuation context obvious and fast to interpret.
         </p>
       </section>
