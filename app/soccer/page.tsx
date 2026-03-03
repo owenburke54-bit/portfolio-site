@@ -159,17 +159,17 @@ export default function SoccerPage() {
         </div>
       </section>
 
-      {/* 5) HIGHLIGHT VIDEO PLACEHOLDER */}
+      {/* 5) HIGHLIGHT VIDEO */}
       <section className="card p-6 space-y-3">
         <h2 className="text-xl font-semibold">Highlights</h2>
         <div className="w-full overflow-hidden rounded-xl border" style={{ background: "var(--surface-2)", borderColor: "var(--border)" }}>
           <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-              <p className="text-[var(--text)]">Highlight video coming soon</p>
-              <p className="text-sm text-[var(--text-muted)]">
-                Game film and career highlights will be added here.
-              </p>
-            </div>
+            <iframe
+              src="https://www.hudl.com/embed/video/3/17926409/677db1979a7f3cced9bda55c"
+              className="absolute inset-0 w-full h-full"
+              allowFullScreen
+              style={{ border: 0 }}
+            />
           </div>
         </div>
       </section>
