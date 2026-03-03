@@ -127,13 +127,14 @@
   ],
   "sports": "Division I college soccer player",
   "experience": [
-    "Fidelity Investments — Operations Intern (accepted for summer internship in Smithfield, RI)",
+    "Fidelity Investments — Data Analytics & Insights Intern supporting the Institutional Wealth Management Group (summer 2025, Smithfield, RI)",
     "Owen Burke Soccer Training — founder (built a training business with 50+ clients and a small coaching team)"
   ],
   "post_graduation": {
     "graduation_date": "May 2026",
     "job_status": "still looking",
-    "open_to_industries": ["Finance", "Tech", "AI"]
+    "open_to_industries": ["Finance", "Tech", "AI"],
+    "note": "Fidelity internship was summer 2025 (past), not post-graduation"
   },
   "projects": [
     {
