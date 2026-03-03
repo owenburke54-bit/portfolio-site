@@ -32,8 +32,7 @@ export default function MarketsNearingPeakPage() {
             by the end of 2026. The FED is predicted to make two rate cuts in 2026 and unemployment has stabilized at a healthy 4.5%. The stock market has been supported by AI investment, strong earnings from big players, and continued expansion. The markets are strong, but performance has been narrow and heavily driven by leaders in AI advancement. 
           </p>
           <p style={{ textIndent: "2em" }}>
-            Overall, the economy is still growing but growth has slowed. This is a signal of a late
-            stage expansion cycle. Due to this, I would recommend investors cautiously deploy more capital.  Investors should be cautious because interest rates are still relatively high, growth is slowing, valuations may be too high, and there is still a risk of recession. With this information, investors should favor quality companies with strong cash flows, maintain diversification in their portfolios, keep cash on hand, and avoid speculative growth stocks.
+            Overall, the economy is still growing but growth has slowed. This is a signal of a late-stage expansion cycle. Due to this, I would recommend investors cautiously deploy more capital. Investors should be cautious because interest rates are still relatively high, growth is slowing, valuations may be too high, and there is still a risk of recession. With this information, investors should favor quality companies with strong cash flows, maintain diversification in their portfolios, keep cash on hand, and avoid speculative growth stocks. We are not quite at the peak of the cycle. There is still plenty of room for growth in the market, driven by AI advancement.
           </p>
         </div>
       </article>
