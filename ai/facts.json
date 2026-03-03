@@ -130,6 +130,11 @@
     "Fidelity Investments — Operations Intern (accepted for summer internship in Smithfield, RI)",
     "Owen Burke Soccer Training — founder (built a training business with 50+ clients and a small coaching team)"
   ],
+  "post_graduation": {
+    "graduation_date": "May 2026",
+    "job_status": "still looking",
+    "open_to_industries": ["Finance", "Tech", "AI"]
+  },
   "projects": [
     {
       "name": "HydraIQ",

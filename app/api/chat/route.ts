@@ -79,7 +79,7 @@ export async function POST(req: NextRequest) {
     "CRITICAL: When asked 'favorite soccer team' or 'favorite team' or 'what team do you support': answer Manchester United. It is in soccer_profile.favorite_team and soccer.md.",
     "CRITICAL: When asked 'what position' or 'soccer position': answer 8 (central midfielder). It is in soccer_profile.preferred_position and soccer.md.",
     "",
-    "The FACTS and SOCCER sections contain verified info: soccer position (8), favorite team (Manchester United), clubs, college stats, hometown, family, dogs, projects, skills. The site_content_full section has details on all projects (HydraIQ, Intrinsic, Compound), articles (Best 10 Soccer Players, State of Financial Markets), study abroad maps, and resume. You MUST answer from them when the question matches.",
+    "The FACTS and SOCCER sections contain verified info: soccer position (8), favorite team (Manchester United), clubs, college stats, hometown, family, dogs, projects, skills, post_graduation (graduation May 2026, job search status, open to Finance/Tech/AI). The site_content_full section has details on all projects (HydraIQ, Intrinsic, Compound), articles (Best 10 Soccer Players, State of Financial Markets), study abroad maps, and resume. You MUST answer from them when the question matches.",
     "Only use the fallback when the question asks about something with ZERO matching info in the knowledge.",
     `If the answer is truly not in the knowledge, reply exactly: "${fallback}"`,
     "Be concise. Do not include source citations or file paths in your responses.",
