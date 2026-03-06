@@ -4,15 +4,35 @@ import { Send } from "lucide-react";
 
 type Msg = { role: 'user' | 'assistant'; content: string };
 
-export default function Chat() {
-  const [messages, setMessages] = useState<Msg[]>([
-    {
-      role: 'assistant',
-      content: "Hi — I'm Owen (AI). Ask anything about my work or background.",
-    },
-  ]);
+const STARTING_QUESTIONS = [
+  "What AI projects have you built?",
+  "Tell me about your professional experience?",
+  "What are your main interests?",
+];
+
+function getFollowUpQuestions(lastUserQuestion: string): string[] {
+  const q = lastUserQuestion.toLowerCase();
+  if (q.includes("project") || q.includes("built") || q.includes("hydra") || q.includes("intrinsic") || q.includes("compound")) {
+    return ["Tell me about HydraIQ", "What's Intrinsic?", "What's Compound?"];
+  }
+  if (q.includes("experience") || q.includes("professional") || q.includes("internship") || q.includes("job") || q.includes("fidelity")) {
+    return ["What was your Fidelity internship like?", "Tell me about Owen Burke Soccer Training", "What roles are you looking for post-graduation?"];
+  }
+  if (q.includes("interest")) {
+    return ["Tell me about your soccer career", "What have you written about?", "Where did you study abroad?"];
+  }
+  return STARTING_QUESTIONS;
+}
+
+export default function Chat({ showSuggestedQuestions = false, chatHeight = 160 }: { showSuggestedQuestions?: boolean; chatHeight?: number }) {
+  const [messages, setMessages] = useState<Msg[]>(
+    showSuggestedQuestions ? [] : [{ role: 'assistant', content: "Hi — I'm Owen (AI). Ask anything about my work or background." }]
+  );
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
+  const [suggestedQuestions, setSuggestedQuestions] = useState<string[]>(
+    showSuggestedQuestions ? STARTING_QUESTIONS : []
+  );
   const viewportRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -22,9 +42,9 @@ export default function Chat() {
     }
   }, [messages, loading]);
 
-  const send = async () => {
-    const content = input.trim();
-    if (!content || loading) return;
+  const sendMessage = async (content: string) => {
+    const trimmed = content.trim();
+    if (!trimmed || loading) return;
     if (messages.filter((m) => m.role === 'user').length >= 15) {
       setMessages((prev) => [
         ...prev,
@@ -36,7 +56,8 @@ export default function Chat() {
       return;
     }
     setLoading(true);
-    const next: Msg[] = [...messages, { role: 'user', content }];
+    setSuggestedQuestions([]);
+    const next: Msg[] = [...messages, { role: 'user', content: trimmed }];
     setMessages(next);
     setInput('');
     setMessages((prev) => [...prev, { role: 'assistant', content: '' }]);
@@ -56,6 +77,9 @@ export default function Chat() {
           }
           return prev;
         });
+        if (showSuggestedQuestions) {
+          setSuggestedQuestions(getFollowUpQuestions(trimmed));
+        }
         return;
       }
       if (!res.ok || !res.body) throw new Error('Stream failed');
@@ -95,6 +119,9 @@ export default function Chat() {
             }
           }
         }
+      }
+      if (showSuggestedQuestions) {
+        setSuggestedQuestions(getFollowUpQuestions(trimmed));
       }
     } catch {
       setMessages((prev) => {
@@ -168,8 +195,8 @@ export default function Chat() {
           ref={viewportRef}
           className="scrollbar-dark overflow-y-auto overflow-x-hidden px-3 py-3 space-y-2.5 text-[13px] leading-relaxed sm:px-4 min-h-0 bg-[color:var(--surface-2)]"
           style={{
-            height: '160px',
-            maxHeight: '160px',
+            height: `${chatHeight}px`,
+            maxHeight: `${chatHeight}px`,
           }}
         >
           {messages.map((m, i) => (
@@ -193,20 +220,35 @@ export default function Chat() {
         </div>
       </div>
 
+      {/* Suggested question boxes */}
+      {showSuggestedQuestions && suggestedQuestions.length > 0 && !loading && (
+        <div className="mb-3 flex flex-wrap gap-2">
+          {suggestedQuestions.map((q) => (
+            <button
+              key={q}
+              onClick={() => sendMessage(q)}
+              className="btn text-sm px-4 py-2"
+            >
+              {q}
+            </button>
+          ))}
+        </div>
+      )}
+
       {/* Input bar */}
       <div className="flex items-center gap-2 rounded-xl overflow-hidden border border-white/5 bg-[color:var(--surface-2)]">
         <input
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => {
-            if (e.key === 'Enter') send();
+            if (e.key === 'Enter') sendMessage(input);
           }}
           className="flex-1 min-w-0 bg-transparent px-3 py-2.5 text-sm placeholder:opacity-50 sm:px-4"
           style={{ color: 'var(--text)' }}
           placeholder="Ask about work, soccer, or background…"
         />
         <button
-          onClick={send}
+          onClick={() => sendMessage(input)}
           disabled={loading}
           className="p-2.5 flex-shrink-0 transition-opacity hover:opacity-80 disabled:opacity-40"
           style={{ color: 'var(--accent)' }}

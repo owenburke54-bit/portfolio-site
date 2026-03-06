@@ -2,15 +2,16 @@ type SectionProps = {
   id: string;
   title?: string;
   subtitle?: string;
+  centerHeader?: boolean;
   children: React.ReactNode;
   className?: string;
 };
 
-export default function Section({ id, title, subtitle, children, className }: SectionProps) {
+export default function Section({ id, title, subtitle, centerHeader, children, className }: SectionProps) {
   return (
     <section id={id} className={`scroll-mt-24 ${className ?? ""}`}>
       {title ? (
-        <header className="mb-6 sm:mb-8">
+        <header className={`mb-6 sm:mb-8 ${centerHeader ? "text-center" : ""}`}>
           <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">{title}</h2>
           {subtitle ? <p className="text-[var(--text-muted)] mt-1">{subtitle}</p> : null}
         </header>

@@ -2,15 +2,14 @@ import Section from "@/components/Section";
 import ProjectCard from "@/components/ProjectCard";
 import InterestCard from "@/components/InterestCard";
 import ContactForm from "@/components/ContactForm";
-import { Cpu } from "lucide-react";
-import Chat from "@/components/Chat";
+import { Sparkles } from "lucide-react";
 import ScrollTopOnLoad from "@/components/ScrollTopOnLoad";
 import ResetHashOnHome from "@/components/ResetHashOnHome";
 
 export const metadata = {
-  title: "Owen Burke | AI Builder",
+  title: "Owen Burke | AI Portfolio",
   description:
-    "AI Builder — Finance & Data Analytics Student | D1 Student-Athlete. Projects, interests, and contact.",
+    "Finance & Data Analytics Student. Projects, interests, and contact.",
 };
 
 export default function HomePage() {
@@ -22,32 +21,29 @@ export default function HomePage() {
       <Section id="home">
         <div className="text-center space-y-5 sm:space-y-6">
           <div className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs" style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}>
-            <Cpu className="h-3.5 w-3.5" />
-            Builder profile
+            <Sparkles className="h-3.5 w-3.5" />
+            AI Portfolio
           </div>
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-semibold tracking-tight">
-            AI Builder
-          </h1>
+          <div className="space-y-2">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight">
+              Owen Burke
+            </h1>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-[var(--text-muted)]">
+              AI Builder
+            </h2>
+          </div>
           <p className="mx-auto max-w-3xl text-base sm:text-lg text-[var(--text-muted)]">
-            Finance &amp; Data Analytics Student | D1 Student-Athlete
+            Finance &amp; Data Analytics Student
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-3">
-            <a href="#projects" className="btn">View Projects</a>
-            <a href="#contact" className="btn-secondary">Contact</a>
+          <div className="flex justify-center">
+            <a href="#contact" className="btn">Contact Owen</a>
           </div>
         </div>
       </Section>
 
-      {/* Talk to Owen */}
-      <section id="talk-to-owen" className="relative py-12 scroll-mt-24">
-        <div className="max-w-4xl mx-auto px-6">
-          <Chat />
-        </div>
-      </section>
-
       {/* Projects */}
       <Section id="projects" title="Projects">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <ProjectCard
             title="HydraIQ"
             description="Hydration tracking app with reminders and WHOOP API integration."
@@ -84,23 +80,25 @@ export default function HomePage() {
             href="/projects/compound"
             cta="View project"
           />
+          <ProjectCard
+            title="Coming Soon"
+            description=""
+            highlights={[]}
+            tools={[]}
+            comingSoon
+          />
         </div>
       </Section>
 
       {/* Interests */}
-      <Section id="interests" title="Interests" subtitle="A few areas I care about.">
+      <Section id="interests" title="Interests">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <InterestCard
             title="Soccer"
-            bullets={[
-              "D1 student-athlete discipline + leadership",
-              "Growth mindset, team-first",
-            ]}
             actions={[{ label: "View", href: "/soccer" }]}
           />
           <InterestCard
             title="Writing"
-            bullets={["Soccer Thoughts", "Financial Markets"]}
             actions={[
               { label: "Top 10 Players", href: "/research/best-10-from-the-stands" },
               { label: "Markets Article", href: "/research/state-of-the-financial-markets-nearing-the-peak" },
@@ -108,24 +106,23 @@ export default function HomePage() {
           />
           <InterestCard
             title="Study Abroad"
-            bullets={["Study abroad experience → data", "Power BI interactive maps"]}
-            actions={[{ label: "Power BI Maps", href: "/study-abroad" }]}
+            actions={[{ label: "View", href: "/study-abroad" }]}
           />
         </div>
       </Section>
 
       {/* Contact */}
-      <Section id="contact" title="Contact">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="card p-6 space-y-3">
-            <h3 className="font-semibold">Get in touch</h3>
-            <div className="text-sm">
+      <Section id="contact" title="Contact" centerHeader>
+        <div className="max-w-2xl mx-auto">
+          <div className="space-y-6">
+            <ContactForm />
+            <div className="text-sm text-center space-y-2">
               <div>
                 <a href="mailto:owenburke54@gmail.com" className="underline">
                   owenburke54@gmail.com
                 </a>
               </div>
-              <div className="mt-2">
+              <div>
                 <a
                   href="https://www.linkedin.com/in/owen-burke-0ab126257"
                   target="_blank"
@@ -135,7 +132,7 @@ export default function HomePage() {
                   LinkedIn
                 </a>
               </div>
-              <div className="mt-2">
+              <div>
                 <a
                   href="/resume.pdf"
                   target="_blank"
@@ -147,7 +144,6 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-          <ContactForm />
         </div>
       </Section>
     </div>
