@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Toolchain from "./Toolchain";
 import { Link2 } from "lucide-react";
 
@@ -12,6 +13,7 @@ type ProjectCardProps = {
   cta?: string;
   comingSoon?: boolean;
   imageSrc?: string;
+  imagePosition?: "top" | "center" | "bottom";
 };
 
 export default function ProjectCard({
@@ -23,12 +25,21 @@ export default function ProjectCard({
   cta = "View",
   comingSoon = false,
   imageSrc,
+  imagePosition = "top",
 }: ProjectCardProps) {
   return (
     <div className="card p-6 h-full flex flex-col overflow-hidden">
       {imageSrc ? (
-        <div className="-mx-6 -mt-6 mb-4 w-[calc(100%+3rem)] overflow-hidden rounded-t-xl" style={{ background: "var(--surface-2)" }}>
-          <img src={imageSrc} alt="" className="w-full aspect-video object-cover object-top" />
+        <div className="-mx-6 -mt-6 mb-4 w-[calc(100%+3rem)] overflow-hidden rounded-t-xl relative aspect-video" style={{ background: "var(--surface-2)" }}>
+          <Image
+            src={imageSrc}
+            alt=""
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            quality={90}
+            className="object-cover"
+            style={{ objectPosition: imagePosition === "center" ? "center" : imagePosition === "bottom" ? "bottom" : "top" }}
+          />
         </div>
       ) : !comingSoon ? (
         <div className="-mx-6 -mt-6 mb-4 w-[calc(100%+3rem)] aspect-video flex items-center justify-center rounded-t-xl" style={{ background: "var(--surface-2)" }}>
