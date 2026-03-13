@@ -46,6 +46,7 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <ProjectCard
             title="HydraIQ"
+            imageSrc="/hydraiq.png"
             description="Hydration tracking app with reminders and WHOOP API integration."
             highlights={[
               "WHOOP API integration",
@@ -58,6 +59,7 @@ export default function HomePage() {
           />
           <ProjectCard
             title="Intrinsic"
+            imageSrc="/intrinsic.png"
             description="Equity research workspace for building valuation-backed investment theses."
             highlights={[
               "AI-assisted stock research workflow",
@@ -70,6 +72,7 @@ export default function HomePage() {
           />
           <ProjectCard
             title="Compound"
+            imageSrc="/compound.png"
             description="Personal knowledge engine that captures ideas and organizes them with AI."
             highlights={[
               "Local-first storage with offline support",
@@ -99,10 +102,7 @@ export default function HomePage() {
           />
           <InterestCard
             title="Writing"
-            actions={[
-              { label: "Top 10 Players", href: "/research/best-10-from-the-stands" },
-              { label: "Markets Article", href: "/research/state-of-the-financial-markets-nearing-the-peak" },
-            ]}
+            actions={[{ label: "View", href: "/research/state-of-the-financial-markets-nearing-the-peak" }]}
           />
           <InterestCard
             title="Study Abroad"
@@ -114,9 +114,9 @@ export default function HomePage() {
       {/* Contact */}
       <Section id="contact" title="Contact" centerHeader>
         <div className="max-w-2xl mx-auto">
-          <div className="space-y-6">
+          <div className="card p-8 space-y-6">
             <ContactForm />
-            <div className="text-sm text-center space-y-2">
+            <div className="pt-4 border-t text-sm text-center space-y-2" style={{ borderColor: "var(--border)" }}>
               <div>
                 <a href="mailto:owenburke54@gmail.com" className="underline">
                   owenburke54@gmail.com

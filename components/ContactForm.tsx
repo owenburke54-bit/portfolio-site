@@ -41,7 +41,7 @@ export default function ContactForm() {
 
   return (
     <form
-      className="card p-6 space-y-4"
+      className="space-y-4"
       onSubmit={handleSubmit}
     >
       <div>
