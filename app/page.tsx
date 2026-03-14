@@ -2,6 +2,7 @@ import Section from "@/components/Section";
 import ProjectCard from "@/components/ProjectCard";
 import InterestCard from "@/components/InterestCard";
 import ContactForm from "@/components/ContactForm";
+import Chat from "@/components/Chat";
 import { Sparkles } from "lucide-react";
 import ScrollTopOnLoad from "@/components/ScrollTopOnLoad";
 import ResetHashOnHome from "@/components/ResetHashOnHome";
@@ -114,6 +115,13 @@ export default function HomePage() {
             title="Study Abroad"
             actions={[{ label: "View", href: "/study-abroad" }]}
           />
+        </div>
+      </Section>
+
+      {/* Talk to Owen */}
+      <Section id="talk-to-owen" title="Talk to Owen" subtitle="Ask about my projects, experience, or interests.">
+        <div className="max-w-4xl mx-auto">
+          <Chat showSuggestedQuestions chatHeight={280} />
         </div>
       </Section>
 
