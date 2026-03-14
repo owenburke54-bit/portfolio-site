@@ -59,8 +59,6 @@ export default function HomePage() {
           />
           <ProjectCard
             title="Intrinsic"
-            imageSrc="/intrinsic.png"
-            imagePosition="center"
             description="Equity research workspace for building valuation-backed investment theses."
             highlights={[
               "AI-assisted stock research workflow",
@@ -73,8 +71,6 @@ export default function HomePage() {
           />
           <ProjectCard
             title="Compound"
-            imageSrc="/compound.png"
-            imagePosition="center"
             description="Personal knowledge engine that captures ideas and organizes them with AI."
             highlights={[
               "Local-first storage with offline support",
