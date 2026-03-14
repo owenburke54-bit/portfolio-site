@@ -14,6 +14,8 @@ type ProjectCardProps = {
   comingSoon?: boolean;
   imageSrc?: string;
   imagePosition?: "top" | "center" | "bottom";
+  imageFit?: "cover" | "contain";
+  imageAspect?: "video" | "taller";
 };
 
 export default function ProjectCard({
@@ -26,18 +28,23 @@ export default function ProjectCard({
   comingSoon = false,
   imageSrc,
   imagePosition = "top",
+  imageFit = "cover",
+  imageAspect = "video",
 }: ProjectCardProps) {
   return (
     <div className="card p-6 h-full flex flex-col overflow-hidden">
       {imageSrc ? (
-        <div className="-mx-6 -mt-6 mb-4 w-[calc(100%+3rem)] overflow-hidden rounded-t-xl relative aspect-video" style={{ background: "var(--surface-2)" }}>
+        <div
+          className="-mx-6 -mt-6 mb-4 w-[calc(100%+3rem)] overflow-hidden rounded-t-xl relative flex items-center justify-center"
+          style={{ background: "var(--surface-2)", aspectRatio: imageAspect === "taller" ? "4/3" : "16/9" }}
+        >
           <Image
             src={imageSrc}
             alt=""
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
-            quality={90}
-            className="object-cover"
+            quality={95}
+            className={imageFit === "contain" ? "object-contain" : "object-cover"}
             style={{ objectPosition: imagePosition === "center" ? "center" : imagePosition === "bottom" ? "bottom" : "top" }}
           />
         </div>
