@@ -48,11 +48,11 @@ export default function ProjectCard({
             style={{ objectPosition: imagePosition === "center" ? "center" : imagePosition === "bottom" ? "bottom" : "top" }}
           />
         </div>
-      ) : !comingSoon ? (
+      ) : (
         <div className="-mx-6 -mt-6 mb-4 w-[calc(100%+3rem)] aspect-video flex items-center justify-center rounded-t-xl" style={{ background: "var(--surface-2)" }}>
-          <span className="text-xs text-[var(--text-muted)]">Image</span>
+          <span className="text-xs text-[var(--text-muted)]">{comingSoon ? "Coming Soon" : "Image"}</span>
         </div>
-      ) : null}
+      )}
       <h3 className="text-lg font-semibold">{title}</h3>
       {description ? <p className="mt-2 text-sm text-[var(--text-muted)]">{description}</p> : null}
       {highlights.length > 0 ? (
