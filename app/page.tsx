@@ -48,7 +48,6 @@ export default function HomePage() {
             title="HydraIQ"
             imageSrc="/hydraiq.png"
             imageFit="contain"
-            imageAspect="taller"
             description="Hydration tracking app with reminders and WHOOP API integration."
             highlights={[
               "WHOOP API integration",
