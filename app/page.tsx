@@ -48,6 +48,7 @@ export default function HomePage() {
             title="HydraIQ"
             imageSrc="/hydraiq.png"
             imageFit="contain"
+            imagePosition="center"
             description="Hydration tracking app with reminders and WHOOP API integration."
             highlights={[
               "WHOOP API integration",
@@ -61,6 +62,7 @@ export default function HomePage() {
           <ProjectCard
             title="Intrinsic"
             imageSrc="/intrinsic.png"
+            imageFit="contain"
             imagePosition="center"
             description="Equity research workspace for building valuation-backed investment theses."
             highlights={[
@@ -75,6 +77,7 @@ export default function HomePage() {
           <ProjectCard
             title="Compound"
             imageSrc="/compound.png"
+            imageFit="contain"
             imagePosition="center"
             description="Personal knowledge engine that captures ideas and organizes them with AI."
             highlights={[

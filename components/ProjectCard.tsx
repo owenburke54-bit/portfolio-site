@@ -35,8 +35,8 @@ export default function ProjectCard({
     <div className="card p-6 h-full flex flex-col overflow-hidden">
       {imageSrc ? (
         <div
-          className="-mx-6 -mt-6 mb-4 w-[calc(100%+3rem)] overflow-hidden rounded-t-xl relative flex items-center justify-center"
-          style={{ background: "var(--surface-2)", aspectRatio: imageAspect === "taller" ? "4/3" : "16/9" }}
+          className="-mx-6 -mt-6 mb-4 w-[calc(100%+3rem)] overflow-hidden rounded-t-xl relative flex items-center justify-center border"
+          style={{ background: "var(--surface-2)", aspectRatio: imageAspect === "taller" ? "4/3" : "16/9", borderColor: "var(--border)" }}
         >
           <Image
             src={imageSrc}
@@ -49,7 +49,7 @@ export default function ProjectCard({
           />
         </div>
       ) : (
-        <div className="-mx-6 -mt-6 mb-4 w-[calc(100%+3rem)] aspect-video flex items-center justify-center rounded-t-xl" style={{ background: "var(--surface-2)" }}>
+        <div className="-mx-6 -mt-6 mb-4 w-[calc(100%+3rem)] aspect-video flex items-center justify-center rounded-t-xl border" style={{ background: "var(--surface-2)", borderColor: "var(--border)" }}>
           <span className="text-xs text-[var(--text-muted)]">{comingSoon ? "Coming Soon" : "Image"}</span>
         </div>
       )}
