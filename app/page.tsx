@@ -65,7 +65,7 @@ export default function HomePage() {
             imageSrc="/intrinsic.png"
             imageFit="contain"
             imagePosition="center"
-            description="Equity research workspace for building valuation-backed investment theses."
+            description="Valuation-backed equity research workspace and thesis builder."
             highlights={[
               "AI-assisted stock research workflow",
               "Thesis, comps, and DCF framework",
@@ -80,7 +80,7 @@ export default function HomePage() {
             imageSrc="/compound.png"
             imageFit="contain"
             imagePosition="center"
-            description="Personal knowledge engine that captures ideas and organizes them with AI."
+            description="AI-powered knowledge engine for capturing and organizing ideas."
             highlights={[
               "Local-first storage with offline support",
               "AI-powered topic classification",
