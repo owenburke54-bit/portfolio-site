@@ -91,11 +91,19 @@ export default function HomePage() {
             cta="View project"
           />
           <ProjectCard
-            title="Coming Soon"
-            description=""
-            highlights={[]}
-            tools={[]}
-            comingSoon
+            title="SessionPlanner"
+            imageSrc="/sessionplanner.png"
+            imageFit="contain"
+            imagePosition="center"
+            description="Mobile-first soccer training session builder for players and trainers."
+            highlights={[
+              "Structured solo and small-group session builder",
+              "Drill library with detailed diagrams and coaching flow",
+              "Mobile-first design for on-field planning",
+            ]}
+            tools={["Claude", "GitHub", "Vercel"]}
+            href="/projects/sessionplanner"
+            cta="View project"
           />
         </div>
       </Section>
