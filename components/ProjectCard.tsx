@@ -28,33 +28,31 @@ export default function ProjectCard({
   comingSoon = false,
   imageSrc,
   imagePosition = "top",
-  imageFit = "cover",
-  imageAspect = "video",
+  // imageFit/imageAspect kept for backwards compatibility, but the
+  // card media frame is intentionally standardized across projects.
+  imageFit: _imageFit = "cover",
+  imageAspect: _imageAspect = "video",
 }: ProjectCardProps) {
   return (
     <div className="card h-full flex flex-col overflow-hidden">
       {/* Image wrapper with consistent spacing */}
       <div className="px-6 pt-6 pb-4">
         <div
-          className="w-full flex items-center justify-center rounded-xl border"
+          className="w-full overflow-hidden rounded-xl border relative"
           style={{
             background: "#0d1220",
             borderColor: "var(--border)",
-            aspectRatio: imageAspect === "taller" ? "4/3" : "16/9",
+            aspectRatio: "16/9",
           }}
         >
           {imageSrc ? (
             <Image
               src={imageSrc}
               alt=""
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               quality={95}
-              width={360}
-              height={203}
-              className={
-                imageFit === "cover"
-                  ? "max-w-full h-auto object-cover"
-                  : "max-w-full h-auto object-contain"
-              }
+              className="object-cover"
               style={{
                 objectPosition:
                   imagePosition === "center"
@@ -65,9 +63,11 @@ export default function ProjectCard({
               }}
             />
           ) : (
-            <span className="text-xs text-[var(--text-muted)]">
-              {comingSoon ? "Coming Soon" : "Image"}
-            </span>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="text-xs text-[var(--text-muted)]">
+                {comingSoon ? "Coming Soon" : "Image"}
+              </span>
+            </div>
           )}
         </div>
       </div>
