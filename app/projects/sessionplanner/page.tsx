@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     "Soccer training session builder for structured individual and small-group work.",
 };
 
-const SESSIONPLANNER_APP_URL = "https://session-planner.vercel.app";
+const SESSIONPLANNER_APP_URL = "https://sessionplanner.vercel.app";
 
 export default function SessionPlannerPage() {
   return (
@@ -34,7 +34,7 @@ export default function SessionPlannerPage() {
             <ResizableEmbed
               src={SESSIONPLANNER_APP_URL}
               title="SessionPlanner Preview"
-              allowedOrigins={["https://session-planner.vercel.app"]}
+              allowedOrigins={["https://sessionplanner.vercel.app"]}
               minHeight={800}
             />
           </div>

@@ -47,10 +47,10 @@ export default function ProjectCard({
             <Image
               src={imageSrc}
               alt=""
-              width={320}
-              height={180}
+              fill
               quality={95}
-              className={imageFit === "contain" ? "max-w-full h-auto object-contain" : "max-w-full h-auto object-cover"}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
               style={{
                 objectPosition:
                   imagePosition === "center"
