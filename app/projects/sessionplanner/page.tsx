@@ -6,7 +6,7 @@ import ResizableEmbed from "@/components/ResizableEmbed";
 export const metadata: Metadata = {
   title: "SessionPlanner | Owen Burke",
   description:
-    "Mobile-first soccer training session builder for players and trainers. Structured sessions, drill library, and on-field planning.",
+    "Soccer training session builder for structured individual and small-group work.",
 };
 
 const SESSIONPLANNER_APP_URL = "https://session-planner.vercel.app";
@@ -16,7 +16,7 @@ export default function SessionPlannerPage() {
     <div className="space-y-8">
       <PageHeader
         title="SessionPlanner"
-        subtitle="A mobile-first soccer training planner built for players and trainers. SessionPlanner helps users generate structured individual and small-group sessions based on player count, session goals, field space, and available equipment."
+        subtitle="Soccer Training Session Builder"
       />
 
       {/* App preview (same treatment as HydraIQ) */}
@@ -45,13 +45,16 @@ export default function SessionPlannerPage() {
       <section className="card p-6 space-y-4">
         <h2 className="text-xl font-semibold">Summary</h2>
         <p className="text-[var(--text)]">
-          SessionPlanner started from a simple idea: planning a good soccer session should be faster, more practical, and more structured.
+          SessionPlanner is a mobile-first training planning tool designed for players and trainers running individual or small-group soccer sessions.
         </p>
         <p className="text-[var(--text)]">
-          Instead of piecing together random drills, the app helps players and trainers build sessions that actually flow. Users choose the type of session they want, the number of players, focus areas, available space, and equipment, and SessionPlanner generates a structured plan with detailed drill cards, coaching guidance, and diagrams.
+          Instead of relying on a large drill database, the app intelligently generates a balanced session structure based on inputs such as player count, skill level, focus areas, equipment, and session length.
         </p>
         <p className="text-[var(--text)]">
-          The goal is to make session planning feel clear enough for a solo technical workout and strong enough for a trainer organizing a small group.
+          The tool creates a recommended session template made up of structured training phases such as activation, ball mastery, passing patterns, dribbling, finishing, fitness, and cooldown. Users can then customize each block by adjusting timing, adding their own drill notes, and reorganizing the session to fit their needs.
+        </p>
+        <p className="text-[var(--text)]">
+          Sessions can be saved and reused, making it easy to build a personal library of effective training plans.
         </p>
       </section>
 
@@ -59,11 +62,11 @@ export default function SessionPlannerPage() {
       <section className="card p-6 space-y-3">
         <h2 className="text-xl font-semibold">Core Features</h2>
         <ul className="list-disc list-inside text-[var(--text)] space-y-1">
-          <li>Mobile-first session builder for players and trainers</li>
-          <li>Structured drill library with specific patterns, reps, and coaching tips</li>
-          <li>Drill diagrams designed for quick visual understanding</li>
-          <li>Session generation based on player count, focus areas, field size, and equipment</li>
-          <li>Editable flow with drill swapping and session refinement</li>
+          <li>Smart session structure generation based on training inputs</li>
+          <li>Mobile-first interface designed for planning sessions quickly on the field</li>
+          <li>Fully editable training blocks with custom notes</li>
+          <li>Intelligent time allocation across phases of the session</li>
+          <li>Saved sessions for reuse and iteration</li>
         </ul>
       </section>
 
