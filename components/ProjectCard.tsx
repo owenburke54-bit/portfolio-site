@@ -56,14 +56,14 @@ export default function ProjectCard({
       <h3 className="text-lg font-semibold">{title}</h3>
       {description ? <p className="mt-2 text-sm text-[var(--text-muted)]">{description}</p> : null}
       {highlights.length > 0 ? (
-        <ul className="mt-4 space-y-1 text-sm list-disc pl-5">
+        <ul className="mt-3 space-y-1 text-sm list-disc pl-5">
           {highlights.map((h) => (
             <li key={h}>{h}</li>
           ))}
         </ul>
       ) : null}
       {tools.length > 0 ? <Toolchain tools={tools} /> : null}
-      <div className="mt-auto pt-5">
+      <div className="mt-auto pt-4">
         {comingSoon ? (
           <button className="btn opacity-60 cursor-not-allowed" disabled>Coming Soon</button>
         ) : href ? (
