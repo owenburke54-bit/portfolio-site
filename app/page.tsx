@@ -58,7 +58,7 @@ export default function HomePage() {
             ]}
             tools={["Cursor", "GitHub", "Vercel"]}
             href="/projects/hydraiq"
-            cta="View project"
+            cta="View"
           />
           <ProjectCard
             title="Intrinsic"
@@ -73,7 +73,7 @@ export default function HomePage() {
             ]}
             tools={["Claude", "GitHub", "Vercel"]}
             href="/projects/intrinsic"
-            cta="View project"
+            cta="View"
           />
           <ProjectCard
             title="Compound"
@@ -88,7 +88,7 @@ export default function HomePage() {
             ]}
             tools={["Cursor", "GitHub", "Vercel"]}
             href="/projects/compound"
-            cta="View project"
+            cta="View"
           />
           <ProjectCard
             title="SessionPlanner"
@@ -103,7 +103,7 @@ export default function HomePage() {
             ]}
             tools={["Claude", "GitHub", "Vercel"]}
             href="/projects/sessionplanner"
-            cta="View project"
+            cta="View"
           />
         </div>
       </Section>
