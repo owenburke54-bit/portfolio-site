@@ -110,14 +110,17 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <InterestCard
             title="Soccer"
+            body="Soccer has been a constant in my life and the biggest driver of my discipline and competitiveness. Playing Division I has taught me how to handle pressure, lead teammates, and stay consistent over long periods of time."
             actions={[{ label: "View", href: "/soccer" }]}
           />
           <InterestCard
             title="Writing"
+            body="I use writing to think more clearly, especially when it comes to markets and investing. It helps me turn rough ideas into structured opinions and communicate them in a way others can understand."
             actions={[{ label: "View", href: "/research/state-of-the-financial-markets-nearing-the-peak" }]}
           />
           <InterestCard
             title="Study Abroad"
+            body="Studying abroad challenged me to step outside my routine and see things from a different perspective. It made me more adaptable, more curious, and more comfortable in unfamiliar environments."
             actions={[{ label: "View", href: "/study-abroad" }]}
           />
         </div>
