@@ -138,33 +138,6 @@ export default function HomePage() {
         <div className="max-w-2xl mx-auto">
           <div className="card p-8 space-y-6">
             <ContactForm />
-            <div className="pt-4 border-t text-sm text-center space-y-2" style={{ borderColor: "var(--border)" }}>
-              <div>
-                <a href="mailto:owenburke54@gmail.com" className="underline">
-                  owenburke54@gmail.com
-                </a>
-              </div>
-              <div>
-                <a
-                  href="https://www.linkedin.com/in/owen-burke-0ab126257"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline"
-                >
-                  LinkedIn
-                </a>
-              </div>
-              <div>
-                <a
-                  href="/resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline"
-                >
-                  Resume (PDF)
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </Section>
