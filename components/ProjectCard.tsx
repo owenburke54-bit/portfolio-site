@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Toolchain from "./Toolchain";
 import { Link2 } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 type Tool = "Cursor" | "GitHub" | "Vercel" | "Claude Code" | "Claude";
 
@@ -33,8 +36,33 @@ export default function ProjectCard({
   imageFit: _imageFit = "cover",
   imageAspect: _imageAspect = "video",
 }: ProjectCardProps) {
+  const router = useRouter();
+  const clickable = Boolean(href) && !comingSoon;
+
+  const onCardActivate = () => {
+    if (!href || comingSoon) return;
+    router.push(href);
+  };
+
   return (
-    <div className="card h-full flex flex-col overflow-hidden">
+    <div
+      className={`card h-full flex flex-col overflow-hidden ${clickable ? "cursor-pointer" : ""}`}
+      role={clickable ? "link" : undefined}
+      tabIndex={clickable ? 0 : undefined}
+      onClick={(e) => {
+        if (!clickable) return;
+        const target = e.target as HTMLElement | null;
+        if (target?.closest("a,button")) return;
+        onCardActivate();
+      }}
+      onKeyDown={(e) => {
+        if (!clickable) return;
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          onCardActivate();
+        }
+      }}
+    >
       {/* Image wrapper with consistent spacing */}
       <div className="px-6 pt-6 pb-4">
         <div

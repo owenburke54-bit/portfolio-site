@@ -1,4 +1,7 @@
+"use client";
+
 import { Trophy, BookOpenText, Globe2, Link2 } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 type Interest = "Soccer" | "Writing" | "Study Abroad";
 
@@ -13,6 +16,10 @@ export default function InterestCard({
   body?: string;
   actions?: { label: string; href: string }[];
 }) {
+  const router = useRouter();
+  const primaryHref = actions?.[0]?.href;
+  const clickable = Boolean(primaryHref);
+
   const icon =
     title === "Soccer" ? <Trophy className="h-5 w-5" /> :
     title === "Writing" ? <BookOpenText className="h-5 w-5" /> :
@@ -20,7 +27,24 @@ export default function InterestCard({
     <BookOpenText className="h-5 w-5" />;
 
   return (
-    <div className="card p-6 h-full flex flex-col">
+    <div
+      className={`card p-6 h-full flex flex-col ${clickable ? "cursor-pointer" : ""}`}
+      role={clickable ? "link" : undefined}
+      tabIndex={clickable ? 0 : undefined}
+      onClick={(e) => {
+        if (!clickable || !primaryHref) return;
+        const target = e.target as HTMLElement | null;
+        if (target?.closest("a,button")) return;
+        router.push(primaryHref);
+      }}
+      onKeyDown={(e) => {
+        if (!clickable || !primaryHref) return;
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          router.push(primaryHref);
+        }
+      }}
+    >
       <div className="flex items-center gap-2">
         {icon}
         <h3 className="text-lg font-semibold">{title}</h3>
