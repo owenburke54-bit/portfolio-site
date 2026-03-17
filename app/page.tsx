@@ -29,12 +29,9 @@ export default function HomePage() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight">
               Owen Burke
             </h1>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-[var(--text-muted)]">
-              AI Builder
-            </h2>
           </div>
           <p className="mx-auto max-w-3xl text-base sm:text-lg text-[var(--text-muted)]">
-            Finance &amp; Data Analytics Student
+            AI Builder | Finance &amp; Data Analytics Student
           </p>
           <div className="flex justify-center">
             <a href="#contact" className="btn">Contact Owen</a>
