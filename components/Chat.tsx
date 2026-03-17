@@ -222,12 +222,12 @@ export default function Chat({ showSuggestedQuestions = false, chatHeight = 160 
 
       {/* Suggested question boxes */}
       {showSuggestedQuestions && suggestedQuestions.length > 0 && !loading && (
-        <div className="mb-3 flex flex-wrap gap-2">
+        <div className="mb-3 flex flex-col gap-2">
           {suggestedQuestions.map((q) => (
             <button
               key={q}
               onClick={() => sendMessage(q)}
-              className="btn text-sm px-4 py-2"
+              className="btn text-sm px-4 py-2 w-full justify-start"
             >
               {q}
             </button>
