@@ -11,9 +11,23 @@ import Script from "next/script";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Owen Burke | Finance, Data Analytics & Performance",
-  description:
-    "Personal website and portfolio of Owen Burke — Finance & Data Analytics, student-athlete, and Builder.",
+  title: "Owen Burke | AI Portfolio",
+  description: "Finance, Data, and AI Projects by Owen Burke",
+  openGraph: {
+    title: "Owen Burke | AI Portfolio",
+    description: "Finance, Data, and AI Projects by Owen Burke",
+    url: "https://owen-burke.com",
+    siteName: "Owen Burke Portfolio",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Owen Burke Portfolio",
+      },
+    ],
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
