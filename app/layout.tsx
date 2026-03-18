@@ -11,6 +11,7 @@ import Script from "next/script";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://owen-burke.com"),
   title: "Owen Burke | AI Portfolio",
   description: "Finance, Data, and AI Projects by Owen Burke",
   openGraph: {
